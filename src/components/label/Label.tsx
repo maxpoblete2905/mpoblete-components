@@ -1,15 +1,11 @@
-import "./MyLabel.css";
+import "./label.css";
+import "../grid/grid.css";
 
 interface Props {
   /**
    * Text to display
    */
   label: string;
-
-  /**
-   * Label size
-   */
-  size?: "normal" | "h1" | "h2" | "h3";
 
   /**
    * all label caps latter
@@ -19,7 +15,7 @@ interface Props {
   /**
    * color label text
    */
-  color?: "text-primary" | "text-secondary" | "text-tertiary";
+  color?: "primary" | "secondary" | "dark";
 
   /**
    * fontColor
@@ -31,21 +27,19 @@ interface Props {
    * color background
    */
   backgroundColor?: string;
+
+  text: "small" | "medium" | "large" | "extra-large";
 }
 
-export const MyLabel = ({
+export const Label = ({
   label,
-  size = "normal",
   allCaps = false,
-  color = "text-primary",
-  fontColor = "",
-  backgroundColor = "",
+  color = "primary",
+
+  text,
 }: Props) => {
   return (
-    <span
-      className={`${size} text-${color}`}
-      style={{ color: fontColor, backgroundColor }}
-    >
+    <span className={`label teme-${color} text-${text}`}>
       {allCaps ? label.toUpperCase() : label}
     </span>
   );

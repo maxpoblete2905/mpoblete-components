@@ -1,19 +1,20 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { MyLabel } from "../components/MyLabel";
+import { Label } from "../components/label/index";
 
 const meta = {
-  title: "mi label",
-  component: MyLabel,
+  title: "Component/Label",
+  component: Label,
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
   },
   argTypes: {
-    size: {
-      control: "radio",
+    color: {
+      control: "select",
     },
+    text: { control: "select" },
   },
-} satisfies Meta<typeof MyLabel>;
+} satisfies Meta<typeof Label>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -21,14 +22,14 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   args: {
     label: "basic",
-    size: "normal",
+    text: "medium",
   },
 };
 
 export const AllCaps: Story = {
   args: {
     label: "All Caps Label",
-    size: "normal",
+    text: "medium",
     allCaps: true,
   },
 };
@@ -36,15 +37,15 @@ export const AllCaps: Story = {
 export const Secondary: Story = {
   args: {
     label: "Secondary label",
-    size: "normal",
-    color: "text-secondary",
+    text: "medium",
+    color: "secondary",
   },
 };
 
 export const CustomColor: Story = {
   args: {
     label: "Custom label",
-    size: "normal",
+    text: "medium",
     fontColor: "#ae23d8",
   },
 };
@@ -53,7 +54,7 @@ export const BackgraundColor: Story = {
   args: {
     label: "back groud color",
     backgroundColor: "black",
-    size: "normal",
+    text: "medium",
     fontColor: "#ffffff",
   },
 };
