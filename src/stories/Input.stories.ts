@@ -1,6 +1,6 @@
 // InputComponent.stories.tsx
 import { Meta, StoryObj } from "@storybook/react";
-import { InputComponent, InputComponentProps } from "../components/input/Input";
+import { InputComponent, InputComponentProps } from "../components/input/Input.component";
 
 const meta: Meta<InputComponentProps> = {
   title: "Component/Input",

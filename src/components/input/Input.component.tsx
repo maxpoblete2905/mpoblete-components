@@ -1,7 +1,6 @@
 // InputComponent.tsx
 import React from "react";
-import "./input.css";
-import "../grid/grid.css";
+import { Form } from "react-bootstrap";
 
 export interface InputComponentProps {
   id: string;
@@ -33,17 +32,20 @@ export const InputComponent: React.FC<InputComponentProps> = ({
   type,
   value,
   onChange,
-  color,
+  label,
 }) => {
   return (
-    <input
-      className={`dynamic-input teme-${color} focus-${color} input`}
-      type={type}
-      id={id}
-      name={id}
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-    />
+    <Form.Group>
+      <Form.Label>{label}</Form.Label>
+      <Form.Control
+        placeholder={label}
+        type={type}
+        id={id}
+        name={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
+    </Form.Group>
   );
 };
 
