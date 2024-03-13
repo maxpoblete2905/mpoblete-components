@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import {
-  TableComponent,
-  TableProps,
-} from "../components/table/Table.component";
-import { TableData } from "../components/table/Mantainer";
+  MantainerComponent,
+  MantainerProps,
+} from "../components/table/Mantainer";
 
 function generateDatesBetweenYears(startYear: number, endYear: number): string {
   let dates = "";
@@ -84,9 +84,9 @@ for (let i = 0; i < 100; i++) {
   sampleData.push({ id, nombre, apellido, email, creationDate });
 }
 
-const meta: Meta<TableProps<TableData>> = {
-  title: "component/Table",
-  component: TableComponent,
+const meta: Meta<MantainerProps> = {
+  title: "Apps/Mantenedor",
+  component: MantainerComponent,
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
@@ -97,23 +97,13 @@ const meta: Meta<TableProps<TableData>> = {
   //   },
   //   text: { control: "select" },
   // },
-} satisfies Meta<typeof TableComponent>;
+} satisfies Meta<typeof MantainerComponent>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Basices: Story = {
+export const Basice: Story = {
   args: {
     data: sampleData,
-    selectedItemIds: [],
-    handleCheckboxChange: function (id: number): void {
-      console.log("data checked", id);
-    },
-    handleEditClick: function (row: TableData): void {
-      console.log("edit ", row);
-    },
-    handleDeleteClick: function (id: number): void {
-      console.log("delete", id);
-    },
   },
 };

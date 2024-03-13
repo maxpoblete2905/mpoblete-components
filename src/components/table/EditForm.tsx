@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import { TableData } from "./Mantainer";
 
-interface EditFormProps {
+interface EditFormProps<T> {
   show: boolean;
   onHide: () => void;
-  selectedItem: any; // Tipo del elemento seleccionado
-  onSave: (editedItem: any) => void; // Función para guardar cambios
+  selectedItem: T; // Tipo del elemento seleccionado
+  onSave: (editedItem: T) => void; // Función para guardar cambios
 }
 
-const EditForm: React.FC<EditFormProps> = ({
+const EditForm = <T extends TableData>({
   show,
   onHide,
   selectedItem,
   onSave,
-}) => {
-  const [editedItem, setEditedItem] = useState(selectedItem);
+}: EditFormProps<T>) => {
+  const [editedItem, setEditedItem] = useState<T>(selectedItem);
 
   const handleSave = () => {
     onSave(editedItem);
@@ -32,7 +33,19 @@ const EditForm: React.FC<EditFormProps> = ({
         <Modal.Title>Editar Elemento</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form>{/* Inputs para editar propiedades del elemento */}</Form>
+        <Form>
+          {Object.keys(selectedItem).map((key) => (
+            <Form.Group controlId={key} key={key}>
+              <Form.Label>{key}</Form.Label>
+              <Form.Control
+                type="text"
+                name={key}
+                value={editedItem[key as keyof T]?.toString()}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+          ))}
+        </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onHide}>
