@@ -6,5 +6,5 @@ export type Theme =
   | "danger"
   | "info"
   | "light"
-  | "dark"
-  | "link";
+  | "dark";
+  | "darkFluor";

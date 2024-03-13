@@ -13,6 +13,7 @@ const meta: Meta<DynamicFormProps> = {
   argTypes: {
     onSubmit: {},
     theme: { control: "select" },
+    isneon: { control: "boolean" },
   },
   tags: ["autodocs"],
   parameters: {
@@ -32,5 +33,6 @@ export const Basict: Story = {
     },
     title: "FORMURARIO",
     subTitle: "Registro y mantencion de usuarios ",
+    isneon: false,
   },
 };

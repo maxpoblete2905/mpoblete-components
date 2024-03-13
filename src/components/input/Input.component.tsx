@@ -1,6 +1,10 @@
-// InputComponent.tsx
-import React from "react";
+// Input.component.js
+
+import { ChangeEvent } from "react";
 import { Form } from "react-bootstrap";
+import { handlerTheme } from "../../customTheme/handlerThemeColor";
+import { Theme } from "../../types/theme";
+import { ThemeInterface } from "../../interfaces/themeColor";
 
 export interface InputComponentProps {
   id: string;
@@ -10,43 +14,52 @@ export interface InputComponentProps {
     | "email"
     | "password"
     | "number"
-    | "checkbox"
-    | "radio"
     | "file"
     | "date"
     | "time"
-    | "submit"
-    | "reset"
-    | "button"
     | "color"
     | "range"
-    | "tel"
-    | "url";
+    | "tel";
   value: string;
-  color: "primary" | "secondary" | "dark";
-  onChange: (value: string) => void;
+  placeholder: string;
+  theme: Theme;
+  isneon: boolean;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void; // No es necesario cambiar el tipo de onChange
 }
 
-export const InputComponent: React.FC<InputComponentProps> = ({
+export const CustomInput = ({
   id,
-  type,
-  value,
-  onChange,
   label,
-}) => {
+  placeholder,
+  value,
+  handleChange,
+  type,
+  theme,
+  isneon,
+}: InputComponentProps) => {
+  const stylesTheme: ThemeInterface = handlerTheme(theme);
+
+  const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+    handleChange(e); // Pasar solo el evento de cambio a la función onChange
+  };
+
+  const neonEffect = ` 0 0 10px ${stylesTheme.textOnPrimary}, 0 0 10px ${stylesTheme.textOnPrimary}, 0 0 10px ${stylesTheme.primary}, 0 0 10px ${stylesTheme.textOnPrimary}`;
+
   return (
-    <Form.Group>
+    <Form.Group controlId={`customInput-${id}`}>
       <Form.Label>{label}</Form.Label>
       <Form.Control
-        placeholder={label}
-        type={type}
-        id={id}
         name={id}
+        type={type || "text"}
+        placeholder={placeholder || ""}
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={handleChangeInput} // Usar la función handleChange para manejar el cambio
+        style={{
+          backgroundColor: stylesTheme.inputBackground,
+          color: stylesTheme.inputText,
+          boxShadow: isneon ? neonEffect : "", // Aplicar el efecto de neón al botón
+        }}
       />
     </Form.Group>
   );
 };
-
-export default InputComponent;

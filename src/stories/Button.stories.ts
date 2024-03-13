@@ -16,6 +16,7 @@ const meta: Meta<ButtonComponentProps> = {
     theme: {
       control: "select",
     },
+    isneon: { control: "boolean" },
     size: { control: "radio" },
     AllCaps: { control: "boolean" },
     customTextColor: { control: "color" },
@@ -30,5 +31,6 @@ type Story = StoryObj<typeof ButtonComponent>;
 export const ButonBasic: Story = {
   args: {
     onClickEvent: () => console.log("Button clicked"),
+    isneon: false,
   },
 };
