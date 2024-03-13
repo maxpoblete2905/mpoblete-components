@@ -2,9 +2,9 @@
 
 import { ChangeEvent } from "react";
 import { Form } from "react-bootstrap";
-import { handlerTheme } from "../../customTheme/handlerThemeColor";
 import { Theme } from "../../types/theme";
 import { ThemeInterface } from "../../interfaces/themeColor";
+import { handlerTheme } from "../../customTheme/handlerThemeColor";
 
 export interface InputComponentProps {
   id: string;
