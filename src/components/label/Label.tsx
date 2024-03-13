@@ -1,6 +1,3 @@
-import "./label.css";
-import "../grid/grid.css";
-
 interface Props {
   /**
    * Text to display
@@ -18,15 +15,8 @@ interface Props {
   color?: "primary" | "secondary" | "dark";
 
   /**
-   * fontColor
+   * text size
    */
-
-  fontColor?: string;
-
-  /**
-   * color background
-   */
-  backgroundColor?: string;
 
   text: "small" | "medium" | "large" | "extra-large";
 }

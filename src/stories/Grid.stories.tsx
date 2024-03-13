@@ -1,13 +1,17 @@
 // ButtonComponent.stories.tsx
 import { Meta, StoryObj } from "@storybook/react";
-import { GridComponent } from "../components/grid/Grid";
+import { GridComponent } from "../components/grid/Grid.component";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const meta: Meta = {
   title: "Component/Grid",
   component: GridComponent,
   tags: ["autodocs"],
-  parameters: {
-    color: "select",
+  argTypes: {
+    color: {
+      control: "select",
+    },
+    col: { control: "select" },
   },
 };
 
@@ -18,7 +22,7 @@ type Story = StoryObj<typeof GridComponent>;
 export const GridBasic: Story = {
   args: {
     color: "dark",
-    col: "12",
+    col: 12,
     children: (
       <>
         <h2>The City</h2>

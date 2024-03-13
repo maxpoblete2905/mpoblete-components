@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import {
   ButtonComponent,
   ButtonComponentProps,
-} from "../components/button/Button";
+} from "../components/button/Button.component";
 
 const meta: Meta<ButtonComponentProps> = {
   title: "Component/Button",
@@ -12,12 +12,25 @@ const meta: Meta<ButtonComponentProps> = {
   parameters: {
     layout: "centered",
   },
-};
+  argTypes: {
+    theme: {
+      control: "select",
+    },
+    isneon: { control: "boolean" },
+    size: { control: "radio" },
+    AllCaps: { control: "boolean" },
+    customTextColor: { control: "color" },
+    label: { control: "text" },
+  },
+} satisfies Meta<typeof ButtonComponent>;
 
 export default meta;
 
 type Story = StoryObj<typeof ButtonComponent>;
 
 export const ButonBasic: Story = {
-  args: { onClickTest: () => console.log("Button clicked") },
+  args: {
+    onClickEvent: () => console.log("Button clicked"),
+    isneon: false,
+  },
 };
