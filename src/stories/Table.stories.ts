@@ -48,7 +48,7 @@ for (let i = 0; i < 100; i++) {
 }
 
 const meta: Meta<TableProps> = {
-  title: "Component/Table",
+  title: "Component/Mantenedor",
   component: TableComponent,
   tags: ["autodocs"],
   parameters: {

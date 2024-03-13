@@ -6,7 +6,7 @@ import EditForm from "./EditForm";
 import DeleteForm from "./DeleteForm";
 import Filter from "./Filter";
 
-interface TableData {
+export interface TableData {
   id: number;
   nombre: string;
   apellido: string;
@@ -14,7 +14,7 @@ interface TableData {
   creationDate: string;
 }
 
-interface TableProps {
+export interface TableProps {
   data: TableData[];
 }
 
