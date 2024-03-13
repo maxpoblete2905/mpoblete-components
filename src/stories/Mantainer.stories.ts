@@ -5,6 +5,7 @@ import {
   MantainerComponent,
   MantainerProps,
 } from "../components/table/Mantainer";
+import { TableColumn } from "../components/table/Table.component";
 
 function generateDatesBetweenYears(startYear: number, endYear: number): string {
   let dates = "";
@@ -21,6 +22,13 @@ function generateDatesBetweenYears(startYear: number, endYear: number): string {
 }
 
 const sampleData = [];
+
+const columns: TableColumn[] = [
+  { key: "nombre", label: "Nombre", width: "20px" },
+  { key: "apellido", label: "Apellido", width: "20px" },
+  { key: "email", label: "Email", width: "50px" },
+  { key: "creationDate", label: "Ingreso", width: "120px" },
+];
 
 // Nombres y apellidos simulados
 const nombres = [
@@ -105,5 +113,6 @@ type Story = StoryObj<typeof meta>;
 export const Basice: Story = {
   args: {
     data: sampleData,
+    columns: columns,
   },
 };

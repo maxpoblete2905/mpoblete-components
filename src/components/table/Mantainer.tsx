@@ -7,13 +7,6 @@ import DeleteForm from "./DeleteForm";
 import Filter from "./Filter";
 import { TableColumn, TableComponent } from "./Table.component";
 
-const columns: TableColumn[] = [
-  { key: "nombre", label: "Nombre" },
-  { key: "apellido", label: "Apellido" },
-  { key: "email", label: "Email" },
-  { key: "creationDate", label: "Ingreso" },
-];
-
 export interface TableData {
   id: number;
   nombre: string;
@@ -24,9 +17,13 @@ export interface TableData {
 
 export interface MantainerProps {
   data: TableData[];
+  columns: TableColumn[];
 }
 
-export const MantainerComponent: React.FC<MantainerProps> = ({ data }) => {
+export const MantainerComponent: React.FC<MantainerProps> = ({
+  data,
+  columns,
+}) => {
   const [filter, setFilter] = useState<string>("");
   const [selectedItemIds, setSelectedItemIds] = useState<number[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);

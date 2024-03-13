@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
+  TableColumn,
   TableComponent,
   TableProps,
 } from "../components/table/Table.component";
@@ -21,6 +22,13 @@ function generateDatesBetweenYears(startYear: number, endYear: number): string {
 }
 
 const sampleData = [];
+
+const columns: TableColumn[] = [
+  { key: "nombre", label: "Nombre" },
+  { key: "apellido", label: "Apellido" },
+  { key: "email", label: "Email" },
+  { key: "creationDate", label: "Ingreso" },
+];
 
 // Nombres y apellidos simulados
 const nombres = [
@@ -106,6 +114,7 @@ export const Basices: Story = {
   args: {
     data: sampleData,
     selectedItemIds: [],
+    columns: columns,
     handleCheckboxChange: function (id: number): void {
       console.log("data checked", id);
     },

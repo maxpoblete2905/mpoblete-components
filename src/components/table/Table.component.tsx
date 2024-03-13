@@ -35,7 +35,7 @@ export const TableComponent = <T extends TableData>({
             <th
               key={column.key}
               style={{
-                width: column.width ?? "auto",
+                width: column.width ?? "150px",
                 textAlign: column.align ?? "left",
               }}
             >

@@ -24,6 +24,7 @@ export interface InputComponentProps {
   placeholder: string;
   theme: Theme;
   isneon: boolean;
+  errors: boolean;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void; // No es necesario cambiar el tipo de onChange
 }
 
@@ -36,6 +37,7 @@ export const CustomInput = ({
   type,
   theme,
   isneon,
+  errors,
 }: InputComponentProps) => {
   const stylesTheme: ThemeInterface = handlerTheme(theme);
 
@@ -43,7 +45,8 @@ export const CustomInput = ({
     handleChange(e); // Pasar solo el evento de cambio a la función onChange
   };
 
-  const neonEffect = ` 0 0 10px ${stylesTheme.textOnPrimary}, 0 0 10px ${stylesTheme.textOnPrimary}, 0 0 10px ${stylesTheme.primary}, 0 0 10px ${stylesTheme.textOnPrimary}`;
+  const colorFinal = errors ? "red" : stylesTheme.textOnPrimary;
+  const neonEffect = ` 0 0 10px ${colorFinal}, 0 0 10px ${colorFinal}, 0 0 10px ${colorFinal}, 0 0 10px ${colorFinal}`;
 
   return (
     <Form.Group controlId={`customInput-${id}`}>
@@ -55,6 +58,7 @@ export const CustomInput = ({
         value={value}
         onChange={handleChangeInput} // Usar la función handleChange para manejar el cambio
         style={{
+          border: errors ? "red solid 1px" : "",
           backgroundColor: stylesTheme.inputBackground,
           color: stylesTheme.inputText,
           boxShadow: isneon ? neonEffect : "", // Aplicar el efecto de neón al botón

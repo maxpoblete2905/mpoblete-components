@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
-import { Form, Alert, Card } from "react-bootstrap";
+import { Form, Card } from "react-bootstrap";
 import { ButtonComponent } from "../button/Button.component";
 import { Theme } from "../../types/theme";
 import { handlerTheme } from "../../customTheme/handlerThemeColor";
@@ -32,9 +32,13 @@ export const LoginForm = ({
     password: "",
   });
 
-  const [errors, setErrors] = useState<{ [key: string]: string | null }>({
-    username: null,
-    password: null,
+  interface Error {
+    username: boolean;
+    password: boolean;
+  }
+  const [errors, setErrors] = useState<Error>({
+    username: false,
+    password: false,
   });
 
   const handleChangeForm = (e: ChangeEvent<HTMLInputElement>) => {
@@ -48,7 +52,7 @@ export const LoginForm = ({
     if (!formData.username) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        username: "Username is required",
+        username: true,
       }));
       return;
     }
@@ -56,14 +60,14 @@ export const LoginForm = ({
     if (!formData.password) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        password: "Password is required",
+        password: true,
       }));
       return;
     }
 
     setErrors({
-      username: null,
-      password: null,
+      username: false,
+      password: false,
     });
     onSubmit(formData);
   };
@@ -94,8 +98,8 @@ export const LoginForm = ({
             theme={theme}
             handleChange={handleChangeForm}
             isneon={isneon}
+            errors={errors.username}
           />
-          {errors.username && <Alert variant="danger">{errors.username}</Alert>}
 
           <CustomInput
             id={"password"}
@@ -106,9 +110,8 @@ export const LoginForm = ({
             theme={theme}
             handleChange={handleChangeForm}
             isneon={isneon}
+            errors={errors.password}
           />
-
-          {errors.password && <Alert variant="danger">{errors.password}</Alert>}
 
           <br />
           {/* Agregar enlace para "Olvidaste tu contraseña" */}
