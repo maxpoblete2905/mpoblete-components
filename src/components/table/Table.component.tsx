@@ -27,7 +27,7 @@ export const TableComponent = <T extends TableData>({
   handleDeleteClick,
 }: TableProps<T>) => {
   return (
-    <Table striped bordered hover>
+    <Table style={{ width: "100%" }} striped bordered hover>
       <thead>
         <tr>
           <th>check</th>

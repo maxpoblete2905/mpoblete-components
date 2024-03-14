@@ -114,5 +114,14 @@ export const Basice: Story = {
   args: {
     data: sampleData,
     columns: columns,
+    emitOnSubmitCreate: (data) => {
+      console.log("create", data);
+    },
+    emitOnSubmitDelete: (data) => {
+      console.log("delete", data);
+    },
+    emitOnSubmitEdit: (data) => {
+      console.log("delete", data);
+    },
   },
 };

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Card, Button, Row, Col } from "react-bootstrap";
 import { BsTrash, BsPlus } from "react-icons/bs";
 import Pagination from "./Paginacion";
 import EditForm from "./EditForm";
@@ -22,6 +22,9 @@ const inputs = ["id", "nombre", "apellido", "email", "creationDate"];
 export interface MantainerProps {
   data: TableData[];
   columns: TableColumn[];
+  emitOnSubmitCreate: (data: TableData) => void;
+  emitOnSubmitDelete: (data: string[]) => void;
+  emitOnSubmitEdit: (data: TableData) => void;
 }
 
 const initialItem: TableData = {
@@ -35,6 +38,9 @@ const initialItem: TableData = {
 export const MantainerComponent: React.FC<MantainerProps> = ({
   data,
   columns,
+  emitOnSubmitCreate,
+  emitOnSubmitDelete,
+  emitOnSubmitEdit,
 }) => {
   const [filter, setFilter] = useState<string>("");
   const [selectedItemIds, setSelectedItemIds] = useState<string[]>([]);
@@ -71,6 +77,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
     );
 
     setDataList(newArray);
+    emitOnSubmitDelete(selectedItemIds);
     setShowDeleteModal(false);
     setSelectedItemIds([]);
   };
@@ -88,6 +95,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
       item.id === editedItem.id ? editedItem : item
     );
     setDataList(updatedDataList);
+    emitOnSubmitEdit(editedItem);
     console.log("se edita un elemento");
   };
 
@@ -96,6 +104,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
     const currentDate = new Date();
     editedItem.creationDate = currentDate.toISOString().split(".")[0] + ".000Z";
     editedItem.id = uuidv4();
+    emitOnSubmitCreate(editedItem);
     setDataList((prevDataList) => [editedItem, ...prevDataList]);
     console.log("Agregar un nuevo elemento");
   };
@@ -141,26 +150,38 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
 
   return (
     <div>
-      <Filter value={filter} onChange={setFilter} />
-      <Button
-        variant="danger"
-        className="mr-2"
-        onClick={handleDeleteMultiple}
-        disabled={selectedItemIds.length === 0}
-      >
-        <BsTrash />
-      </Button>
-      <Button variant="success" onClick={handleAddClick}>
-        <BsPlus />
-      </Button>
-      <TableComponent
-        data={currentData}
-        handleCheckboxChange={handleCheckboxChange}
-        handleEditClick={handleEditClick}
-        selectedItemIds={selectedItemIds}
-        handleDeleteClick={handleDeleteClick}
-        columns={columns}
-      />
+      <Card>
+        <Card.Header>
+          <Row>
+            <Col md={6}>
+              <Filter value={filter} onChange={setFilter} />
+            </Col>
+            <Col md={6} className="text-right">
+              <Button
+                variant="danger"
+                className="mr-2"
+                onClick={handleDeleteMultiple}
+                disabled={selectedItemIds.length === 0}
+              >
+                <BsTrash />
+              </Button>
+              <Button variant="success" onClick={handleAddClick}>
+                <BsPlus />
+              </Button>
+            </Col>
+          </Row>
+        </Card.Header>
+        <Card.Body>
+          <TableComponent
+            data={currentData}
+            handleCheckboxChange={handleCheckboxChange}
+            handleEditClick={handleEditClick}
+            selectedItemIds={selectedItemIds}
+            handleDeleteClick={handleDeleteClick}
+            columns={columns}
+          />
+        </Card.Body>
+      </Card>
       <Pagination
         totalPages={Math.ceil(sortedData.length / dataPerPage)}
         currentPage={currentPage}
@@ -188,3 +209,5 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
     </div>
   );
 };
+
+export default MantainerComponent;
