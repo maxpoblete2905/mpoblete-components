@@ -6,6 +6,7 @@ import EditForm from "./EditForm";
 import DeleteForm from "./DeleteForm";
 import Filter from "./Filter";
 import { TableColumn, TableComponent } from "./Table.component";
+import { CreateForm } from "./CreateForm";
 
 export interface TableData {
   id: number;
@@ -20,6 +21,14 @@ export interface MantainerProps {
   columns: TableColumn[];
 }
 
+const initialItem: TableData = {
+  id: 0,
+  nombre: "",
+  apellido: "",
+  email: "",
+  creationDate: "",
+};
+
 export const MantainerComponent: React.FC<MantainerProps> = ({
   data,
   columns,
@@ -29,15 +38,10 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false);
   const [showEditModal, setShowEditModal] = useState<boolean>(false);
+  const [showCreateModal, setShowCreateModal] = useState<boolean>(false);
   const [dataList, setDataList] = useState<TableData[]>([]);
   const [dataPerPage] = useState<number>(10);
-  const [selectedItem, setSelectedItem] = useState<TableData>({
-    id: 0,
-    nombre: "",
-    apellido: "",
-    email: "",
-    creationDate: "",
-  });
+  const [selectedItem, setSelectedItem] = useState<TableData>(initialItem);
 
   useEffect(() => {
     setDataList(data);
@@ -76,15 +80,25 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
   };
 
   const handleEditSave = (editedItem: TableData) => {
-    // Lógica para guardar cambios en el elemento
+    // Lógica para edit cambios en el elemento
     const updatedDataList = dataList.map((item) =>
       item.id === editedItem.id ? editedItem : item
     );
     setDataList(updatedDataList);
+    console.log("se edita un elemento");
+  };
+
+  const handleCreateSave = (editedItem: TableData) => {
+    // Lógica para guardar cambios en el elemento
+    const currentDate = new Date();
+    editedItem.creationDate = currentDate.toISOString().split(".")[0] + ".000Z";
+
+    setDataList((prevDataList) => [editedItem, ...prevDataList]);
+    console.log("Agregar un nuevo elemento");
   };
 
   const handleAddClick = () => {
-    console.log("Agregar nuevo elemento");
+    setShowCreateModal(true);
   };
 
   const handleCheckboxChange = (id: number) => {
@@ -130,6 +144,9 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
       >
         <BsTrash />
       </Button>
+      <Button variant="success" onClick={handleAddClick}>
+        <BsPlus />
+      </Button>
       <TableComponent
         data={currentData}
         handleCheckboxChange={handleCheckboxChange}
@@ -143,9 +160,6 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
         currentPage={currentPage}
         paginate={paginate}
       />
-      <Button variant="success" onClick={handleAddClick}>
-        <BsPlus />
-      </Button>
 
       <DeleteForm
         show={showDeleteModal}
@@ -158,6 +172,12 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
         onHide={() => setShowEditModal(false)}
         selectedItem={selectedItem}
         onSave={handleEditSave}
+      />
+      <CreateForm
+        show={showCreateModal}
+        onHide={() => setShowCreateModal(false)}
+        onSave={handleCreateSave}
+        initialItem={Object.keys(selectedItem)}
       />
     </div>
   );

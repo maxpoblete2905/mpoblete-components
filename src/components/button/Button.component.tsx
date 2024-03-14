@@ -26,6 +26,7 @@ export const ButtonComponent = ({
   const stylesTheme: ThemeInterface = handlerTheme(theme);
 
   const neonEffect = ` 0 0 10px ${stylesTheme.textOnPrimary}, 0 0 10px ${stylesTheme.textOnPrimary}, 0 0 10px ${stylesTheme.primary}, 0 0 10px ${stylesTheme.textOnPrimary}`;
+  const data = AllCaps ? label.toUpperCase() : label;
 
   return (
     <Button
@@ -40,7 +41,7 @@ export const ButtonComponent = ({
         margin: "3px",
       }}
     >
-      {AllCaps ? label.toUpperCase() : label}
+      {data}
     </Button>
   );
 };

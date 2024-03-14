@@ -1,6 +1,15 @@
-import React, { useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
 import { TableData } from "./Mantainer";
+import { CustomInput } from "../input/Input.component";
+import { ModalComponent } from "./Modal";
+
+function deleteKeys<T>(obj: T, keysToDelete: (keyof T)[]): T {
+  const newObj = { ...obj }; // Creamos una copia del objeto original
+  keysToDelete.forEach((key) => {
+    delete newObj[key]; // Eliminamos la clave del objeto copiado
+  });
+  return newObj;
+}
 
 interface EditFormProps<T> {
   show: boolean;
@@ -15,47 +24,55 @@ const EditForm = <T extends TableData>({
   selectedItem,
   onSave,
 }: EditFormProps<T>) => {
-  const [editedItem, setEditedItem] = useState<T>(selectedItem);
+  const [editedItem, setEditedItem] = useState<T | null>(null);
 
-  const handleSave = () => {
-    onSave(editedItem);
-    onHide();
-  };
+  // Actualizar el estado de editedItem cuando selectedItem cambia
+  useEffect(() => {
+    setEditedItem(selectedItem);
+  }, [selectedItem]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setEditedItem({ ...editedItem, [name]: value });
+    if (editedItem) {
+      const { name, value } = event.target;
+      setEditedItem({ ...editedItem, [name]: value });
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (editedItem) {
+      console.log("send edit", editedItem);
+      onSave(editedItem);
+      setEditedItem(null);
+      onHide();
+    }
   };
 
   return (
-    <Modal show={show} onHide={onHide}>
-      <Modal.Header closeButton>
-        <Modal.Title>Editar Elemento</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Form>
-          {Object.keys(selectedItem).map((key) => (
-            <Form.Group controlId={key} key={key}>
-              <Form.Label>{key}</Form.Label>
-              <Form.Control
-                type="text"
-                name={key}
-                value={editedItem[key as keyof T]?.toString()}
-                onChange={handleInputChange}
-              />
-            </Form.Group>
-          ))}
-        </Form>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={onHide}>
-          Cancelar
-        </Button>
-        <Button variant="primary" onClick={handleSave}>
-          Guardar Cambios
-        </Button>
-      </Modal.Footer>
-    </Modal>
+    <ModalComponent
+      show={show}
+      onHide={onHide}
+      children={
+        editedItem &&
+        Object.keys(deleteKeys(editedItem, ["id", "creationDate"])).map(
+          (key) => (
+            <CustomInput
+              key={key}
+              id={key}
+              label={key}
+              type={"text"}
+              value={editedItem[key as keyof T]?.toString() || ""}
+              placeholder={key}
+              theme={"primary"}
+              isneon={false}
+              errors={false}
+              handleChange={handleInputChange}
+            />
+          )
+        )
+      }
+      onSubmit={handleSubmit}
+    />
   );
 };
 

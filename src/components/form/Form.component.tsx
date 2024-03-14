@@ -36,6 +36,7 @@ export const LoginForm = ({
     username: boolean;
     password: boolean;
   }
+
   const [errors, setErrors] = useState<Error>({
     username: false,
     password: false,

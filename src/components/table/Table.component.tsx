@@ -1,5 +1,5 @@
 import { Form, Table, Button } from "react-bootstrap";
-import { BsTrash, BsPencilSquare } from "react-icons/bs";
+import { BsTrash, BsPencilSquare, BsFileTextFill } from "react-icons/bs";
 import { TableData } from "./Mantainer";
 
 export type TableColumn = {
@@ -65,6 +65,13 @@ export const TableComponent = <T extends TableData>({
                 onClick={() => handleDeleteClick(row.id)}
               >
                 <BsTrash />
+              </Button>
+              <Button
+                variant="secondary"
+                className="ml-2"
+                onClick={() => handleDeleteClick(row.id)}
+              >
+                <BsFileTextFill />
               </Button>
               <Button
                 variant="primary"
