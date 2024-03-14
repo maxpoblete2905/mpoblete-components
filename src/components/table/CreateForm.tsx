@@ -3,10 +3,7 @@ import { TableData } from "./Mantainer";
 import { CustomInput } from "../input/Input.component";
 import { ModalComponent } from "./Modal";
 
-function removeValuesFromArray(
-  array: string[],
-  valuesToRemove: string[]
-): string[] {
+function removeItem(array: string[], valuesToRemove: string[]): string[] {
   return array.filter((item) => !valuesToRemove.includes(item));
 }
 
@@ -23,45 +20,40 @@ export const CreateForm = <T extends TableData>({
   onSave,
   inputs,
 }: CreateFormProps<T>) => {
-  const [createItem, setCreateItem] = useState<T | null>(null);
+  const [createItem, setCreateItem] = useState<T>({} as T); // Inicializa createItem como un objeto vacío
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (createItem) {
-      const { name, value } = event.target;
-      setCreateItem({ ...createItem, [name]: value });
-    }
+    const { name, value } = event.target;
+    setCreateItem({ ...createItem, [name]: value });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (createItem) {
-      onSave(createItem);
-      onHide();
-    }
+    onSave(createItem);
+    onHide();
   };
 
   return (
     <ModalComponent
+      title={"Crear Elemento"}
       show={show}
       onHide={onHide}
       children={
-        createItem &&
-        Object.keys(removeValuesFromArray(inputs, ["id", "creationDate"])).map(
-          (key) => (
-            <CustomInput
-              key={key}
-              id={key}
-              label={key}
-              type={"text"}
-              value={createItem[key as keyof T]?.toString() || ""}
-              placeholder={key}
-              theme={"primary"}
-              isneon={false}
-              errors={false}
-              handleChange={handleInputChange}
-            />
-          )
-        )
+        inputs &&
+        removeItem(inputs, ["id", "creationDate"]).map((key) => (
+          <CustomInput
+            key={key}
+            id={key}
+            label={key}
+            type={"text"}
+            value={createItem[key as keyof T]?.toString() || ""}
+            placeholder={`ingrege ${key}`}
+            theme={"primary"}
+            isneon={false}
+            errors={false}
+            handleChange={handleInputChange}
+          />
+        ))
       }
       onSubmit={handleSubmit}
     />

@@ -78,7 +78,7 @@ const apellidos = [
 ];
 
 // Crear 100 registros simulados
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 150; i++) {
   const nombreIndex = Math.floor(Math.random() * nombres.length);
   const apellidoIndex = Math.floor(Math.random() * apellidos.length);
   const nombre = nombres[nombreIndex];
@@ -86,8 +86,8 @@ for (let i = 0; i < 100; i++) {
   const email = `${nombre.toLowerCase()}${apellido.toLowerCase()}${
     i + 1
   }@example.com`;
-  const id = i + 1;
-  const creationDate = generateDatesBetweenYears(2022, 2024);
+  const id = String(i + 1);
+  const creationDate = generateDatesBetweenYears(2022, 2023);
 
   sampleData.push({ id, nombre, apellido, email, creationDate });
 }

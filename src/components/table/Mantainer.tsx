@@ -7,14 +7,17 @@ import DeleteForm from "./DeleteForm";
 import Filter from "./Filter";
 import { TableColumn, TableComponent } from "./Table.component";
 import { CreateForm } from "./CreateForm";
+import { v4 as uuidv4 } from "uuid";
 
 export interface TableData {
-  id: number;
+  id: string;
   nombre: string;
   apellido: string;
   email: string;
   creationDate: string;
 }
+
+const inputs = ["id", "nombre", "apellido", "email", "creationDate"];
 
 export interface MantainerProps {
   data: TableData[];
@@ -22,7 +25,7 @@ export interface MantainerProps {
 }
 
 const initialItem: TableData = {
-  id: 0,
+  id: "0",
   nombre: "",
   apellido: "",
   email: "",
@@ -34,7 +37,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
   columns,
 }) => {
   const [filter, setFilter] = useState<string>("");
-  const [selectedItemIds, setSelectedItemIds] = useState<number[]>([]);
+  const [selectedItemIds, setSelectedItemIds] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false);
   const [showEditModal, setShowEditModal] = useState<boolean>(false);
@@ -51,7 +54,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
     return new Date(dateString);
   };
 
-  const handleDeleteClick = (id: number) => {
+  const handleDeleteClick = (id: string) => {
     setSelectedItemIds([id]);
     setShowDeleteModal(true);
   };
@@ -92,7 +95,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
     // Lógica para guardar cambios en el elemento
     const currentDate = new Date();
     editedItem.creationDate = currentDate.toISOString().split(".")[0] + ".000Z";
-
+    editedItem.id = uuidv4();
     setDataList((prevDataList) => [editedItem, ...prevDataList]);
     console.log("Agregar un nuevo elemento");
   };
@@ -101,7 +104,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
     setShowCreateModal(true);
   };
 
-  const handleCheckboxChange = (id: number) => {
+  const handleCheckboxChange = (id: string) => {
     const selectedIndex = selectedItemIds.indexOf(id);
     if (selectedIndex === -1) {
       setSelectedItemIds([...selectedItemIds, id]);
@@ -117,13 +120,16 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
   const sortedData = dataList
     .filter(
       (item) =>
-        item.nombre.toLowerCase().includes(filter.toLowerCase()) ||
-        item.apellido.toLowerCase().includes(filter.toLowerCase()) ||
-        item.email.toLowerCase().includes(filter.toLowerCase())
+        (item.nombre?.toLowerCase()?.includes(filter?.toLowerCase()) ??
+          false) ||
+        (item.apellido?.toLowerCase()?.includes(filter?.toLowerCase()) ??
+          false) ||
+        (item.email?.toLowerCase()?.includes(filter?.toLowerCase()) ?? false)
     )
+
     .sort(
       (a, b) =>
-        toDate(a.creationDate).getTime() - toDate(b.creationDate).getTime()
+        toDate(b.creationDate).getTime() - toDate(a.creationDate).getTime()
     );
 
   // Paginación
@@ -177,7 +183,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
         show={showCreateModal}
         onHide={() => setShowCreateModal(false)}
         onSave={handleCreateSave}
-        initialItem={Object.keys(selectedItem)}
+        inputs={inputs}
       />
     </div>
   );

@@ -12,10 +12,10 @@ export type TableColumn = {
 export interface TableProps<T> {
   data: T[];
   columns: TableColumn[];
-  selectedItemIds: number[];
-  handleCheckboxChange: (id: number) => void;
+  selectedItemIds: string[];
+  handleCheckboxChange: (id: string) => void;
   handleEditClick: (row: T) => void;
-  handleDeleteClick: (id: number) => void;
+  handleDeleteClick: (id: string) => void;
 }
 
 export const TableComponent = <T extends TableData>({
@@ -56,7 +56,9 @@ export const TableComponent = <T extends TableData>({
               />
             </td>
             {columns.map((column) => (
-              <td key={column.key}>{row[column.key as keyof T]?.toString()}</td>
+              <td key={column.label}>
+                {row[column.key as keyof T]?.toString()}
+              </td>
             ))}
             <td>
               <Button

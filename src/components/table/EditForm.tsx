@@ -72,6 +72,7 @@ const EditForm = <T extends TableData>({
         )
       }
       onSubmit={handleSubmit}
+      title={"Editar Elemento"}
     />
   );
 };
