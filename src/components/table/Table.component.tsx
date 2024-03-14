@@ -30,7 +30,7 @@ export const TableComponent = <T extends TableData>({
     <Table style={{ width: "100%" }} striped bordered hover>
       <thead>
         <tr>
-          <th>check</th>
+          <th>Check</th>
           {columns.map((column) => (
             <th
               key={column.key}
@@ -63,21 +63,21 @@ export const TableComponent = <T extends TableData>({
             <td>
               <Button
                 variant="danger"
-                className="ml-2"
+                className="ml-2 my-1"
                 onClick={() => handleDeleteClick(row.id)}
               >
                 <BsTrash />
               </Button>
               <Button
                 variant="secondary"
-                className="ml-2"
+                className="ml-2 my-1"
                 onClick={() => handleDeleteClick(row.id)}
               >
                 <BsFileTextFill />
               </Button>
               <Button
                 variant="primary"
-                className="ml-2"
+                className="ml-2 my-1"
                 onClick={() => handleEditClick(row)}
               >
                 <BsPencilSquare />
