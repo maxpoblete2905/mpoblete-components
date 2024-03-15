@@ -7,18 +7,25 @@ import {
 } from "../components/table/Mantainer";
 import { TableColumn } from "../components/table/Table.component";
 
-function generateDatesBetweenYears(startYear: number, endYear: number): string {
-  let dates = "";
+function generateRandomDateBeforeToday(startYear: number): string {
+  const currentDate = new Date();
+  const randomYear =
+    Math.floor(Math.random() * (currentDate.getUTCFullYear() - startYear + 1)) +
+    startYear;
+  let randomMonth = Math.floor(Math.random() * 12);
+  let randomDay = Math.floor(Math.random() * 28) + 1;
 
-  for (let year = startYear; year <= endYear; year++) {
-    const randomMonth = Math.floor(Math.random() * 12); // Genera un número aleatorio entre 0 y 11
-    const randomDay = Math.floor(Math.random() * 28) + 1; // Genera un número aleatorio entre 1 y 28
-
-    const randomDate = new Date(Date.UTC(year, randomMonth, randomDay));
-    dates = randomDate.toISOString();
+  // Si el año generado es el año actual, ajusta el mes y el día para no exceder la fecha actual
+  if (randomYear === currentDate.getUTCFullYear()) {
+    randomMonth = Math.min(randomMonth, currentDate.getUTCMonth());
+    if (randomMonth === currentDate.getUTCMonth()) {
+      randomDay = Math.min(randomDay, currentDate.getUTCDate());
+    }
   }
 
-  return dates;
+  const randomDate = new Date(Date.UTC(randomYear, randomMonth, randomDay));
+
+  return randomDate.toISOString();
 }
 
 const sampleData = [];
@@ -87,7 +94,7 @@ for (let i = 0; i < 150; i++) {
     i + 1
   }@example.com`;
   const id = String(i + 1);
-  const creationDate = generateDatesBetweenYears(2022, 2023);
+  const creationDate = generateRandomDateBeforeToday(2010);
 
   sampleData.push({ id, nombre, apellido, email, creationDate });
 }
@@ -114,8 +121,12 @@ export const Basice: Story = {
   args: {
     data: sampleData,
     columns: columns,
-    emitOnSubmitCreate: (data) => {
+    emitOnSubmitCreate: (data): boolean => {
       console.log("create", data);
+      if (data) {
+        return true;
+      }
+      return false;
     },
     emitOnSubmitDelete: (data) => {
       console.log("delete", data);

@@ -57,6 +57,7 @@ export const CustomInput = ({
         placeholder={placeholder || ""}
         value={value}
         onChange={handleChangeInput} // Usar la función handleChange para manejar el cambio
+        max={new Date().toISOString().split("T")[0]}
         style={{
           border: errors ? "red solid 1px" : "",
           backgroundColor: stylesTheme.inputBackground,

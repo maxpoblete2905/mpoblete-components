@@ -18,6 +18,15 @@ export interface TableProps<T> {
   handleDeleteClick: (id: string) => void;
 }
 
+export const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+};
+
 export const TableComponent = <T extends TableData>({
   data,
   columns,
@@ -26,15 +35,6 @@ export const TableComponent = <T extends TableData>({
   handleEditClick,
   handleDeleteClick,
 }: TableProps<T>) => {
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("es-ES", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  };
-
   const modifiedData = data.map((item) => ({
     ...item,
     creationDate: formatDate(item.creationDate),

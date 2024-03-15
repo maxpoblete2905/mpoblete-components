@@ -17,5 +17,5 @@ export const ExcelDownloadButton = <T extends object>({
     XLSX.writeFile(workbook, `${fileName}.xlsx`);
   };
 
-  return <Button onClick={handleDownload}>Descargar Excel</Button>;
+  return <Button onClick={handleDownload}>Excel</Button>;
 };

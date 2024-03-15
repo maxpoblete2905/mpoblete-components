@@ -10,6 +10,11 @@ import { v4 as uuidv4 } from "uuid";
 import { ExcelDownloadButton } from "../downloadExcel/buttonExcel";
 import Pagination from "../pagination/Paginacion";
 
+function eliminarEspacios(cadena: string): string {
+  // Utiliza una expresión regular para reemplazar todos los espacios en blanco con una cadena vacía
+  return cadena.replace(/\s+/g, "");
+}
+
 export interface TableData {
   id: string;
   nombre: string;
@@ -23,7 +28,7 @@ const inputs = ["id", "nombre", "apellido", "email", "creationDate"];
 export interface MantainerProps {
   data: TableData[];
   columns: TableColumn[];
-  emitOnSubmitCreate: (data: TableData) => void;
+  emitOnSubmitCreate: (data: TableData) => boolean;
   emitOnSubmitDelete: (data: string[]) => void;
   emitOnSubmitEdit: (data: TableData) => void;
 }
@@ -43,7 +48,8 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
   emitOnSubmitDelete,
   emitOnSubmitEdit,
 }) => {
-  const [filter, setFilter] = useState<string>("");
+  const [filter, setFilter] = useState<string[]>(["", "", ""]);
+
   const [selectedItemIds, setSelectedItemIds] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false);
@@ -57,9 +63,49 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
     setDataList(data);
   }, [data]);
 
-  const toDate = (dateString: string): Date => {
+  function removeAccents(str: string) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  useEffect(() => {
+    function filtrarPorFechaYNombre(lista: TableData[], filtro: string[]) {
+      const [nombre, desde, hasta] = filtro;
+
+      return lista.filter((item) => {
+        const fechaCreacion = new Date(item.creationDate);
+        const fechaDesde = desde ? new Date(filter[1]) : null;
+        const fechaHasta = hasta ? new Date(filter[2]) : null;
+        const nombreLowerCase = removeAccents(
+          eliminarEspacios(filter[0]).toLowerCase()
+        );
+
+        const cumpleNombre =
+          !nombre ||
+          item.nombre.toLowerCase().includes(removeAccents(nombreLowerCase));
+        const cumpleFecha =
+          !fechaDesde ||
+          !fechaHasta ||
+          (fechaCreacion >= fechaDesde && fechaCreacion <= fechaHasta);
+
+        return cumpleNombre && cumpleFecha;
+      });
+    }
+
+    const newData = filtrarPorFechaYNombre(data, filter);
+    setDataList(newData);
+  }, [data, filter]);
+
+  const toDateFuntion = (dateString: string): Date => {
     return new Date(dateString);
   };
+
+  const sortedData = useMemo(() => {
+    return dataList.sort(
+      (a, b) =>
+        toDateFuntion(b.creationDate).getTime() -
+        toDateFuntion(a.creationDate).getTime()
+    );
+  }, [dataList]);
 
   const handleDeleteClick = useCallback((id: string) => {
     setSelectedItemIds([id]);
@@ -102,13 +148,18 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
 
   const handleCreateSave = useCallback(
     (editedItem: TableData) => {
-      const currentDate = new Date();
-      editedItem.creationDate =
-        currentDate.toISOString().split(".")[0] + ".000Z";
-      editedItem.id = uuidv4();
-      emitOnSubmitCreate(editedItem);
-      setDataList((prevDataList) => [editedItem, ...prevDataList]);
-      console.log("Agregar un nuevo elemento");
+      const isSaved = emitOnSubmitCreate(editedItem);
+      console.log(isSaved);
+      if (isSaved) {
+        const currentDate = new Date();
+        editedItem.creationDate =
+          currentDate.toISOString().split(".")[0] + ".000Z";
+        editedItem.id = uuidv4();
+        setDataList((prevDataList) => [editedItem, ...prevDataList]);
+        console.log("nuevo elemento");
+      } else {
+        console.log("error en el servidor");
+      }
     },
     [emitOnSubmitCreate]
   );
@@ -132,33 +183,6 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
     [selectedItemIds]
   );
 
-  function removeAccents(str: string) {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  }
-
-  const sortedData = useMemo(() => {
-    return dataList
-      .filter(
-        ({ nombre, apellido, email }) =>
-          (removeAccents(nombre)
-            ?.toLowerCase()
-            ?.includes(removeAccents(filter.trim())?.toLowerCase()) ??
-            false) ||
-          (removeAccents(apellido)
-            ?.toLowerCase()
-            ?.includes(removeAccents(filter.trim())?.toLowerCase()) ??
-            false) ||
-          (removeAccents(email)
-            ?.toLowerCase()
-            ?.includes(removeAccents(filter.trim())?.toLowerCase()) ??
-            false)
-      )
-      .sort(
-        (a, b) =>
-          toDate(b.creationDate).getTime() - toDate(a.creationDate).getTime()
-      );
-  }, [dataList, filter]);
-
   const indexOfLastData = currentPage * dataPerPage;
   const indexOfFirstData = indexOfLastData - dataPerPage;
   const currentData = sortedData.slice(indexOfFirstData, indexOfLastData);
@@ -181,13 +205,19 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
       <Card>
         <Card.Header>
           <Row className="align-items-center justify-content-between">
-            <Col md={8}>
+            <Col md={10}>
               <Filter value={filter} onChange={setFilter} />
             </Col>
 
             <Col
-              md={4}
-              className="text-right d-flex justify-content-end align-items-center"
+              md={2}
+              style={{
+                textAlign: "right",
+                display: "flex",
+                justifyContent: "end",
+                alignItems: "center",
+                marginTop: 28,
+              }}
             >
               <Button
                 variant="danger"
