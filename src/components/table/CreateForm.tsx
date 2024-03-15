@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TableData } from "./Mantainer";
 import { CustomInput } from "../input/Input.component";
-import { ModalComponent } from "./Modal";
+import { ModalComponent } from "../modal/Modal";
 
 function removeItem(array: string[], valuesToRemove: string[]): string[] {
   return array.filter((item) => !valuesToRemove.includes(item));

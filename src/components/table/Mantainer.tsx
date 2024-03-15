@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { Card, Button, Row, Col } from "react-bootstrap";
 import { BsTrash, BsPlus } from "react-icons/bs";
-import Pagination from "./Paginacion";
 import EditForm from "./EditForm";
 import DeleteForm from "./DeleteForm";
 import Filter from "./Filter";
 import { TableColumn, TableComponent } from "./Table.component";
 import { CreateForm } from "./CreateForm";
 import { v4 as uuidv4 } from "uuid";
+import { ExcelDownloadButton } from "../downloadExcel/buttonExcel";
+import Pagination from "../pagination/Paginacion";
 
 export interface TableData {
   id: string;
@@ -60,18 +61,16 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
     return new Date(dateString);
   };
 
-  const handleDeleteClick = (id: string) => {
+  const handleDeleteClick = useCallback((id: string) => {
     setSelectedItemIds([id]);
     setShowDeleteModal(true);
-  };
+  }, []);
 
-  const handleDeleteMultiple = () => {
-    // Lógica para eliminar los elementos seleccionados
+  const handleDeleteMultiple = useCallback(() => {
     setShowDeleteModal(true);
-  };
+  }, []);
 
-  const handleConfirmDelete = () => {
-    // Lógica para eliminar el elemento
+  const handleConfirmDelete = useCallback(() => {
     const newArray = dataList.filter(
       (item) => !selectedItemIds.includes(item.id)
     );
@@ -80,98 +79,137 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
     emitOnSubmitDelete(selectedItemIds);
     setShowDeleteModal(false);
     setSelectedItemIds([]);
-  };
+  }, [dataList, selectedItemIds, emitOnSubmitDelete]);
 
-  const handleEditClick = (table: TableData) => {
+  const handleEditClick = useCallback((table: TableData) => {
     if (table) {
       setSelectedItem(table);
       setShowEditModal(true);
     }
-  };
+  }, []);
 
-  const handleEditSave = (editedItem: TableData) => {
-    // Lógica para edit cambios en el elemento
-    const updatedDataList = dataList.map((item) =>
-      item.id === editedItem.id ? editedItem : item
-    );
-    setDataList(updatedDataList);
-    emitOnSubmitEdit(editedItem);
-    console.log("se edita un elemento");
-  };
+  const handleEditSave = useCallback(
+    (editedItem: TableData) => {
+      const updatedDataList = dataList.map((item) =>
+        item.id === editedItem.id ? editedItem : item
+      );
+      setDataList(updatedDataList);
+      emitOnSubmitEdit(editedItem);
+      console.log("se edita un elemento");
+    },
+    [dataList, emitOnSubmitEdit]
+  );
 
-  const handleCreateSave = (editedItem: TableData) => {
-    // Lógica para guardar cambios en el elemento
-    const currentDate = new Date();
-    editedItem.creationDate = currentDate.toISOString().split(".")[0] + ".000Z";
-    editedItem.id = uuidv4();
-    emitOnSubmitCreate(editedItem);
-    setDataList((prevDataList) => [editedItem, ...prevDataList]);
-    console.log("Agregar un nuevo elemento");
-  };
+  const handleCreateSave = useCallback(
+    (editedItem: TableData) => {
+      const currentDate = new Date();
+      editedItem.creationDate =
+        currentDate.toISOString().split(".")[0] + ".000Z";
+      editedItem.id = uuidv4();
+      emitOnSubmitCreate(editedItem);
+      setDataList((prevDataList) => [editedItem, ...prevDataList]);
+      console.log("Agregar un nuevo elemento");
+    },
+    [emitOnSubmitCreate]
+  );
 
-  const handleAddClick = () => {
+  const handleAddClick = useCallback(() => {
     setShowCreateModal(true);
-  };
+  }, []);
 
-  const handleCheckboxChange = (id: string) => {
-    const selectedIndex = selectedItemIds.indexOf(id);
-    if (selectedIndex === -1) {
-      setSelectedItemIds([...selectedItemIds, id]);
-    } else {
-      setSelectedItemIds([
-        ...selectedItemIds.slice(0, selectedIndex),
-        ...selectedItemIds.slice(selectedIndex + 1),
-      ]);
-    }
-  };
+  const handleCheckboxChange = useCallback(
+    (id: string) => {
+      const selectedIndex = selectedItemIds.indexOf(id);
+      if (selectedIndex === -1) {
+        setSelectedItemIds([...selectedItemIds, id]);
+      } else {
+        setSelectedItemIds([
+          ...selectedItemIds.slice(0, selectedIndex),
+          ...selectedItemIds.slice(selectedIndex + 1),
+        ]);
+      }
+    },
+    [selectedItemIds]
+  );
 
-  // Ordenar los datos por fecha de creación en orden ascendente
-  const sortedData = dataList
-    .filter(
-      (item) =>
-        (item.nombre?.toLowerCase()?.includes(filter?.toLowerCase()) ??
-          false) ||
-        (item.apellido?.toLowerCase()?.includes(filter?.toLowerCase()) ??
-          false) ||
-        (item.email?.toLowerCase()?.includes(filter?.toLowerCase()) ?? false)
-    )
+  function removeAccents(str: string) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
 
-    .sort(
-      (a, b) =>
-        toDate(b.creationDate).getTime() - toDate(a.creationDate).getTime()
-    );
+  const sortedData = useMemo(() => {
+    return dataList
+      .filter(
+        ({ nombre, apellido, email }) =>
+          (removeAccents(nombre)
+            ?.toLowerCase()
+            ?.includes(removeAccents(filter.trim())?.toLowerCase()) ??
+            false) ||
+          (removeAccents(apellido)
+            ?.toLowerCase()
+            ?.includes(removeAccents(filter.trim())?.toLowerCase()) ??
+            false) ||
+          (removeAccents(email)
+            ?.toLowerCase()
+            ?.includes(removeAccents(filter.trim())?.toLowerCase()) ??
+            false)
+      )
+      .sort(
+        (a, b) =>
+          toDate(b.creationDate).getTime() - toDate(a.creationDate).getTime()
+      );
+  }, [dataList, filter]);
 
-  // Paginación
   const indexOfLastData = currentPage * dataPerPage;
   const indexOfFirstData = indexOfLastData - dataPerPage;
   const currentData = sortedData.slice(indexOfFirstData, indexOfLastData);
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginate = useCallback(
+    (pageNumber: number) => setCurrentPage(pageNumber),
+    []
+  );
 
   return (
-    <div>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "fixed",
+        top: 0,
+        left: 0,
+      }}
+    >
       <Card>
         <Card.Header>
-          <Row>
-            <Col md={6}>
+          <Row className="align-items-center justify-content-between">
+            <Col md={8}>
               <Filter value={filter} onChange={setFilter} />
             </Col>
-            <Col md={6} className="text-right">
+
+            <Col
+              md={4}
+              className="text-right d-flex justify-content-end align-items-center"
+            >
               <Button
                 variant="danger"
-                className="mr-2"
+                style={{ marginRight: "5px" }}
                 onClick={handleDeleteMultiple}
                 disabled={selectedItemIds.length === 0}
               >
                 <BsTrash />
               </Button>
-              <Button variant="success" onClick={handleAddClick}>
+              <Button
+                variant="success"
+                onClick={handleAddClick}
+                style={{ marginRight: "5px" }}
+              >
                 <BsPlus />
               </Button>
+              <ExcelDownloadButton data={currentData} fileName={"mi-data"} />
             </Col>
           </Row>
         </Card.Header>
-        <Card.Body>
+
+        <Card.Body style={{ padding: 0 }}>
           <TableComponent
             data={currentData}
             handleCheckboxChange={handleCheckboxChange}
@@ -181,12 +219,14 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
             columns={columns}
           />
         </Card.Body>
+        <Card.Footer style={{ display: "flex", justifyContent: "center" }}>
+          <Pagination
+            totalPages={Math.ceil(sortedData.length / dataPerPage)}
+            currentPage={currentPage}
+            paginate={paginate}
+          />
+        </Card.Footer>
       </Card>
-      <Pagination
-        totalPages={Math.ceil(sortedData.length / dataPerPage)}
-        currentPage={currentPage}
-        paginate={paginate}
-      />
 
       <DeleteForm
         show={showDeleteModal}
