@@ -70,6 +70,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
   useEffect(() => {
     function filtrarPorFechaYNombre(lista: TableData[], filtro: string[]) {
       const [nombre, desde, hasta] = filtro;
+      console.log(filter);
 
       return lista.filter((item) => {
         const fechaCreacion = new Date(item.creationDate);
