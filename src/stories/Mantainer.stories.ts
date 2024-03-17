@@ -6,6 +6,7 @@ import {
   MantainerProps,
 } from "../components/table/Mantainer";
 import { TableColumn } from "../components/table/Table.component";
+import { registros } from "../mock/data";
 
 function generateRandomDateBeforeToday(startYear: number): string {
   const currentDate = new Date();
@@ -119,7 +120,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Basice: Story = {
   args: {
-    data: sampleData,
+    data: registros,
     columns: columns,
     emitOnSubmitCreate: (data): boolean => {
       console.log("create", data);

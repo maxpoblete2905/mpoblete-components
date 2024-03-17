@@ -67,19 +67,18 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
   }
 
   useEffect(() => {
-    console.log()
-    function filtrarPorFechaYNombre(lista: TableData[], filtro: string[]) {
+    function filtrarPorFechaYNombre(lista: TableData[]) {
 
       return lista.filter((item) => {
         const fechaCreacion = new Date(item.creationDate);
-        const fechaDesde = filtro[1] ? new Date(filtro[1]) : null;
-        const fechaHasta = filtro[2] ? new Date(filtro[2]) : null;
+        const fechaDesde = filter[1] ? new Date(filter[1]) : null;
+        const fechaHasta = filter[2] ? new Date(filter[2]) : null;
         const nombreLowerCase = removeAccents(
-          eliminarEspacios(filtro[0]).toLowerCase()
+          eliminarEspacios(filter[0]).toLowerCase()
         );
 
         const cumpleNombre =
-          !filtro[0] ||
+          !filter[0] ||
           item.nombre.toLowerCase().includes(removeAccents(nombreLowerCase));
         const cumpleFecha =
           !fechaDesde ||
@@ -90,7 +89,8 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
       });
     }
 
-    const newData = filtrarPorFechaYNombre(data, filter);
+    const newData = filtrarPorFechaYNombre(data);
+    console.log(newData)
     setDataList(newData);
   }, [data, filter]);
 
