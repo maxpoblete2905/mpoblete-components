@@ -11,7 +11,6 @@ import { ExcelDownloadButton } from "../downloadExcel/buttonExcel";
 import Pagination from "../pagination/Paginacion";
 
 function eliminarEspacios(cadena: string): string {
-  // Utiliza una expresión regular para reemplazar todos los espacios en blanco con una cadena vacía
   return cadena.replace(/\s+/g, "");
 }
 
@@ -68,19 +67,19 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
   }
 
   useEffect(() => {
+    console.log()
     function filtrarPorFechaYNombre(lista: TableData[], filtro: string[]) {
-      const [nombre, desde, hasta] = filtro;
 
       return lista.filter((item) => {
         const fechaCreacion = new Date(item.creationDate);
-        const fechaDesde = desde ? new Date(filter[1]) : null;
-        const fechaHasta = hasta ? new Date(filter[2]) : null;
+        const fechaDesde = filtro[1] ? new Date(filtro[1]) : null;
+        const fechaHasta = filtro[2] ? new Date(filtro[2]) : null;
         const nombreLowerCase = removeAccents(
-          eliminarEspacios(filter[0]).toLowerCase()
+          eliminarEspacios(filtro[0]).toLowerCase()
         );
 
         const cumpleNombre =
-          !nombre ||
+          !filtro[0] ||
           item.nombre.toLowerCase().includes(removeAccents(nombreLowerCase));
         const cumpleFecha =
           !fechaDesde ||
