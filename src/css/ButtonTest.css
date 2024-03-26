@@ -3,9 +3,19 @@
   border: none;
   outline: none;
   transition: all 0.5s ease;
-  display: flex;
+  display: inline-flex;
+  align-items: center; /* Alinea los elementos verticalmente */
   justify-content: center; /* Centra horizontalmente los elementos */
-  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  margin: 0px;
+  margin-left: 5px;
 }
 
 .hover-color-black:hover {

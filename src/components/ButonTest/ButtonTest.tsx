@@ -5,7 +5,12 @@ import { getIconByName } from "../../icon/handlerIcon";
 
 export const ButtonTest: React.FC<ButtonProps> = (props) => {
   const classes = generateButtonClasses(props);
-  const { icon } = props;
-  const data = icon ? getIconByName(icon) : null; // Modificado para manejar el caso en que no haya icono
-  return <button className={classes}> {data} {props.label} </button>; // Corregido para renderizar el icono correctamente
+  const { icon, label } = props;
+  const iconData = icon ? getIconByName(icon) : null; 
+  return (
+    <button className={classes}> 
+       {iconData}
+        <span className="label">{label}</span>
+    </button>
+  ); 
 };

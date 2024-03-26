@@ -53,7 +53,8 @@ export const ButtonCreate: Story = {
         padding: 'sm',
         margin: '0',
         borderRadius: 'md',
-        boxShadow: 'md'
+        boxShadow: 'md',
+        icon: 'save'
     },
 };
 
