@@ -1,5 +1,4 @@
 import { Theme } from "../../types/theme";
-import './buttonComponent.css';
 
 export interface ButtonComponentProps {
   onClickEvent?: () => void;
