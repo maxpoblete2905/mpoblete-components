@@ -1,6 +1,6 @@
-import { Form, Table, Button } from "react-bootstrap";
 import { BsTrash, BsPencilSquare, BsFileTextFill } from "react-icons/bs";
-import { TableData } from "./Mantainer";
+import "./table.css"; // Importa tu hoja de estilos CSS externa
+import { TableData } from "../../apps/Mantainer/Mantainer";
 
 export type TableColumn = {
   key: string;
@@ -41,98 +41,65 @@ export const TableComponent = <T extends TableData>({
   }));
 
   return (
-    <Table striped bordered hover>
+    <table className="table">
       <thead>
         <tr>
-          <th
-            style={{
-              width: "auto",
-              textAlign: "center",
-            }}
-          >
-            Check
-          </th>
+          <th className="header-cell">Check</th>
           {columns.map((column) => (
             <th
               key={column.key}
-              style={{
-                width: column.width ?? "auto",
-                textAlign: column.align ?? "center",
-              }}
+              className="header-cell"
             >
               {column.label}
             </th>
           ))}
-          <th
-            style={{
-              width: "20PX",
-              textAlign: "center",
-            }}
-          >
-            Acciones
-          </th>
+          <th className="header-cell">Acciones</th>
         </tr>
       </thead>
       <tbody>
         {modifiedData.map((row) => (
           <tr key={row.id}>
-            <td
-              style={{
-                textAlign: "center",
-                verticalAlign: "middle",
-                width: "20px",
-              }}
-            >
-              <div style={{ display: "inline-block" }}>
-                <Form.Check
-                  style={{ margin: "auto" }}
+            <td className="body-cell">
+              <div className="checkbox-container">
+                <input
                   type="checkbox"
                   checked={selectedItemIds.includes(row.id)}
                   onChange={() => handleCheckboxChange(row.id)}
                 />
+
               </div>
             </td>
             {columns.map((column) => (
-              <td key={column.label}>
+              <td key={column.label} className="body-cell">
                 {row[column.key as keyof T]?.toString()}
               </td>
             ))}
-            <td
-              style={{
-                textAlign: "center",
-                verticalAlign: "middle",
-                width: "20%",
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <Button
-                  variant="danger"
-                  className="ml-2"
-                  style={{ marginRight: "5px" }}
+            <td className="body-cell">
+              <div className="button-container">
+                <button
+                  className="action-button delete-button"
                   onClick={() => handleDeleteClick(row.id)}
                 >
                   <BsTrash />
-                </Button>
-                <Button
-                  variant="secondary"
-                  className="ml-2"
-                  style={{ marginRight: "5px" }}
+                </button>
+                <button
+                  className="action-button view-button"
                   onClick={() => alert("crear vista ver registro")}
                 >
                   <BsFileTextFill />
-                </Button>
-                <Button
-                  variant="primary"
-                  className="ml-2"
+                </button>
+                <button
+                  className="action-button edit-button"
                   onClick={() => handleEditClick(row)}
                 >
                   <BsPencilSquare />
-                </Button>
+                </button>
               </div>
             </td>
           </tr>
         ))}
       </tbody>
-    </Table>
+    </table>
   );
 };
+

@@ -9,6 +9,9 @@ module.exports = {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
+      
     ],
+     // Agregar regla para tabuladores
+     'no-tabs': 'error',
   },
 }

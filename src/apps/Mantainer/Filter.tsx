@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
-import { CustomInput } from "../input/Input.component";
+import { CustomInput } from "../../components/input/Input.component";
 
 interface FilterProps {
   value: string[];

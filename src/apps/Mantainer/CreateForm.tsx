@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TableData } from "./Mantainer";
-import { CustomInput } from "../input/Input.component";
-import { ModalComponent } from "../modal/Modal";
+import { CustomInput } from "../../components/input/Input.component";
+import { ModalComponent } from "../../components/modal/Modal";
 
 function removeItem(array: string[], valuesToRemove: string[]): string[] {
   return array.filter((item) => !valuesToRemove.includes(item));
@@ -59,3 +59,23 @@ export const CreateForm = <T extends TableData>({
     />
   );
 };
+
+/**
+ *       children={
+        inputs &&
+        removeItem(inputs, ["id", "creationDate"]).map((key) => (
+          <CustomInput
+            key={key}
+            id={key}
+            label={key}
+            type={"text"}
+            value={createItem[key as keyof T]?.toString() || ""}
+            placeholder={`ingrege ${key}`}
+            theme={"primary"}
+            isneon={false}
+            errors={false}
+            handleChange={handleInputChange}
+          />
+        ))
+      }
+ */

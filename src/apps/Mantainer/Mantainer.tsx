@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { Card, Button, Row, Col } from "react-bootstrap";
 import { BsTrash, BsPlus } from "react-icons/bs";
+import { TableColumn, TableComponent } from "../../components/Tabla/Table.component";
+import { CreateForm } from "./CreateForm";
+import { v4 as uuidv4 } from "uuid";
+import { ExcelDownloadButton } from "../../components/downloadExcel/ExcelDownloadButton";
+import Pagination from "../../components/pagination/Paginacion";
 import EditForm from "./EditForm";
 import DeleteForm from "./DeleteForm";
 import Filter from "./Filter";
-import { TableColumn, TableComponent } from "./Table.component";
-import { CreateForm } from "./CreateForm";
-import { v4 as uuidv4 } from "uuid";
-import { ExcelDownloadButton } from "../downloadExcel/buttonExcel";
-import Pagination from "../pagination/Paginacion";
 
 function eliminarEspacios(cadena: string): string {
   return cadena.replace(/\s+/g, "");
@@ -192,15 +192,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
   );
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        position: "fixed",
-        top: 0,
-        left: 0,
-      }}
-    >
+    <div>
       <Card>
         <Card.Header>
           <Row className="align-items-center justify-content-between">
@@ -275,6 +267,7 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
         onSave={handleCreateSave}
         inputs={inputs}
       />
+
     </div>
   );
 };

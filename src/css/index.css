@@ -1,0 +1,11 @@
+/* Importa todos los estilos CSS */
+@import "./ButtonTest.css";
+@import "./color.css";
+@import "./backGroudColors.css";
+@import "./fontsize.css";
+@import "./fontweight.css";
+@import "./margin.css";
+@import "./padding.css";
+@import "./borderRadius.css";
+@import "./boxShadow.css"
+

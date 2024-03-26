@@ -1,0 +1,10 @@
+.custom-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+.hover-color-black:hover {
+  color: black;
+}

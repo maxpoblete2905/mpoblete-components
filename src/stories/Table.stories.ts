@@ -4,24 +4,9 @@ import {
   TableColumn,
   TableComponent,
   TableProps,
-} from "../components/table/Table.component";
-import { TableData } from "../components/table/Mantainer";
-
-function generateDatesBetweenYears(startYear: number, endYear: number): string {
-  let dates = "";
-
-  for (let year = startYear; year <= endYear; year++) {
-    const randomMonth = Math.floor(Math.random() * 12); // Genera un número aleatorio entre 0 y 11
-    const randomDay = Math.floor(Math.random() * 28) + 1; // Genera un número aleatorio entre 1 y 28
-
-    const randomDate = new Date(Date.UTC(year, randomMonth, randomDay));
-    dates = randomDate.toISOString();
-  }
-
-  return dates;
-}
-
-const sampleData = [];
+} from "../components/Tabla/Table.component";
+import { TableData } from "../apps/Mantainer/Mantainer";
+import { registros } from "../mock/data";
 
 const columns: TableColumn[] = [
   { key: "nombre", label: "Nombre" },
@@ -30,67 +15,6 @@ const columns: TableColumn[] = [
   { key: "creationDate", label: "Ingreso" },
 ];
 
-// Nombres y apellidos simulados
-const nombres = [
-  "Juan",
-  "María",
-  "Pedro",
-  "Ana",
-  "Carlos",
-  "Esteban",
-  "Laura",
-  "Diego",
-  "Sofía",
-  "Luis",
-  "Carmen",
-  "Javier",
-  "Rosa",
-  "Miguel",
-  "Elena",
-  "Manuel",
-  "Isabel",
-  "Fernando",
-  "Lucía",
-  "Antonio",
-];
-
-const apellidos = [
-  "Poblete",
-  "Pérez",
-  "Gómez",
-  "Martínez",
-  "López",
-  "Sánchez",
-  "Romero",
-  "García",
-  "Fernández",
-  "González",
-  "Rodríguez",
-  "Navarro",
-  "Jiménez",
-  "Díaz",
-  "Torres",
-  "Álvarez",
-  "Ruiz",
-  "Martín",
-  "Serrano",
-  "Molina",
-];
-
-// Crear 100 registros simulados
-for (let i = 0; i < 100; i++) {
-  const nombreIndex = Math.floor(Math.random() * nombres.length);
-  const apellidoIndex = Math.floor(Math.random() * apellidos.length);
-  const nombre = nombres[nombreIndex];
-  const apellido = apellidos[apellidoIndex];
-  const email = `${nombre.toLowerCase()}${apellido.toLowerCase()}${
-    i + 1
-  }@example.com`;
-  const id = i + 1;
-  const creationDate = generateDatesBetweenYears(2022, 2024);
-
-  sampleData.push({ id, nombre, apellido, email, creationDate });
-}
 
 const meta: Meta<TableProps<TableData>> = {
   title: "component/Table",
@@ -112,16 +36,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Basices: Story = {
   args: {
-    data: sampleData,
+    data: registros,
     selectedItemIds: [],
     columns: columns,
-    handleCheckboxChange: function (id: number): void {
+    handleCheckboxChange: function (id: string): void {
       console.log("data checked", id);
     },
     handleEditClick: function (row: TableData): void {
       console.log("edit ", row);
     },
-    handleDeleteClick: function (id: number): void {
+    handleDeleteClick: function (id: string): void {
       console.log("delete", id);
     },
   },

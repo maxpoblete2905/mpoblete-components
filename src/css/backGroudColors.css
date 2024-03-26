@@ -1,0 +1,184 @@
+/* Colores de fondo claros */
+.background-black-light {
+  background-color: #333;
+}
+
+.background-white-light {
+  background-color: #f5f5f5;
+}
+
+.background-red-light {
+  background-color: #ffcccc;
+}
+
+.background-green-light {
+  background-color: #ccffcc;
+}
+
+.background-blue-light {
+  background-color: #cce5ff;
+}
+
+.background-yellow-light {
+  background-color: #ffffcc;
+}
+
+.background-orange-light {
+  background-color: #ffe0b3;
+}
+
+.background-purple-light {
+  background-color: #e0ccff;
+}
+
+.background-gray-light {
+  background-color: #f2f2f2;
+}
+
+.background-pink-light {
+  background-color: #ffcce6;
+}
+
+.background-brown-light {
+  background-color: #e6ccb3;
+}
+
+.background-cyan-light {
+  background-color: #ccffff;
+}
+
+.background-magenta-light {
+  background-color: #ffccff;
+}
+
+.background-teal-light {
+  background-color: #ccffcc;
+}
+
+.background-lime-light {
+  background-color: #e6ffcc;
+}
+
+/* Colores de fondo medios */
+.background-black-medium {
+  background-color: #222;
+}
+
+.background-white-medium {
+  background-color: #ddd;
+}
+
+.background-red-medium {
+  background-color: #ff9999;
+}
+
+.background-green-medium {
+  background-color: #99ff99;
+}
+
+.background-blue-medium {
+  background-color: #99ccff;
+}
+
+.background-yellow-medium {
+  background-color: #ffff99;
+}
+
+.background-orange-medium {
+  background-color: #ffcc99;
+}
+
+.background-purple-medium {
+  background-color: #cc99ff;
+}
+
+.background-gray-medium {
+  background-color: #cccccc;
+}
+
+.background-pink-medium {
+  background-color: #ff99cc;
+}
+
+.background-brown-medium {
+  background-color: #cc9966;
+}
+
+.background-cyan-medium {
+  background-color: #99ffff;
+}
+
+.background-magenta-medium {
+  background-color: #ff99ff;
+}
+
+.background-teal-medium {
+  background-color: #99ff99;
+}
+
+.background-lime-medium {
+  background-color: #ccff99;
+}
+
+/* Colores de fondo sólidos (un poco más oscuros) */
+.background-black-solid {
+  background-color: #000;
+}
+
+.background-white-solid {
+  background-color: #999;
+}
+
+.background-red-solid {
+  background-color: #cc3333;
+}
+
+.background-green-solid {
+  background-color: #33cc33;
+}
+
+.background-blue-solid {
+  background-color: #3366cc;
+}
+
+.background-yellow-solid {
+  background-color: #cccc00;
+}
+
+.background-orange-solid {
+  background-color: #cc6600;
+}
+
+.background-purple-solid {
+  background-color: #6633cc;
+}
+
+.background-gray-solid {
+  background-color: #666666;
+}
+
+.background-pink-solid {
+  background-color: #cc3399;
+}
+
+.background-brown-solid {
+  background-color: #663300;
+}
+
+.background-cyan-solid {
+  background-color: #339999;
+}
+
+.background-magenta-solid {
+  background-color: #cc33cc;
+}
+
+.background-teal-solid {
+  background-color: #33cc33;
+}
+
+.background-lime-solid {
+  background-color: #669933;
+}
+
+/* Puedes ajustar los colores sólidos según tus preferencias */

@@ -1,5 +1,5 @@
-import { Button } from "react-bootstrap";
 import * as XLSX from "xlsx";
+import './excelDownloadButton.css'; // Import your CSS file
 
 interface ExcelDownloadButtonProps<T> {
   data: T[];
@@ -17,5 +17,5 @@ export const ExcelDownloadButton = <T extends object>({
     XLSX.writeFile(workbook, `${fileName}.xlsx`);
   };
 
-  return <Button onClick={handleDownload}>Excel</Button>;
+  return <button className="excel-download-button" onClick={handleDownload}>Excel</button>;
 };

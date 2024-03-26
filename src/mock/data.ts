@@ -174,3 +174,29 @@ export const registros = [
     email: "jorge@example.com",
     creationDate: new Date(Date.now() - 24 * 86400000).toISOString(), // Veinticuatro días antes
   }]
+
+
+
+export const fields = [
+  {
+    label: "Nombre",
+    key: "name",
+    type: "text",
+    value: "", // Valor inicial del campo
+    onChange: (value: string) => console.log("Nombre cambiado:", value), // Función de cambio de valor
+  },
+  {
+    label: "Apellido",
+    key: "apellido",
+    type: "text",
+    value: "", // Valor inicial del campo
+    onChange: (value: string) => console.log("Correo electrónico cambiado:", value), // Función de cambio de valor
+  },
+  {
+    label: "Email",
+    key: "email",
+    type: "email",
+    value: "", // Valor inicial del campo
+    onChange: (value: string) => console.log("Correo electrónico cambiado:", value), // Función de cambio de valor
+  },
+];

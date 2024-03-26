@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { TableData } from "./Mantainer";
-import { CustomInput } from "../input/Input.component";
-import { ModalComponent } from "../modal/Modal";
+import { CustomInput } from "../../components/input/Input.component";
+import { ModalComponent } from "../../components/modal/Modal";
 
 function deleteKeys<T>(obj: T, keysToDelete: (keyof T)[]): T {
   const newObj = { ...obj }; // Creamos una copia del objeto original

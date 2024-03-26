@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import { Form, Card } from "react-bootstrap";
 import { ButtonComponent } from "../button/Button.component";
 import { Theme } from "../../types/theme";
-import { handlerTheme } from "../../customTheme/handlerThemeColor";
+import { handlerTheme } from "../../Theme/handlerThemeColor";
 import { ThemeInterface } from "../../interfaces/themeColor";
 import { CustomInput } from "../input/Input.component";
 
