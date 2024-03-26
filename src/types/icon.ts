@@ -1,1 +1,8 @@
-export type IconOpcion = 'trash' | 'plus' | 'edit' | 'checkboxEmpty' | 'checkboxFilled' | 'save' | 'close';
+export type IconOpcion = 
+'trash' 
+| 'plus' 
+| 'edit' 
+| 'checkboxEmpty' 
+| 'checkboxFilled' 
+| 'save' 
+| 'close';

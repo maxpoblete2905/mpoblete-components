@@ -1,55 +1,69 @@
-/* Tamaños de fuente */
+/* Variables para tamaños de fuente */
+:root {
+  --font-size-6: 6px;
+  --font-size-8: 8px;
+  --font-size-10: 10px;
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-30: 30px;
+  --font-size-36: 36px;
+  --font-size-48: 48px;
+  --font-size-60: 60px;
+}
+
+/* Implementación de los tamaños de fuente */
 .font-size-6 {
-    font-size: 6px;
-  }
-  
-  .font-size-8 {
-    font-size: 8px;
-  }
-  
-  .font-size-10 {
-    font-size: 10px;
-  }
-  
-  .font-size-12 {
-    font-size: 12px;
-  }
-  
-  .font-size-14 {
-    font-size: 14px;
-  }
-  
-  .font-size-16 {
-    font-size: 16px;
-  }
-  
-  .font-size-18 {
-    font-size: 18px;
-  }
-  
-  .font-size-20 {
-    font-size: 20px;
-  }
-  
-  .font-size-24 {
-    font-size: 24px;
-  }
-  
-  .font-size-30 {
-    font-size: 30px;
-  }
-  
-  .font-size-36 {
-    font-size: 36px;
-  }
-  
-  .font-size-48 {
-    font-size: 48px;
-  }
-  
-  .font-size-60 {
-    font-size: 60px;
-  }
-  
-  /* Agrega más clases de tamaños de fuente según sea necesario */
-  
+  font-size: var(--font-size-6);
+}
+
+.font-size-8 {
+  font-size: var(--font-size-8);
+}
+
+.font-size-10 {
+  font-size: var(--font-size-10);
+}
+
+.font-size-12 {
+  font-size: var(--font-size-12);
+}
+
+.font-size-14 {
+  font-size: var(--font-size-14);
+}
+
+.font-size-16 {
+  font-size: var(--font-size-16);
+}
+
+.font-size-18 {
+  font-size: var(--font-size-18);
+}
+
+.font-size-20 {
+  font-size: var(--font-size-20);
+}
+
+.font-size-24 {
+  font-size: var(--font-size-24);
+}
+
+.font-size-30 {
+  font-size: var(--font-size-30);
+}
+
+.font-size-36 {
+  font-size: var(--font-size-36);
+}
+
+.font-size-48 {
+  font-size: var(--font-size-48);
+}
+
+.font-size-60 {
+  font-size: var(--font-size-60);
+}

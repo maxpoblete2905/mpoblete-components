@@ -1,0 +1,59 @@
+/* Variables para hover scale */
+:root {
+  --hover-scale-100: 1;
+  --hover-scale-105: 1.05;
+  --hover-scale-110: 1.1;
+  --hover-scale-115: 1.15;
+  --hover-scale-120: 1.2;
+  --hover-scale-125: 1.25;
+  --hover-scale-130: 1.3;
+  --hover-scale-135: 1.35;
+  --hover-scale-140: 1.4;
+  --hover-scale-145: 1.45;
+  --hover-scale-150: 1.5;
+}
+
+/* Clases para manejar el hover scale */
+.hover-scale-100:hover {
+  transform: scale(var(--hover-scale-100));
+}
+
+.hover-scale-105:hover {
+  transform: scale(var(--hover-scale-105));
+}
+
+.hover-scale-110:hover {
+  transform: scale(var(--hover-scale-110));
+}
+
+.hover-scale-115:hover {
+  transform: scale(var(--hover-scale-115));
+}
+
+.hover-scale-120:hover {
+  transform: scale(var(--hover-scale-120));
+}
+
+.hover-scale-125:hover {
+  transform: scale(var(--hover-scale-125));
+}
+
+.hover-scale-130:hover {
+  transform: scale(var(--hover-scale-130));
+}
+
+.hover-scale-135:hover {
+  transform: scale(var(--hover-scale-135));
+}
+
+.hover-scale-140:hover {
+  transform: scale(var(--hover-scale-140));
+}
+
+.hover-scale-145:hover {
+  transform: scale(var(--hover-scale-145));
+}
+
+.hover-scale-150:hover {
+  transform: scale(var(--hover-scale-150));
+}

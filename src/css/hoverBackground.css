@@ -1,0 +1,238 @@
+/* Variables para colores de fondo claros */
+:root {
+  --hover-background-black-light: #333;
+  --hover-background-blue-light: #cce5ff;
+  --hover-background-brown-light: #e6ccb3;
+  --hover-background-cyan-light: #ccffff;
+  --hover-background-gray-light: #f2f2f2;
+  --hover-background-green-light: #ccffcc;
+  --hover-background-lime-light: #e6ffcc;
+  --hover-background-magenta-light: #ffccff;
+  --hover-background-orange-light: #ffe0b3;
+  --hover-background-pink-light: #ffcce6;
+  --hover-background-purple-light: #e0ccff;
+  --hover-background-red-light: #ffcccc;
+  --hover-background-teal-light: #ccffcc;
+  --hover-background-white-light: #f5f5f5;
+  --hover-background-yellow-light: #ffffcc;
+}
+
+/* Variables para colores de fondo medios */
+:root {
+  --hover-background-black-medium: #222;
+  --hover-background-blue-medium: #99ccff;
+  --hover-background-brown-medium: #cc9966;
+  --hover-background-cyan-medium: #99ffff;
+  --hover-background-gray-medium: #cccccc;
+  --hover-background-green-medium: #99ff99;
+  --hover-background-lime-medium: #ccff99;
+  --hover-background-magenta-medium: #ff99ff;
+  --hover-background-orange-medium: #ffcc99;
+  --hover-background-pink-medium: #ff99cc;
+  --hover-background-purple-medium: #cc99ff;
+  --hover-background-red-medium: #ff9999;
+  --hover-background-teal-medium: #99ff99;
+  --hover-background-white-medium: #ddd;
+  --hover-background-yellow-medium: #ffff99;
+}
+
+/* Variables para colores de fondo sólidos */
+:root {
+  --hover-background-black-solid: #000;
+  --hover-background-blue-solid: #3366cc;
+  --hover-background-brown-solid: #663300;
+  --hover-background-cyan-solid: #339999;
+  --hover-background-gray-solid: #666666;
+  --hover-background-green-solid: #33cc33;
+  --hover-background-lime-solid: #669933;
+  --hover-background-magenta-solid: #cc33cc;
+  --hover-background-orange-solid: #cc6600;
+  --hover-background-pink-solid: #cc3399;
+  --hover-background-purple-solid: #6633cc;
+  --hover-background-red-solid: #cc3333;
+  --hover-background-teal-solid: #33cc33;
+  --hover-background-white-solid: #999;
+  --hover-background-yellow-solid: #cccc00;
+}
+/* Colores de fondo claros con efecto hover */
+.hover-background-color-black-light:hover {
+  background-color: var(--hover-background-black-light);
+}
+
+.hover-background-color-blue-light:hover {
+  background-color: var(--hover-background-blue-light);
+}
+
+.hover-background-color-brown-light:hover {
+  background-color: var(--hover-background-brown-light);
+}
+
+.hover-background-color-cyan-light:hover {
+  background-color: var(--hover-background-cyan-light);
+}
+
+.hover-background-color-gray-light:hover {
+  background-color: var(--hover-background-gray-light);
+}
+
+.hover-background-color-green-light:hover {
+  background-color: var(--hover-background-green-light);
+}
+
+.hover-background-color-lime-light:hover {
+  background-color: var(--hover-background-lime-light);
+}
+
+.hover-background-color-magenta-light:hover {
+  background-color: var(--hover-background-color-magenta-light);
+}
+
+.hover-background-color-orange-light:hover {
+  background-color: var(--hover-background-orange-light);
+}
+
+.hover-background-color-pink-light:hover {
+  background-color: var(--hover-background-pink-light);
+}
+
+.hover-background-color-purple-light:hover {
+  background-color: var(--hover-background-purple-light);
+}
+
+.hover-background-color-red-light:hover {
+  background-color: var(--hover-background-red-light);
+}
+
+.hover-background-color-teal-light:hover {
+  background-color: var(--hover-background-teal-light);
+}
+
+.hover-background-color-white-light:hover {
+  background-color: var(--hover-background-white-light);
+}
+
+.hover-background-color-yellow-light:hover {
+  background-color: var(--hover-background-yellow-light);
+}
+
+/* Colores de fondo medios con efecto hover */
+.hover-background-color-black-medium:hover {
+  background-color: var(--hover-background-black-medium);
+}
+
+.hover-background-color-blue-medium:hover {
+  background-color: var(--hover-background-blue-medium);
+}
+
+.hover-background-color-brown-medium:hover {
+  background-color: var(--hover-background-brown-medium);
+}
+
+.hover-background-color-cyan-medium:hover {
+  background-color: var(--hover-background-cyan-medium);
+}
+
+.hover-background-color-gray-medium:hover {
+  background-color: var(--hover-background-gray-medium);
+}
+
+.hover-background-color-green-medium:hover {
+  background-color: var(--hover-background-green-medium);
+}
+
+.hover-background-color-lime-medium:hover {
+  background-color: var(--hover-background-lime-medium);
+}
+
+.hover-background-color-magenta-medium:hover {
+  background-color: var(--hover-background-magenta-medium);
+}
+
+.hover-background-color-orange-medium:hover {
+  background-color: var(--hover-background-orange-medium);
+}
+
+.hover-background-color-pink-medium:hover {
+  background-color: var(--hover-background-pink-medium);
+}
+
+.hover-background-color-purple-medium:hover {
+  background-color: var(--hover-background-purple-medium);
+}
+
+.hover-background-color-red-medium:hover {
+  background-color: var(--hover-background-red-medium);
+}
+
+.hover-background-color-teal-medium:hover {
+  background-color: var(--hover-background-teal-medium);
+}
+
+.hover-background-color-white-medium:hover {
+  background-color: var(--hover-background-white-medium);
+}
+
+.hover-background-color-yellow-medium:hover {
+  background-color: var(--hover-background-yellow-medium);
+}
+
+/* Colores de fondo sólidos con efecto hover */
+.hover-background-color-black-solid:hover {
+  background-color: var(--hover-background-black-solid);
+}
+
+.hover-background-color-blue-solid:hover {
+  background-color: var(--hover-background-blue-solid);
+}
+
+.hover-background-color-brown-solid:hover {
+  background-color: var(--hover-background-brown-solid);
+}
+
+.hover-background-color-cyan-solid:hover {
+  background-color: var(--hover-background-cyan-solid);
+}
+
+.hover-background-color-gray-solid:hover {
+  background-color: var(--hover-background-gray-solid);
+}
+
+.hover-background-color-green-solid:hover {
+  background-color: var(--hover-background-green-solid);
+}
+
+.hover-background-color-lime-solid:hover {
+  background-color: var(--hover-background-lime-solid);
+}
+
+.hover-background-color-magenta-solid:hover {
+  background-color: var(--hover-background-magenta-solid);
+}
+
+.hover-background-color-orange-solid:hover {
+  background-color: var(--hover-background-orange-solid);
+}
+
+.hover-background-color-pink-solid:hover {
+  background-color: var(--hover-background-pink-solid);
+}
+
+.hover-background-color-purple-solid:hover {
+  background-color: var(--hover-background-purple-solid);
+}
+
+.hover-background-color-red-solid:hover {
+  background-color: var(--hover-background-red-solid);
+}
+
+.hover-background-color-teal-solid:hover {
+  background-color: var(--hover-background-teal-solid);
+}
+
+.hover-background-color-white-solid:hover {
+  background-color: var(--hover-background-white-solid);
+}
+
+.hover-background-color-yellow-solid:hover {
+  background-color: var(--hover-background-yellow-solid);
+}

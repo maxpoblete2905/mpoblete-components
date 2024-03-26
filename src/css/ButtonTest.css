@@ -1,23 +1,29 @@
 .custom-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  transition: all 0.5s ease;
-  display: inline-flex;
-  align-items: center; /* Alinea los elementos verticalmente */
-  justify-content: center; /* Centra horizontalmente los elementos */
+  cursor: pointer; /* Establece el cursor del ratón como un puntero cuando se pasa sobre el botón */
+  border: none; /* Elimina el borde del botón */
+  outline: none; /* Elimina el contorno del botón cuando se enfoca */
+  transition: all 0.5s ease; /* Aplica una transición suave a todas las propiedades CSS durante medio segundo */
+  display: inline-flex; /* Establece el elemento como un contenedor de tipo flex con disposición en línea */
+  align-items: center; /* Alinea los elementos hijos verticalmente en el contenedor */
+  justify-content: center; /* Centra horizontalmente los elementos hijos en el contenedor */
 }
 
 .container {
-  display: flex;
-  align-items: center;
+  display: flex; /* Establece el contenedor como un contenedor de tipo flex */
+  align-items: center; /* Alinea los elementos hijos verticalmente en el contenedor */
 }
 
 .label {
-  margin: 0px;
-  margin-left: 5px;
+  margin: 0px; /* Elimina el margen en todos los lados del elemento */
+  margin-left: 5px; /* Establece un margen izquierdo de 5px */
 }
 
-.hover-color-black:hover {
-  color: black;
-}
+/* .custom-button:hover { */
+ 
+  /* border: 1px solid black; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  */
+  /* transform: rotate(
+    360deg
+  ); 
+  transition: transform 0.3s ease;  */
+/* } */

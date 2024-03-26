@@ -1,5 +1,5 @@
 export type FontWeightOption =
-    | 'normal'
+     'normal'
     | 'bold'
     | 'bolder'
     | 'lighter'
@@ -12,7 +12,3 @@ export type FontWeightOption =
     | '700'
     | '800'
     | '900';
-
-// Ejemplo de uso:
-// let fontWeight: FontWeightOption = 'bold'; // Válido
-// let invalidFontWeight: FontWeightOption = 'extrabold'; // Esto dará un error de tipo

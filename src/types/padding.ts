@@ -1,5 +1,5 @@
 export type PaddingOption =
-    | '0'
+     '0'
     | 'xs'
     | 'sm'
     | 'md'

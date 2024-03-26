@@ -1,5 +1,5 @@
 export type MarginOption =
-    | 'auto'
+     'auto'
     | '0'
     | 'xs'
     | 'sm'

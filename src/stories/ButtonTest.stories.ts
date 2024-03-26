@@ -20,7 +20,11 @@ const meta: Meta<ButtonProps> = {
         backgroundColor: { control: 'select' },
         borderRadius: { control: 'select' },
         boxShadow: { control: 'select' },
-        icon: {control: 'select'}
+        icon: {control: 'select'},
+        hoverBackground: {control: 'select'},
+        hoverColor: {control: 'select'},
+        hoverScale: {control: 'select'}
+
     },
 
 } satisfies Meta<typeof ButtonTest>;
@@ -31,21 +35,24 @@ type Story = StoryObj<typeof ButtonTest>;
 
 export const ButtonCustom: Story = {
     args: {
-        label: 'Button send',
-        color: 'black-solid',
+        label: 'Custom Button',
+        color: 'white-light',
         backgroundColor: 'blue-solid',
         fontSize: '18',
         fontWeight: '100',
         padding: 'sm',
         margin: '0',
         borderRadius: 'md',
-        boxShadow: 'none'
+        boxShadow: 'none',
+        hoverBackground: 'blue-medium',
+        hoverColor: 'blue-solid',
+        hoverScale: 110
     },
 };
 
 export const ButtonCreate: Story = {
     args: {
-        label: 'Crear registro',
+        label: 'Crear Registro',
         color: 'white-light',
         backgroundColor: 'green-solid',
         fontSize: '20',
@@ -54,13 +61,16 @@ export const ButtonCreate: Story = {
         margin: '0',
         borderRadius: 'md',
         boxShadow: 'md',
-        icon: 'save'
+        icon: 'save',
+        hoverBackground: 'green-medium',
+        hoverColor: 'green-solid',
+        hoverScale: 100
     },
 };
 
 export const ButtonDelete: Story = {
     args: {
-        label: 'Eliminar registro',
+        label: 'Eliminar',
         color: 'white-light',
         backgroundColor: 'red-solid',
         fontSize: '20',
@@ -69,6 +79,60 @@ export const ButtonDelete: Story = {
         margin: '0',
         borderRadius: 'md',
         boxShadow: 'md',
-        icon: 'trash'
+        icon: 'trash',
+        hoverBackground: 'red-medium',
+        hoverColor: 'red-solid',
+        hoverScale: 100
+    },
+};
+
+export const ButtonInfo: Story = {
+    args: {
+        label: 'Información',
+        color: 'white-light',
+        backgroundColor: 'blue-solid',
+        fontSize: '20',
+        fontWeight: '500',
+        padding: 'sm',
+        margin: '0',
+        borderRadius: 'md',
+        boxShadow: 'md',
+        icon: 'checkboxFilled',
+        hoverBackground: 'blue-medium',
+        hoverColor: 'blue-solid',
+        hoverScale: 100
+    },
+};
+
+export const ButtonScale: Story = {
+    args: {
+        label: 'Button Scale',
+        color: 'white-light',
+        backgroundColor: 'blue-solid',
+        fontSize: '18',
+        fontWeight: '500',
+        padding: 'xs',
+        margin: '0',
+        borderRadius: 'md',
+        boxShadow: 'md',
+        hoverBackground: 'blue-solid',
+        hoverColor: 'white-light',
+        hoverScale: 120
+    },
+};
+
+export const ButtonIcon: Story = {
+    args: {
+        label: '',
+        color: 'white-light',
+        backgroundColor: 'blue-solid',
+        fontSize: '20',
+        fontWeight: '500',
+        padding: 'sm',
+        margin: '0',
+        borderRadius: 'md',
+        boxShadow: 'md',
+        icon: 'edit',
+        hoverScale: 110
     },
 };

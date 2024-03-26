@@ -1,20 +1,29 @@
 /* Radio de borde */
+:root {
+  --border-radius-none: 0;
+  --border-radius-sm: 0.25rem; /* Ajusta según sea necesario */
+  --border-radius-md: 0.5rem; /* Ajusta según sea necesario */
+  --border-radius-lg: 1rem; /* Ajusta según sea necesario */
+  --border-radius-xl: 2rem; /* Ajusta según sea necesario */
+}
+
+/* Clases CSS */
 .border-radius-none {
-  border-radius: 0;
+  border-radius: var(--border-radius-none);
 }
 
 .border-radius-sm {
-  border-radius: 0.25rem; /* Ajusta según sea necesario */
+  border-radius: var(--border-radius-sm);
 }
 
 .border-radius-md {
-  border-radius: 0.5rem; /* Ajusta según sea necesario */
+  border-radius: var(--border-radius-md);
 }
 
 .border-radius-lg {
-  border-radius: 1rem; /* Ajusta según sea necesario */
+  border-radius: var(--border-radius-lg);
 }
 
 .border-radius-xl {
-  border-radius: 2rem; /* Ajusta según sea necesario */
+  border-radius: var(--border-radius-xl);
 }
