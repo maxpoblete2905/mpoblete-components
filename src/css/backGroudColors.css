@@ -1,235 +1,182 @@
-:root {
-  /* Colores de fondo claros */
-  --background-black-light: #333;
-  --background-blue-light: #cce5ff;
-  --background-brown-light: #e6ccb3;
-  --background-cyan-light: #ccffff;
-  --background-gray-light: #f2f2f2;
-  --background-green-light: #ccffcc;
-  --background-lime-light: #e6ffcc;
-  --background-magenta-light: #ffccff;
-  --background-orange-light: #ffe0b3;
-  --background-pink-light: #ffcce6;
-  --background-purple-light: #e0ccff;
-  --background-red-light: #ffcccc;
-  --background-teal-light: #ccffcc;
-  --background-white-light: #f5f5f5;
-  --background-yellow-light: #ffffcc;
-
-  /* Colores de fondo medios */
-  --background-black-medium: #222;
-  --background-blue-medium: #99ccff;
-  --background-brown-medium: #cc9966;
-  --background-cyan-medium: #99ffff;
-  --background-gray-medium: #cccccc;
-  --background-green-medium: #99ff99;
-  --background-lime-medium: #ccff99;
-  --background-magenta-medium: #ff99ff;
-  --background-orange-medium: #ffcc99;
-  --background-pink-medium: #ff99cc;
-  --background-purple-medium: #cc99ff;
-  --background-red-medium: #ff9999;
-  --background-teal-medium: #99ff99;
-  --background-white-medium: #ddd;
-  --background-yellow-medium: #ffff99;
-
-  /* Colores de fondo sólidos (un poco más oscuros) */
-  --background-black-solid: #000;
-  --background-blue-solid: #3366cc;
-  --background-brown-solid: #663300;
-  --background-cyan-solid: #339999;
-  --background-gray-solid: #666666;
-  --background-green-solid: #33cc33;
-  --background-lime-solid: #669933;
-  --background-magenta-solid: #cc33cc;
-  --background-orange-solid: #cc6600;
-  --background-pink-solid: #cc3399;
-  --background-purple-solid: #6633cc;
-  --background-red-solid: #cc3333;
-  --background-teal-solid: #33cc33;
-  --background-white-solid: #999;
-  --background-yellow-solid: #cccc00;
-}
-
 /* Colores de fondo claros */
 .background-black-light {
-  background-color: var(--background-black-light);
+  background-color: var(--color-black-light);
 }
 
 .background-blue-light {
-  background-color: var(--background-blue-light);
+  background-color: var(--color-blue-light);
 }
 
 .background-brown-light {
-  background-color: var(--background-brown-light);
+  background-color: var(--color-brown-light);
 }
 
 .background-cyan-light {
-  background-color: var(--background-cyan-light);
+  background-color: var(--color-cyan-light);
 }
 
 .background-gray-light {
-  background-color: var(--background-gray-light);
+  background-color: var(--color-gray-light);
 }
 
 .background-green-light {
-  background-color: var(--background-green-light);
+  background-color: var(--color-green-light);
 }
 
 .background-lime-light {
-  background-color: var(--background-lime-light);
+  background-color: var(--color-lime-light);
 }
 
 .background-magenta-light {
-  background-color: var(--background-magenta-light);
+  background-color: var(--color-magenta-light);
 }
 
 .background-orange-light {
-  background-color: var(--background-orange-light);
+  background-color: var(--color-orange-light);
 }
 
 .background-pink-light {
-  background-color: var(--background-pink-light);
+  background-color: var(--color-pink-light);
 }
 
 .background-purple-light {
-  background-color: var(--background-purple-light);
+  background-color: var(--color-purple-light);
 }
 
 .background-red-light {
-  background-color: var(--background-red-light);
+  background-color: var(--color-red-light);
 }
 
 .background-teal-light {
-  background-color: var(--background-teal-light);
+  background-color: var(--color-teal-light);
 }
 
 .background-white-light {
-  background-color: var(--background-white-light);
+  background-color: var(--color-white-light);
 }
 
 .background-yellow-light {
-  background-color: var(--background-yellow-light);
+  background-color: var(--color-yellow-light);
 }
 
 /* Colores de fondo medios */
 .background-black-medium {
-  background-color: var(--background-black-medium);
+  background-color: var(--color-black-medium);
 }
 
 .background-blue-medium {
-  background-color: var(--background-blue-medium);
+  background-color: var(--color-blue-medium);
 }
 
 .background-brown-medium {
-  background-color: var(--background-brown-medium);
+  background-color: var(--color-brown-medium);
 }
 
 .background-cyan-medium {
-  background-color: var(--background-cyan-medium);
+  background-color: var(--color-cyan-medium);
 }
 
 .background-gray-medium {
-  background-color: var(--background-gray-medium);
+  background-color: var(--color-gray-medium);
 }
 
 .background-green-medium {
-  background-color: var(--background-green-medium);
+  background-color: var(--color-green-medium);
 }
 
 .background-lime-medium {
-  background-color: var(--background-lime-medium);
+  background-color: var(--color-lime-medium);
 }
 
 .background-magenta-medium {
-  background-color: var(--background-magenta-medium);
+  background-color: var(--color-magenta-medium);
 }
 
 .background-orange-medium {
-  background-color: var(--background-orange-medium);
+  background-color: var(--color-orange-medium);
 }
 
 .background-pink-medium {
-  background-color: var(--background-pink-medium);
+  background-color: var(--color-pink-medium);
 }
 
 .background-purple-medium {
-  background-color: var(--background-purple-medium);
+  background-color: var(--color-purple-medium);
 }
 
 .background-red-medium {
-  background-color: var(--background-red-medium);
+  background-color: var(--color-red-medium);
 }
 
 .background-teal-medium {
-  background-color: var(--background-teal-medium);
+  background-color: var(--color-teal-medium);
 }
 
 .background-white-medium {
-  background-color: var(--background-white-medium);
+  background-color: var(--color-white-medium);
 }
 
 .background-yellow-medium {
-  background-color: var(--background-yellow-medium);
+  background-color: var(--color-yellow-medium);
 }
 
 /* Colores de fondo sólidos (un poco más oscuros) */
 .background-black-solid {
-  background-color: var(--background-black-solid);
+  background-color: var(--color-black-solid);
 }
 
 .background-blue-solid {
-  background-color: var(--background-blue-solid);
+  background-color: var(--color-blue-solid);
 }
 
 .background-brown-solid {
-  background-color: var(--background-brown-solid);
+  background-color: var(--color-brown-solid);
 }
 
 .background-cyan-solid {
-  background-color: var(--background-cyan-solid);
+  background-color: var(--color-cyan-solid);
 }
 
 .background-gray-solid {
-  background-color: var(--background-gray-solid);
+  background-color: var(--color-gray-solid);
 }
 
 .background-green-solid {
-  background-color: var(--background-green-solid);
+  background-color: var(--color-green-solid);
 }
 
 .background-lime-solid {
-  background-color: var(--background-lime-solid);
+  background-color: var(--color-lime-solid);
 }
 
 .background-magenta-solid {
-  background-color: var(--background-magenta-solid);
+  background-color: var(--color-magenta-solid);
 }
 
 .background-orange-solid {
-  background-color: var(--background-orange-solid);
+  background-color: var(--color-orange-solid);
 }
 
 .background-pink-solid {
-  background-color: var(--background-pink-solid);
+  background-color: var(--color-pink-solid);
 }
 
 .background-purple-solid {
-  background-color: var(--background-purple-solid);
+  background-color: var(--color-purple-solid);
 }
 
 .background-red-solid {
-  background-color: var(--background-red-solid);
+  background-color: var(--color-red-solid);
 }
 
 .background-teal-solid {
-  background-color: var(--background-teal-solid);
+  background-color: var(--color-teal-solid);
 }
 
 .background-white-solid {
-  background-color: var(--background-white-solid);
+  background-color: var(--color-white-solid);
 }
 
 .background-yellow-solid {
-  background-color: var(--background-yellow-solid);
+  background-color: var(--color-yellow-solid);
 }

@@ -23,8 +23,9 @@ const meta: Meta<ButtonProps> = {
         icon: {control: 'select'},
         hoverBackground: {control: 'select'},
         hoverColor: {control: 'select'},
-        hoverScale: {control: 'select'}
-
+        hoverScale: {control: 'select'},
+        onClick: { action: 'clicked' },
+        allCaps: {control: 'boolean'}
     },
 
 } satisfies Meta<typeof ButtonTest>;
@@ -33,106 +34,145 @@ export default meta;
 
 type Story = StoryObj<typeof ButtonTest>;
 
-export const ButtonCustom: Story = {
+export const ButtonCreate: Story = {
     args: {
-        label: 'Custom Button',
-        color: 'white-light',
-        backgroundColor: 'blue-solid',
-        fontSize: '18',
-        fontWeight: '100',
-        padding: 'sm',
-        margin: '0',
+        backgroundColor: 'green-solid',
         borderRadius: 'md',
-        boxShadow: 'none',
-        hoverBackground: 'blue-medium',
-        hoverColor: 'blue-solid',
-        hoverScale: 110
+        boxShadow: 'md',
+        color: 'white-light',
+        fontSize: '20',
+        fontWeight: '500',
+        hoverBackground: 'green-medium',
+        hoverColor: 'green-solid',
+        hoverScale: 100,
+        icon: 'save',
+        label: 'Crear Registro',
+        margin: '0',
+        onClick: () => {
+            console.log("se ejecuta funcion anonima");
+        },
+        padding: 'sm',
     },
 };
 
-export const ButtonCreate: Story = {
+export const ButtonCustom: Story = {
     args: {
-        label: 'Crear Registro',
-        color: 'white-light',
-        backgroundColor: 'green-solid',
-        fontSize: '20',
-        fontWeight: '500',
-        padding: 'sm',
-        margin: '0',
+        backgroundColor: 'blue-solid',
         borderRadius: 'md',
-        boxShadow: 'md',
-        icon: 'save',
-        hoverBackground: 'green-medium',
-        hoverColor: 'green-solid',
-        hoverScale: 100
+        boxShadow: 'none',
+        color: 'white-light',
+        fontSize: '18',
+        fontWeight: '100',
+        hoverBackground: 'blue-medium',
+        hoverColor: 'blue-solid',
+        hoverScale: 110,
+        label: 'Custom Button',
+        margin: '0',
+        onClick: () => {
+            console.log("se ejecuta funcion anonima");
+        },
+        padding: 'sm',
     },
 };
 
 export const ButtonDelete: Story = {
     args: {
-        label: 'Eliminar',
-        color: 'white-light',
         backgroundColor: 'red-solid',
-        fontSize: '20',
-        fontWeight: '500',
-        padding: 'sm',
-        margin: '0',
         borderRadius: 'md',
         boxShadow: 'md',
-        icon: 'trash',
+        color: 'white-light',
+        fontSize: '20',
+        fontWeight: '500',
         hoverBackground: 'red-medium',
         hoverColor: 'red-solid',
-        hoverScale: 100
-    },
-};
-
-export const ButtonInfo: Story = {
-    args: {
-        label: 'Información',
-        color: 'white-light',
-        backgroundColor: 'blue-solid',
-        fontSize: '20',
-        fontWeight: '500',
+        hoverScale: 100,
+        icon: 'trash',
+        label: 'Eliminar',
+        margin: '0',
+        onClick: () => {
+            console.log("se ejecuta funcion anonima");
+        },
         padding: 'sm',
-        margin: '0',
-        borderRadius: 'md',
-        boxShadow: 'md',
-        icon: 'checkboxFilled',
-        hoverBackground: 'blue-medium',
-        hoverColor: 'blue-solid',
-        hoverScale: 100
-    },
-};
-
-export const ButtonScale: Story = {
-    args: {
-        label: 'Button Scale',
-        color: 'white-light',
-        backgroundColor: 'blue-solid',
-        fontSize: '18',
-        fontWeight: '500',
-        padding: 'xs',
-        margin: '0',
-        borderRadius: 'md',
-        boxShadow: 'md',
-        hoverBackground: 'blue-solid',
-        hoverColor: 'white-light',
-        hoverScale: 120
     },
 };
 
 export const ButtonIcon: Story = {
     args: {
-        label: '',
-        color: 'white-light',
         backgroundColor: 'blue-solid',
-        fontSize: '20',
-        fontWeight: '500',
-        padding: 'sm',
-        margin: '0',
         borderRadius: 'md',
         boxShadow: 'md',
+        color: 'white-light',
+        fontSize: '20',
+        fontWeight: '500',
+        hoverScale: 110,
         icon: 'edit',
-        hoverScale: 110
+        label: '',
+        margin: '0',
+        onClick: () => {
+            console.log("se ejecuta funcion anonima");
+        },
+        padding: 'sm',
+    },
+};
+
+export const ButtonInfo: Story = {
+    args: {
+        backgroundColor: 'blue-solid',
+        borderRadius: 'md',
+        boxShadow: 'md',
+        color: 'white-light',
+        fontSize: '20',
+        fontWeight: '500',
+        hoverBackground: 'blue-medium',
+        hoverColor: 'blue-solid',
+        hoverScale: 100,
+        icon: 'checkboxFilled',
+        label: 'Información',
+        margin: '0',
+        onClick: () => {
+            console.log("se ejecuta funcion anonima");
+        },
+        padding: 'sm',
+    },
+};
+
+export const ButtonScale: Story = {
+    args: {
+        backgroundColor: 'blue-solid',
+        borderRadius: 'md',
+        boxShadow: 'md',
+        color: 'white-light',
+        fontSize: '18',
+        fontWeight: '500',
+        hoverBackground: 'blue-solid',
+        hoverColor: 'white-light',
+        hoverScale: 120,
+        label: 'Button Scale',
+        margin: '0',
+        onClick: () => {
+            console.log("se ejecuta funcion anonima");
+        },
+        padding: 'xs',
+    },
+};
+
+export const ButtonAllCaps: Story = {
+    args: {
+        backgroundColor: 'blue-solid',
+        borderRadius: 'md',
+        boxShadow: 'md',
+        color: 'white-light',
+        fontSize: '18',
+        fontWeight: '500',
+        hoverBackground: 'blue-solid',
+        hoverColor: 'white-light',
+        hoverScale: 100,
+        label: 'Button Scale',
+        margin: '0',
+        onClick: () => {
+            console.log("se ejecuta funcion anonima");
+        },
+        padding: 'xs',
+        allCaps: true,
     },
 };

@@ -11,8 +11,8 @@ import {
 import { ScaleValue } from "@types-data/scale";
 
 export interface ButtonProps {
-    icon?: IconOpcion;
     label: string;
+    icon?: IconOpcion;
     color?: ColorOption;
     fontSize?: FontSizeOption;
     fontWeight?: FontWeightOption;
@@ -24,4 +24,6 @@ export interface ButtonProps {
     hoverBackground?: ColorOption;
     hoverColor?: ColorOption;
     hoverScale?:ScaleValue;
+    allCaps?: boolean;
+    onClick: () => void;
 }

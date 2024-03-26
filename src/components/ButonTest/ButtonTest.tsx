@@ -4,18 +4,20 @@ import { getIconByName } from "../../icon/handlerIcon";
 
 export const ButtonTest: React.FC<ButtonProps> = ({
   color = 'black-solid',
-  backgroundColor = 'blue-solid',
-  fontSize= '20',
+  fontSize = '20',
   fontWeight = 'normal',
-  margin= 'md',
-  padding= 'md',
-  borderRadius= 'md',
-  boxShadow= 'none',
+  margin = 'md',
+  padding = 'md',
+  borderRadius = 'md',
+  boxShadow = 'none',
   hoverBackground,
+  backgroundColor = 'blue-solid',
   hoverColor,
-  icon,
   label = 'Guardar registro',
-  hoverScale = 100
+  hoverScale = 100,
+  allCaps = false,
+  icon,
+  onClick
 }) => {
 
 const classes = `
@@ -32,10 +34,16 @@ const classes = `
   hover-scale-${hoverScale}
 `;
   const iconData = icon ? getIconByName(icon) : null; 
+  
+  const labelData = allCaps ? label.toUpperCase() : label;
+
   return (
-    <button className={classes}> 
+    <button 
+      className={classes}
+      onClick={onClick}
+    > 
        {iconData ? iconData : null}
-       {label ? <span className="label">{label}</span> : null }
+       {label ? <span className="label">{labelData}</span> : null }
     </button>
   ); 
 };

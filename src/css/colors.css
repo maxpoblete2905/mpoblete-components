@@ -1,0 +1,52 @@
+:root {
+  /* Colores de texto claros */
+  --color-black-light: #333; /* Negro claro */
+  --color-white-light: #f5f5f5; /* Blanco claro */
+  --color-red-light: #ffcccc; /* Rojo claro */
+  --color-green-light: #ccffcc; /* Verde claro */
+  --color-blue-light: #cce5ff; /* Azul claro */
+  --color-yellow-light: #ffffcc; /* Amarillo claro */
+  --color-orange-light: #ffe0b3; /* Naranja claro */
+  --color-purple-light: #e0ccff; /* Morado claro */
+  --color-gray-light: #f2f2f2; /* Gris claro */
+  --color-pink-light: #ffcce6; /* Rosa claro */
+  --color-brown-light: #e6ccb3; /* Marrón claro */
+  --color-cyan-light: #ccffff; /* Cian claro */
+  --color-magenta-light: #ffccff; /* Magenta claro */
+  --color-teal-light: #ccffcc; /* Turquesa claro */
+  --color-lime-light: #e6ffcc; /* Lima claro */
+
+  /* Colores de texto medios */
+  --color-black-medium: #222; /* Negro medio */
+  --color-white-medium: #ddd; /* Blanco medio */
+  --color-red-medium: #ff9999; /* Rojo medio */
+  --color-green-medium: #99ff99; /* Verde medio */
+  --color-blue-medium: #99ccff; /* Azul medio */
+  --color-yellow-medium: #ffff99; /* Amarillo medio */
+  --color-orange-medium: #ffcc99; /* Naranja medio */
+  --color-purple-medium: #cc99ff; /* Morado medio */
+  --color-gray-medium: #cccccc; /* Gris medio */
+  --color-pink-medium: #ff99cc; /* Rosa medio */
+  --color-brown-medium: #cc9966; /* Marrón medio */
+  --color-cyan-medium: #99ffff; /* Cian medio */
+  --color-magenta-medium: #ff99ff; /* Magenta medio */
+  --color-teal-medium: #99ff99; /* Turquesa medio */
+  --color-lime-medium: #ccff99; /* Lima medio */
+
+  /* Colores de texto sólidos */
+  --color-black-solid: #111; /* Negro sólido */
+  --color-white-solid: #aaa; /* Blanco sólido */
+  --color-red-solid: #cc0000; /* Rojo sólido */
+  --color-green-solid: #009900; /* Verde sólido */
+  --color-blue-solid: #003399; /* Azul sólido */
+  --color-yellow-solid: #cccc00; /* Amarillo sólido */
+  --color-orange-solid: #cc6600; /* Naranja sólido */
+  --color-purple-solid: #6600cc; /* Morado sólido */
+  --color-gray-solid: #666666; /* Gris sólido */
+  --color-pink-solid: #cc0099; /* Rosa sólido */
+  --color-brown-solid: #663300; /* Marrón sólido */
+  --color-cyan-solid: #006666; /* Cian sólido */
+  --color-magenta-solid: #990099; /* Magenta sólido */
+  --color-teal-solid: #006600; /* Turquesa sólido */
+  --color-lime-solid: #669900; /* Lima sólido */
+}

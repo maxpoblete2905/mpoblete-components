@@ -1,6 +1,6 @@
 /* Importa todos los estilos CSS */
 @import "./ButtonTest.css";
-@import "./color.css";
+@import "./fontColor.css";
 @import "./backGroudColors.css";
 @import "./fontsize.css";
 @import "./fontweight.css";
@@ -11,3 +11,4 @@
 @import "./hoverBackground.css";
 @import "./hoverColor.css";
 @import "./hoverScale.css";
+@import "./colors.css";

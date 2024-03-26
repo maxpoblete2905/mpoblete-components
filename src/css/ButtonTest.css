@@ -17,13 +17,3 @@
   margin: 0px; /* Elimina el margen en todos los lados del elemento */
   margin-left: 5px; /* Establece un margen izquierdo de 5px */
 }
-
-/* .custom-button:hover { */
- 
-  /* border: 1px solid black; */
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  */
-  /* transform: rotate(
-    360deg
-  ); 
-  transition: transform 0.3s ease;  */
-/* } */
