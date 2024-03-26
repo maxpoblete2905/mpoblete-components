@@ -3,6 +3,9 @@
   border: none;
   outline: none;
   transition: all 0.5s ease;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
 }
 
 .hover-color-black:hover {

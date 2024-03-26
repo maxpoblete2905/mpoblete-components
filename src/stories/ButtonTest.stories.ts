@@ -1,7 +1,7 @@
 // ButtonComponent.stories.tsx
 import { Meta, StoryObj } from "@storybook/react";
 import '../css/index.css';
-import { ButtonProps } from "src/components/ButonTest/ButtonPros";
+import { ButtonProps } from "../components/ButonTest/ButtonPros";
 import { ButtonTest } from '../components/ButonTest/ButtonTest'
 
 const meta: Meta<ButtonProps> = {
