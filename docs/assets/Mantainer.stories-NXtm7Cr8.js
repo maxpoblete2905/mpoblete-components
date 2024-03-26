@@ -110,4 +110,4 @@
       console.log("delete", data);
     }
   }
-}`,...(r0=(e0=gn.parameters)==null?void 0:e0.docs)==null?void 0:r0.source}}};const Kp=["Basice"];export{gn as Basice,Kp as __namedExportsOrder,$p as default};
+}`,...(r0=(e0=gn.parameters)==null?void 0:e0.docs)==null?void 0:r0.source}}};const Kp=["Mantainer"];export{gn as Mantainer,Kp as __namedExportsOrder,$p as default};

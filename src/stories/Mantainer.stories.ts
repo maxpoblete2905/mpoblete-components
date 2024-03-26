@@ -33,7 +33,7 @@ const meta: Meta<MantainerProps> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Basice: Story = {
+export const Mantainer: Story = {
   args: {
     data: registros,
     columns: columns,
