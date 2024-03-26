@@ -9,18 +9,30 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
+    "chromatic": "npx chromatic --project-token=chpt_b1b879a692cba1d",
+    "delete:docs": "del-cli docs",
+    "delete:build-storybook": "del-cli storybook-static",
+    "create:docs-directory": "mkdir docs",
+    "copy:storybook-static": "xcopy /s storybook-static\\* docs",
+    "create:nojekyll-file": "type nul > docs\\.nojekyll",
+    "copy:dist": "npm run create:docs-directory && npm run copy:storybook-static && npm run create:nojekyll-file",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_b1b879a692cba1d"
+    "build:github": "npm run delete:docs && npm run build-storybook && npm run copy:dist && npm run delete:build-storybook"
+  
   },
+
   "dependencies": {
     "@types/xlsx": "^0.0.36",
     "bootstrap": "^5.3.3",
+    "copyfiles": "^2.4.1",
+    "del-cli": "^5.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "uuid": "^9.0.1"
   },
+
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-interactions": "^7.6.17",
