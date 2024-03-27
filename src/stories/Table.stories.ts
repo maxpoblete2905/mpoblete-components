@@ -1,10 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import {
   TableColumn,
   TableComponent,
   TableProps,
-} from "../components/Tabla/Table.component";
+} from "../components/tabla/Table.component";
 import { TableData } from "../apps/Mantainer/Mantainer";
 import { registros } from "../mock/data";
 

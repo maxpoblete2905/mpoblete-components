@@ -1,4 +1,4 @@
-export type ScaleValue = 
+export type Scaleoption = 
 100 | 
 105 | 
 110 | 

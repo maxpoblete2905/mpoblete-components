@@ -6,6 +6,9 @@ import { FontSizeOption } from "./fontsize.ts";
 import { MarginOption } from "./margin.ts";
 import { PaddingOption } from "./padding.ts";
 import { IconOpcion } from "./icon.ts";
+import { Scaleoption } from "./scale.ts";
+import { InputWidth } from "./inputWidth.ts";
+import { FontOption } from "./font.ts";
 
 export type {
     BorderRadiusOption,
@@ -15,5 +18,8 @@ export type {
     FontSizeOption,
     MarginOption,
     PaddingOption,
-    IconOpcion
+    IconOpcion,
+    Scaleoption,
+    InputWidth,
+    FontOption
 }

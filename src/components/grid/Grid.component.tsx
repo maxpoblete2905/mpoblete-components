@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import { Col, Container, Row } from "react-bootstrap";
 
 interface GridComponentProps {
   children: ReactNode;
@@ -9,19 +8,35 @@ interface GridComponentProps {
 
 export const GridComponent: React.FC<GridComponentProps> = ({
   children,
-  col,
   color,
 }) => {
+  const containerStyle = {
+    padding: "20px",
+    borderRadius: 10,
+  };
+
+  const columnStyle = {
+    flexGrow: 1,
+  };
+
   return (
-    <Container
-      style={{ padding: "20px", borderRadius: 10 }}
-      className={`theme-${color}`}
+    <div
+      style={{
+        ...containerStyle,
+        backgroundColor: color === "primary" ? "blue" : color === "secondary" ? "green" : "black", // Example background colors, change as needed
+      }}
     >
-      <Row>
-        <Col className={`theme-secondary`} xs={12} md={col}>
+      <div className="row">
+        <div
+          className="col"
+          style={{
+            ...columnStyle,
+            backgroundColor: color === "secondary" ? "green" : "inherit", // Example background colors, change as needed
+          }}
+        >
           {children}
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };

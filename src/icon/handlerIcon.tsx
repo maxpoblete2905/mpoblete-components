@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { BsTrash, BsPlus, BsPencil } from "react-icons/bs";
 import { RiCheckboxBlankCircleLine, RiCheckboxCircleFill } from "react-icons/ri";
 import { AiOutlineSave, AiOutlineClose } from "react-icons/ai";
-import { FaHome, FaUser, FaSearch, FaCog, FaHeart, FaBell, FaEnvelope, FaStar, FaThumbsUp, FaThumbsDown, FaComment, FaBars, FaTimes, FaChevronLeft, FaChevronRight, FaChevronUp, FaChevronDown, FaArrowLeft, FaArrowRight, FaArrowUp, FaArrowDown, FaCheck, FaTimesCircle, FaExclamationTriangle, FaInfoCircle, FaQuestionCircle, FaRegLaugh, FaRegFrown, FaRegMeh, FaRegGrin, FaRegGrinStars, FaRegGrinTears, FaRegSadTear, FaRegSadCry, FaRegTired, FaRegDizzy, FaRegFlushed, FaRegAngry, FaRegMehBlank, FaRegSmileBeam, FaRegGrinBeam, FaRegKissWinkHeart, FaRegLaughWink, FaRegSmileWink, FaRegSurprise, FaRegMehRollingEyes } from "react-icons/fa";
+import { FaLock ,FaHome, FaUser, FaSearch, FaCog, FaHeart, FaBell, FaEnvelope, FaStar, FaThumbsUp, FaThumbsDown, FaComment, FaBars, FaTimes, FaChevronLeft, FaChevronRight, FaChevronUp, FaChevronDown, FaArrowLeft, FaArrowRight, FaArrowUp, FaArrowDown, FaCheck, FaTimesCircle, FaExclamationTriangle, FaInfoCircle, FaQuestionCircle, FaRegLaugh, FaRegFrown, FaRegMeh, FaRegGrin, FaRegGrinStars, FaRegGrinTears, FaRegSadTear, FaRegSadCry, FaRegTired, FaRegDizzy, FaRegFlushed, FaRegAngry, FaRegMehBlank, FaRegSmileBeam, FaRegGrinBeam, FaRegKissWinkHeart, FaRegLaughWink, FaRegSmileWink, FaRegSurprise, FaRegMehRollingEyes } from "react-icons/fa";
 
 interface IconLibrary {
   [key: string]: ReactNode; 
@@ -62,6 +62,8 @@ const icons: IconLibrary = {
   smileWink: <FaRegSmileWink />,
   surprise: <FaRegSurprise />,
   mehRollingEyes: <FaRegMehRollingEyes />,
+  lock: <FaLock />,
+
 };
 
 export const getIconByName = (name: string): ReactNode | null => {

@@ -1,11 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import {
   MantainerComponent,
   MantainerProps,
 } from "../apps/Mantainer/Mantainer";
-import { TableColumn } from "../components/Tabla/Table.component";
+import { TableColumn } from "../components/tabla/Table.component";
 import { registros } from "../mock/data";
 
 const columns: TableColumn[] = [

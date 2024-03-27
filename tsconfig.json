@@ -28,6 +28,9 @@
       ],
       "@types-data/*": [
         "src/types/*"
+      ],
+      "@components/*": [
+        "src/components/*"
       ]
     }
   },

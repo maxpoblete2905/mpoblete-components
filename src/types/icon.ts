@@ -51,5 +51,6 @@ export type IconOpcion =
   | 'laughWink'
   | 'smileWink'
   | 'surprise'
-  | 'mehRollingEyes';
+  | 'mehRollingEyes'
+  | 'lock';
   

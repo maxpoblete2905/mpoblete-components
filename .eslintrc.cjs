@@ -12,6 +12,5 @@ module.exports = {
       
     ],
      // Agregar regla para tabuladores
-     'no-tabs': 'error',
   },
 }

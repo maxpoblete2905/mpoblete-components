@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TableData } from "./Mantainer";
-import { CustomInput } from "../../components/input/Input.component";
+import { InputComponent } from "../../components/input/Input";
 import { ModalComponent } from "../../components/modal/Modal";
 
 function removeItem(array: string[], valuesToRemove: string[]): string[] {
@@ -38,23 +38,24 @@ export const CreateForm = <T extends TableData>({
       title={"Crear Elemento"}
       show={show}
       onHide={onHide}
-      children={
-        inputs &&
-        removeItem(inputs, ["id", "creationDate"]).map((key) => (
-          <CustomInput
-            key={key}
-            id={key}
-            label={key}
-            type={"text"}
-            value={createItem[key as keyof T]?.toString() || ""}
-            placeholder={`ingrege ${key}`}
-            theme={"primary"}
-            isneon={false}
-            errors={false}
-            handleChange={handleInputChange}
-          />
-        ))
-      }
+      children={<></>}
+      // children={
+      //   inputs &&
+      //   removeItem(inputs, ["id", "creationDate"]).map((key) => (
+      //     <CustomInput
+      //       key={key}
+      //       id={key}
+      //       label={key}
+      //       type={"text"}
+      //       value={createItem[key as keyof T]?.toString() || ""}
+      //       placeholder={`ingrege ${key}`}
+      //       theme={"primary"}
+      //       isneon={false}
+      //       errors={false}
+      //       handleChange={handleInputChange}
+      //     />
+      //   ))
+      // }
       onSubmit={handleSubmit}
     />
   );

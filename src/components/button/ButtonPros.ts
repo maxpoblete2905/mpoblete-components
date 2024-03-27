@@ -1,4 +1,3 @@
-import { IconOpcion } from "@types-data/icon";
 import {
     BorderRadiusOption,
     BoxShadowOption,
@@ -7,8 +6,9 @@ import {
     FontSizeOption,
     MarginOption,
     PaddingOption,
+    Scaleoption,
+    IconOpcion
 } from "@types-data/index";
-import { ScaleValue } from "@types-data/scale";
 
 export interface ButtonProps {
     label: string;
@@ -23,7 +23,8 @@ export interface ButtonProps {
     backgroundColor?: ColorOption;
     hoverBackground?: ColorOption;
     hoverColor?: ColorOption;
-    hoverScale?:ScaleValue;
+    hoverScale?:Scaleoption;
     allCaps?: boolean;
+    disabled?: boolean;
     onClick: () => void;
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { TableData } from "./Mantainer";
-import { CustomInput } from "../../components/input/Input.component";
+import { InputComponent } from "../../components/input/Input";
 import { ModalComponent } from "../../components/modal/Modal";
 
 function deleteKeys<T>(obj: T, keysToDelete: (keyof T)[]): T {
@@ -56,18 +56,19 @@ const EditForm = <T extends TableData>({
         editedItem &&
         Object.keys(deleteKeys(editedItem, ["id", "creationDate"])).map(
           (key) => (
-            <CustomInput
-              key={key}
-              id={key}
-              label={key}
-              type={"text"}
-              value={editedItem[key as keyof T]?.toString() || ""}
-              placeholder={key}
-              theme={"primary"}
-              isneon={false}
-              errors={false}
-              handleChange={handleInputChange}
-            />
+            <>{key}</>
+            // <CustomInput
+            //   key={key}
+            //   id={key}
+            //   label={key}
+            //   type={"text"}
+            //   value={editedItem[key as keyof T]?.toString() || ""}
+            //   placeholder={key}
+            //   theme={"primary"}
+            //   isneon={false}
+            //   errors={false}
+            //   handleChange={handleInputChange}
+            // />
           )
         )
       }

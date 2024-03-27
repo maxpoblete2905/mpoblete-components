@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
-import { CustomInput } from "../../components/input/Input.component";
+import { InputComponent } from "../../components/input/Input";
 
 interface FilterProps {
   value: string[];
@@ -64,8 +64,8 @@ const Filter: React.FC<FilterProps> = ({ value, onChange }) => {
           className="d-inline-block"
           style={{ marginRight: "5px" }}
         >
-          {type === "text" ? (
-            <CustomInput
+          {/* {type === "text" ? (
+            <InputComponent
               id={""}
               label={label}
               type={type}
@@ -74,7 +74,7 @@ const Filter: React.FC<FilterProps> = ({ value, onChange }) => {
               theme={"primary"}
               isneon={false}
               errors={false}
-              handleChange={(e) => handleTextChange(e.target.value)}
+              handleChange={(e: { target: { value: string; }; }) => handleTextChange(e.target.value)}
             />
           ) : (
             <CustomInput
@@ -92,7 +92,7 @@ const Filter: React.FC<FilterProps> = ({ value, onChange }) => {
               isneon={false}
               errors={false}
             />
-          )}
+          )} */}
         </div>
       ))}
     </>

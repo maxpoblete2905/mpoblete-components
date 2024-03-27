@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useCallback, useMemo } from "react";
-import { Card, Button, Row, Col } from "react-bootstrap";
-import { BsTrash, BsPlus } from "react-icons/bs";
-import { TableColumn, TableComponent } from "../../components/Tabla/Table.component";
+import { Card, Row, Col } from "react-bootstrap";
+import { TableColumn, TableComponent } from "../../components/tabla/Table.component";
 import { CreateForm } from "./CreateForm";
 import { v4 as uuidv4 } from "uuid";
-import { ExcelDownloadButton } from "../../components/downloadExcel/ExcelDownloadButton";
 import Pagination from "../../components/pagination/Paginacion";
 import EditForm from "./EditForm";
 import DeleteForm from "./DeleteForm";
 import Filter from "./Filter";
+import { ButtonTest } from "../../components/button/Button";
+import { handleDownload } from "../../util/handlerDownloadExcel";
 
 function eliminarEspacios(cadena: string): string {
   return cadena.replace(/\s+/g, "");
@@ -200,33 +200,35 @@ export const MantainerComponent: React.FC<MantainerProps> = ({
               <Filter value={filter} onChange={setFilter} />
             </Col>
 
-            <Col
-              md={2}
-              style={{
-                textAlign: "right",
-                display: "flex",
-                justifyContent: "end",
-                alignItems: "center",
-                marginTop: 28,
-              }}
-            >
-              <Button
-                variant="danger"
-                style={{ marginRight: "5px" }}
+            <Col md={2}>
+              <ButtonTest
+                backgroundColor="red-solid"
+                color="white-light"
+                icon="trash"
+                label=""
                 onClick={handleDeleteMultiple}
                 disabled={selectedItemIds.length === 0}
-              >
-                <BsTrash />
-              </Button>
-              <Button
-                variant="success"
+                margin='xs'
+              />
+              
+              <ButtonTest
+                backgroundColor="green-solid"
+                color="white-light"
+                icon="save"
+                label=""
                 onClick={handleAddClick}
-                style={{ marginRight: "5px" }}
-              >
-                <BsPlus />
-              </Button>
-              <ExcelDownloadButton data={currentData} fileName={"mi-data"} />
-            </Col>
+                margin='xs'
+              />
+
+              <ButtonTest
+                backgroundColor="green-solid"
+                color="white-light"
+                icon='arrowDown'
+                label=""
+                onClick={()=> handleDownload(currentData, "mi-data")}
+                margin='xs'
+              />
+             </Col>
           </Row>
         </Card.Header>
 
