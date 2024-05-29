@@ -1,4 +1,4 @@
-export const registros = [
+export const records = [
   {
     id: "0",
     nombre: "Juan",

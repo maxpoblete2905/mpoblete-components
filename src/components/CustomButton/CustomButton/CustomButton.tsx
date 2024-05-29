@@ -2,7 +2,7 @@ import React from 'react';
 import './CustomButton.css';
 import './CustomButtonColor.css'
 import { CustomButtonProps } from './CustomButtonProps';
-import { getIconByName } from '../../icon/handlerIcon';
+import { getIconByName } from '../../../icon/handlerIcon';
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   label,

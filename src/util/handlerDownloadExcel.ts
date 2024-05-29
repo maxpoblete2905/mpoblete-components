@@ -1,7 +1,7 @@
 import * as XLSX from "xlsx";
 
 type DataItem = {
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 export const handleDownload = <T extends DataItem>(

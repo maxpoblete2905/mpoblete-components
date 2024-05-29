@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { CustomButtonProps } from "../components/button/CustomButtonProps";
-import CustomButton from '../components/button/CustomButton'
+import { CustomButtonProps } from "../components/CustomButton/CustomButton/CustomButtonProps";
+import CustomButton from '../components/CustomButton/CustomButton/CustomButton'
 
 const meta: Meta<CustomButtonProps> = {
-    title: "Component/Button",
+    title: "Component/Buttons/Buton",
     component: CustomButton,
     tags: ["autodocs"],
     parameters: {
