@@ -67,7 +67,7 @@ const icons: IconLibrary = {
 };
 
 export const getIconByName = (name: string): ReactNode | null => {
-  if (icons.hasOwnProperty(name)) {
+  if (Object.prototype.hasOwnProperty.call(icons, name)) {
     return icons[name];
   } else {
     console.error(`Icono '${name}' no encontrado.`);

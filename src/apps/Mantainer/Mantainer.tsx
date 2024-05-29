@@ -7,7 +7,7 @@ import Pagination from "../../components/pagination/Paginacion";
 import EditForm from "./EditForm";
 import DeleteForm from "./DeleteForm";
 import Filter from "./Filter";
-import { ButtonTest } from "../../components/button/Button";
+import { ButtonTest } from "../../components/button/CustomButton";
 import { handleDownload } from "../../util/handlerDownloadExcel";
 
 function eliminarEspacios(cadena: string): string {
