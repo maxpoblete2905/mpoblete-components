@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@types/xlsx": "^0.0.36",
+    "bootstrap": "^5.3.3",
     "copyfiles": "^2.4.1",
     "del-cli": "^5.1.0",
     "react": "^18.2.0",
@@ -34,8 +35,9 @@
     "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
+    "@storybook/addon-webpack5-compiler-babel": "^3.0.3",
     "@storybook/blocks": "^7.6.17",
-    "@storybook/react": "^7.6.17",
+    "@storybook/react": "^7.6.19",
     "@storybook/react-vite": "^7.6.17",
     "@storybook/test": "^7.6.17",
     "@types/react": "^18.2.56",

@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { CustomButtonProps } from "../components/CustomButton/CustomButton/CustomButtonProps";
-import CustomButton from '../components/CustomButton/CustomButton/CustomButton'
+import { CustomButtonProps } from "@components/CustomButton/interfaces";
+import { CustomButton } from "@components/index";
 
 const meta: Meta<CustomButtonProps> = {
-    title: "Component/Buttons/Buton",
+    title: "Component/Buttons/Button",
     component: CustomButton,
     tags: ["autodocs"],
     parameters: {
@@ -55,6 +55,10 @@ const meta: Meta<CustomButtonProps> = {
         },
       },
       icon: {
+        control: 'select',
+        description: 'Elemento de icono para el botón'
+      },
+      borderRedius: {
         control: 'select',
         description: 'Elemento de icono para el botón'
       },

@@ -1,4 +1,4 @@
-export type IconOpcion = 
+export type IconsType = 
   'trash' 
   | 'plus' 
   | 'edit' 
@@ -52,5 +52,6 @@ export type IconOpcion =
   | 'smileWink'
   | 'surprise'
   | 'mehRollingEyes'
-  | 'lock';
+  | 'lock'
+  | 'none';
   

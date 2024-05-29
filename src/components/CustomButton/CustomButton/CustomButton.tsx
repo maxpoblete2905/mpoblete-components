@@ -1,31 +1,41 @@
-import React from 'react';
-import './CustomButton.css';
-import './CustomButtonColor.css'
-import { CustomButtonProps } from './CustomButtonProps';
-import { getIconByName } from '../../../icon/handlerIcon';
+import React from "react";
+import "../css/CustomButton.css";
+import "../css/CustomButtonIcon.css";
+import "../css/CustomButtonColor.css";
+import "../css/CustomButtonBorderRadius.css";
+import { searchIconByName } from "@icon/handlerIcon";
+import { CustomButtonProps } from "../interfaces";
 
-const CustomButton: React.FC<CustomButtonProps> = ({
+export const CustomButton: React.FC<CustomButtonProps> = ({
   label,
   onClick,
-  type = 'button',
+  type = "button",
   disabled = false,
-  size = 'medium',
-  color = 'default',
+  size = "medium",
+  color = "default",
+  borderRedius = "sm",
   icon,
 }) => {
-  const classNames = `custom-button ${size} ${color}`;
+  const classButton = `custom-button 
+    ${size} 
+    ${color} 
+    ${borderRedius} 
+    ${label ? "label-is" : "label-none"}
+  `;
+
+  const classIcon = `button-icon 
+    ${label ? "label-is" : "label-none"}
+  `;
 
   return (
     <button
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={classNames}
+      className={classButton}
     >
-      {icon && <span className="button-icon">{getIconByName(icon)}</span>}
+      {icon && <span className={classIcon}>{searchIconByName(icon!)}</span>}
       {label}
     </button>
   );
 };
-
-export default CustomButton;

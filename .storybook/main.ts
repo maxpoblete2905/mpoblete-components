@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -14,6 +15,17 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
+  },
+  async viteFinal(config, { configType }) {
+    // ... any existing Vite config modifications 
+    config.resolve!.alias = {
+      '@components': path.resolve(__dirname, '../src/components'), // Ensure alignment with Vite config
+      process: 'process/browser',
+    };
+    config.define = config.define || {};
+    config.define['process.env'] = {}; 
+
+    return config;
   },
 };
 export default config;

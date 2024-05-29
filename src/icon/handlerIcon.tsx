@@ -66,7 +66,7 @@ const icons: IconLibrary = {
 
 };
 
-export const getIconByName = (name: string): ReactNode | null => {
+export const searchIconByName = (name: string): ReactNode | null => {
   if (Object.prototype.hasOwnProperty.call(icons, name)) {
     return icons[name];
   } else {
