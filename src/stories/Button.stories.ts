@@ -55,11 +55,8 @@ const meta: Meta<CustomButtonProps> = {
         },
       },
       icon: {
-        control: 'node',
-        description: 'Elemento de icono para el botón',
-        table: {
-          type: { summary: 'ReactNode' },
-        },
+        control: 'select',
+        description: 'Elemento de icono para el botón'
       },
     },
   } satisfies Meta<typeof CustomButton>;
@@ -80,6 +77,6 @@ export const ButtonCreate: Story = {
         disabled: false,
         size: "medium", // Puedes cambiar el tamaño predeterminado aquí
         color: "default", // Puedes cambiar el color predeterminado aquí
-        icon: null, // Puedes añadir un icono aquí si es necesario
+        icon: "arrowLeft", // Puedes añadir un icono aquí si es necesario
     },
 };

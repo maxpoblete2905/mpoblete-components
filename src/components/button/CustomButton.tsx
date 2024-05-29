@@ -2,6 +2,7 @@ import React from 'react';
 import './CustomButton.css';
 import './CustomButtonColor.css'
 import { CustomButtonProps } from './CustomButtonProps';
+import { getIconByName } from '../../icon/handlerIcon';
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   label,
@@ -21,7 +22,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       disabled={disabled}
       className={classNames}
     >
-      {icon && <span className="button-icon">{icon}</span>}
+      {icon && <span className="button-icon">{getIconByName(icon)}</span>}
       {label}
     </button>
   );
