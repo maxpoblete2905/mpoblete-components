@@ -1,0 +1,44 @@
+.custom-button.primary {
+  background-color: #0069d9;
+  color: white;
+}
+
+.custom-button.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.custom-button.danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.custom-button.custom-primary {
+  background-color: #ff5733; /* Naranja */
+  color: white;
+}
+
+.custom-button.custom-secondary {
+  background-color: #9b59b6; /* Morado */
+  color: white;
+}
+
+.custom-button.custom-danger {
+  background-color: #e74c3c; /* Rojo */
+  color: white;
+}
+
+.custom-button.default {
+  background-color: #cccccc; /* Gris */
+  color: black;
+}
+
+.custom-button.green {
+  background-color: #28a745; /* Verde */
+  color: white;
+}
+
+.custom-button.yellow {
+  background-color: #ffc107; /* Amarillo */
+  color: black;
+}

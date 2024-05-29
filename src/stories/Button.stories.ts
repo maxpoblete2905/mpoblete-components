@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ButtonProps } from "../components/button/ButtonPros";
+import { CustomButtonProps } from "../components/button/CustomButtonProps";
 import CustomButton from '../components/button/CustomButton'
 
-const meta: Meta<ButtonProps> = {
+const meta: Meta<CustomButtonProps> = {
     title: "Component/Button",
     component: CustomButton,
     tags: ["autodocs"],
@@ -39,6 +39,28 @@ const meta: Meta<ButtonProps> = {
           type: { summary: 'boolean' },
         },
       },
+      size: {
+        control: 'select',
+        options: ['small', 'medium', 'large'],
+        description: 'Tamaño del botón',
+        table: {
+          type: { summary: 'small | medium | large' },
+        },
+      },
+      color: {
+        control: 'select',
+        description: 'Color del botón',
+        table: {
+          type: { summary: 'default | primary | secondary | danger' },
+        },
+      },
+      icon: {
+        control: 'node',
+        description: 'Elemento de icono para el botón',
+        table: {
+          type: { summary: 'ReactNode' },
+        },
+      },
     },
   } satisfies Meta<typeof CustomButton>;
   
@@ -52,9 +74,12 @@ export const ButtonCreate: Story = {
       
         label: 'Create',
         onClick: () => {
-            console.log("se ejecuta funcion anonima");
+            alert("se ejecuta funcion anonima");
         },
         type: "button",
-        disabled: false
+        disabled: false,
+        size: "medium", // Puedes cambiar el tamaño predeterminado aquí
+        color: "default", // Puedes cambiar el color predeterminado aquí
+        icon: null, // Puedes añadir un icono aquí si es necesario
     },
 };
