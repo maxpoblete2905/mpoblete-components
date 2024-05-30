@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
-import {CustomButtonDownloadExcel}  from "@components/index"; // Asegúrate de importar el componente correcto
-import { records } from '../mock/data';
+import { records } from "@mock/index";
 import { CustomButtonProps } from "@components/CustomButton/interfaces";
+import { CustomButtonDownloadExcel } from "@components/CustomButton/index";
 
 const meta: Meta<CustomButtonProps> = {
   title: "Component/Buttons/ButonDownloadExcel",
@@ -12,56 +12,56 @@ const meta: Meta<CustomButtonProps> = {
   },
   argTypes: {
     label: {
-      control: 'text',
-      description: 'Texto que se muestra en el botón',
+      control: "text",
+      description: "Texto que se muestra en el botón",
       table: {
-        type: { summary: 'string' },
+        type: { summary: "string" },
       },
     },
     onClick: {
-      action: 'clicked',
-      description: 'Función a ejecutar cuando se hace clic en el botón',
+      action: "clicked",
+      description: "Función a ejecutar cuando se hace clic en el botón",
       table: {
-        type: { summary: '() => void' },
+        type: { summary: "() => void" },
       },
     },
     type: {
-      control: 'select',
-      options: ['button', 'submit', 'reset'],
-      description: 'Tipo del botón',
+      control: "select",
+      options: ["button", "submit", "reset"],
+      description: "Tipo del botón",
       table: {
-        type: { summary: 'button | submit | reset' },
+        type: { summary: "button | submit | reset" },
       },
     },
     disabled: {
-      control: 'boolean',
-      description: 'Si el botón está deshabilitado',
+      control: "boolean",
+      description: "Si el botón está deshabilitado",
       table: {
-        type: { summary: 'boolean' },
+        type: { summary: "boolean" },
       },
     },
     size: {
-      control: 'select',
-      options: ['small', 'medium', 'large'],
-      description: 'Tamaño del botón',
+      control: "select",
+      options: ["small", "medium", "large"],
+      description: "Tamaño del botón",
       table: {
-        type: { summary: 'small | medium | large' },
+        type: { summary: "small | medium | large" },
       },
     },
     color: {
-      control: 'select',
-      description: 'Color del botón',
+      control: "select",
+      description: "Color del botón",
       table: {
-        type: { summary: 'default | primary | secondary | danger' },
+        type: { summary: "default | primary | secondary | danger" },
       },
     },
     icon: {
-      control: 'select',
-      description: 'Elemento de icono para el botón'
+      control: "select",
+      description: "Elemento de icono para el botón",
     },
     borderRedius: {
-      control: 'select',
-      description: 'Elemento de icono para el botón'
+      control: "select",
+      description: "Elemento de icono para el botón",
     },
     data: {
       control: {
@@ -90,15 +90,15 @@ type Story = StoryObj<CustomButtonProps>;
 
 export const ButtonCreate: Story = {
   args: {
-    label: 'Export to Excel',
+    label: "Export to Excel",
     data: records,
     onClick: () => {
-        alert("se ejecuta funcion anonima");
+      alert("se ejecuta funcion anonima");
     },
     type: "button",
     disabled: false,
-    size: "medium", // Puedes cambiar el tamaño predeterminado aquí
-    color: "default", // Puedes cambiar el color predeterminado aquí
-    icon: "arrowLeft", // Puedes añadir un icono aquí si es necesario
+    size: "medium",
+    color: "default",
+    icon: "arrowLeft",
   },
 };

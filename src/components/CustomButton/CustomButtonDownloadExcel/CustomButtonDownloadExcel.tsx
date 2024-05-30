@@ -1,22 +1,8 @@
 import React from "react";
-import "../css/CustomButton.css";
-import "../css/CustomButtonIcon.css";
-import "../css/CustomButtonColor.css";
-import "../css/CustomButtonBorderRadius.css";
-import * as XLSX from "xlsx";
-import { searchIconByName } from "../../../icon/handlerIcon";
-import { CustomButtonProps, DataItem } from "../interfaces";
-
-const handleDownload = (
-  data: DataItem[],
-  header: string[],
-  fileName: string
-) => {
-  const worksheet = XLSX.utils.json_to_sheet(data, { header });
-  const workbook = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
-  XLSX.writeFile(workbook, `${fileName}.xlsx`);
-};
+import "../css/index";
+import { searchIconByName } from "@icon/handlerIcon";
+import { CustomButtonProps } from "../interfaces";
+import { handleDownloadExcel } from "../util";
 
 export const CustomButtonDownloadExcel: React.FC<CustomButtonProps> = ({
   label,
@@ -40,7 +26,7 @@ export const CustomButtonDownloadExcel: React.FC<CustomButtonProps> = ({
   `;
 
   const handleClick = () => {
-    handleDownload(data!, header!, "exported_data");
+    handleDownloadExcel(data!, header!, "exported_data");
   };
 
   return (

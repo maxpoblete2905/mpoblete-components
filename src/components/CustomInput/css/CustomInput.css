@@ -1,0 +1,19 @@
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  width: 250px;
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+}

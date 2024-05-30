@@ -26,7 +26,8 @@
       "@components/*": ["src/components/*"],
       "@styles/*": ["src/css/*"],
       "@types-data/*": ["src/types/*"],
-      "@icon/*": ["src/icon/*"]
+      "@icon/*": ["src/icon/*"],
+      "@mock/*": ["src/mock/*"]
     }
   },
   "include": [

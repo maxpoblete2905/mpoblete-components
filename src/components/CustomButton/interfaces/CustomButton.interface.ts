@@ -1,11 +1,12 @@
-import { IconsType } from "@types-data/icon";
+import { DataItem } from ".";
+
 import {
   BorderRadiusType,
   ButtonColorType,
+  ButtonIconsType,
   ButtonSizeType,
   ButtonType,
 } from "../types";
-import { DataItem } from "./DataItem";
 
 export interface CustomButtonProps {
   label: string;
@@ -13,7 +14,7 @@ export interface CustomButtonProps {
   disabled?: boolean;
   size?: ButtonSizeType;
   color?: ButtonColorType;
-  icon?: IconsType;
+  icon?: ButtonIconsType;
   borderRedius?: BorderRadiusType;
   data?: DataItem[];
   header?: string[];

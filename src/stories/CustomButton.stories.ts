@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { CustomButtonProps } from "@components/CustomButton/interfaces";
-import { CustomButton } from "@components/index";
+import { CustomButton } from "@components/CustomButton/index";
 
 const meta: Meta<CustomButtonProps> = {
     title: "Component/Buttons/Button",

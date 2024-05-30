@@ -20,6 +20,8 @@ const config: StorybookConfig = {
     // ... any existing Vite config modifications 
     config.resolve!.alias = {
       '@components': path.resolve(__dirname, '../src/components'), // Ensure alignment with Vite config
+      '@icon': path.resolve(__dirname, '../src/icon'),
+      '@mock': path.resolve(__dirname, '../src/mock'),
       process: 'process/browser',
     };
     config.define = config.define || {};
