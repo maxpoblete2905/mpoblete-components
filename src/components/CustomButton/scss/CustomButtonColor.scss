@@ -1,4 +1,4 @@
-@import "../../../styles/globalVariables.scss";
+@import "../../../scss/globalVariables.scss";
 
 @mixin button-background($type) {
   background-color: map-get($button-background-colors, $type);

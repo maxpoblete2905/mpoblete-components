@@ -1,4 +1,4 @@
-@import "../../../styles/globalVariables.scss";
+@import "../../../scss/globalVariables.scss";
 
 @mixin button-icon-margin($type) {
   margin-right: map-get($button-icon-margins, $type);
