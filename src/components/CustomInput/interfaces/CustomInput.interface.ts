@@ -1,10 +1,10 @@
-import { IconName } from "@icon/icon.type";
+import { ReactIconsName } from "@icon/types/reactIcons.type";
 import { ChangeEvent } from "react";
 
 export interface CustomInputProps {
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
-  icon?: IconName;
+  icon?: ReactIconsName;
   error?: boolean;
 }

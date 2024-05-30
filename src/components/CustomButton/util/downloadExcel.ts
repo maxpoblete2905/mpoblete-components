@@ -1,8 +1,8 @@
 import * as XLSX from "xlsx";
-import { DataItem } from "../interfaces";
+import { ExcelDatatoDownload } from "../interfaces";
 
 export const handleDownloadExcel = (
-  data: DataItem[],
+  data: ExcelDatatoDownload[],
   header: string[],
   fileName: string
 ) => {

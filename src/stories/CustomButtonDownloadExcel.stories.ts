@@ -99,6 +99,6 @@ export const ButtonCreate: Story = {
     disabled: false,
     size: "medium",
     color: "default",
-    icon: "arrowLeft",
+    icon: "FcAudioFile",
   },
 };

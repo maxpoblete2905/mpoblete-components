@@ -45,6 +45,13 @@ export const SearchInput: Story = {
   },
 };
 
+export const UsernameInput: Story = {
+  args: {
+    placeholder: 'Username...',
+    icon: "FcBusinessman"
+  },
+};
+
 export const PasswordInput: Story = {
   args: {
     placeholder: 'Password...',
@@ -58,4 +65,3 @@ export const PasswordInput2: Story = {
     icon: "FcKey"
   },
 };
-

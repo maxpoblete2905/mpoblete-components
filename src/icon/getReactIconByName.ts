@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons';
 import * as Icons from 'react-icons/fc';
 
-export function getReactIcon(iconName: string): IconType | null {
+export function getReactIconByName(iconName: string): IconType | null {
     if (Object.prototype.hasOwnProperty.call(Icons, iconName)) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error

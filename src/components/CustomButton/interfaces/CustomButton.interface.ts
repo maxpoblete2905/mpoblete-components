@@ -1,9 +1,9 @@
-import { DataItem } from ".";
+import { ReactIcons } from "@icon/types";
+import { excelDataDoDownload } from ".";
 
 import {
   BorderRadiusType,
   ButtonColorType,
-  ButtonIconsType,
   ButtonSizeType,
   ButtonType,
 } from "../types";
@@ -14,9 +14,9 @@ export interface CustomButtonProps {
   disabled?: boolean;
   size?: ButtonSizeType;
   color?: ButtonColorType;
-  icon?: ButtonIconsType;
+  icon?: ReactIcons;
   borderRedius?: BorderRadiusType;
-  data?: DataItem[];
+  data?: excelDataDoDownload[];
   header?: string[];
   onClick?: () => void;
 }

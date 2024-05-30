@@ -1,4 +1,4 @@
-export type IconName =
+export type ReactIcons =
   | "FcBusinesswoman"
   | "FcCalculator"
   | "FcCalendar"

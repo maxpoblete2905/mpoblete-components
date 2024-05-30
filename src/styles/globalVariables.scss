@@ -1,0 +1,50 @@
+$border-radius-values: (
+  none: 0,
+  xs: 2px,
+  sm: 4px,
+  md: 8px,
+  lg: 12px,
+  xl: 16px,
+  xxl: 24px,
+  full: 50px,
+  pill: 100px,
+  custom: 100px,
+);
+
+// _background-colors.scss
+$button-background-colors: (
+  primary: #0069d9,
+  secondary: #6c757d,
+  danger: #dc3545,
+  custom-primary: #ff5733,
+  custom-secondary: #9b59b6,
+  custom-danger: #e74c3c,
+  default: #cccccc,
+  green: #28a745,
+  yellow: #ffc107
+);
+
+// _text-colors.scss
+$button-text-colors: (
+  primary: white,
+  secondary: white,
+  danger: white,
+  custom-primary: white,
+  custom-secondary: white,
+  custom-danger: white,
+  default: black,
+  green: white,
+  yellow: black,
+);
+
+// _icon-button-variables.scss hay que mejorar logica estos estilos
+$button-icon-margins: (
+  label-none: 0px,
+  label-is: 8px
+);
+
+$button-icon-font-sizes: (
+  label-none: null,
+  label-is: 24px
+);
+/// 

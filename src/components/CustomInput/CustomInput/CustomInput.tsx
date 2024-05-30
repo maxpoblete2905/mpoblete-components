@@ -1,6 +1,6 @@
-import "../css/index";
+import "../scss/index.sccs";
 import { CustomInputProps } from "../interfaces";
-import { getReactIcon } from "@icon/getIcons";
+import { getReactIconByName } from "@icon/index";
 
 export const CustomInput: React.FC<CustomInputProps> = ({
   value,
@@ -8,7 +8,7 @@ export const CustomInput: React.FC<CustomInputProps> = ({
   placeholder="agrega un valor",
   icon
 }) => {
-  const IconComponent = getReactIcon(icon!);
+  const IconComponent = getReactIconByName(icon!);
 
   return (
     <div className="input-container">

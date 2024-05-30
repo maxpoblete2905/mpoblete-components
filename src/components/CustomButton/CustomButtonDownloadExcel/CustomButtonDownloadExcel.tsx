@@ -1,8 +1,8 @@
 import React from "react";
-import "../css/index";
-import { searchIconByName } from "@icon/handlerIcon";
+import "../scss/index.scss";
 import { CustomButtonProps } from "../interfaces";
 import { handleDownloadExcel } from "../util";
+import { getReactIconByName } from "@icon/index";
 
 export const CustomButtonDownloadExcel: React.FC<CustomButtonProps> = ({
   label,
@@ -25,6 +25,8 @@ export const CustomButtonDownloadExcel: React.FC<CustomButtonProps> = ({
     ${label ? "label-is" : "label-none"}
   `;
 
+  const IconComponent = getReactIconByName(icon!);
+
   const handleClick = () => {
     handleDownloadExcel(data!, header!, "exported_data");
   };
@@ -36,7 +38,7 @@ export const CustomButtonDownloadExcel: React.FC<CustomButtonProps> = ({
       type={type}
       disabled={disabled}
     >
-      {icon && <span className={classIcon}>{searchIconByName(icon!)}</span>}
+      {IconComponent && <IconComponent className={classIcon} />}
       {label}
     </button>
   );

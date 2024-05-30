@@ -1,4 +1,4 @@
 import { CustomButtonProps } from "./CustomButton.interface";
-import { DataItem } from "./DataItem";
+import { ExcelDatatoDownload } from "./ExcelDatatoDownload";
 
-export type { CustomButtonProps, DataItem };
+export type { CustomButtonProps, ExcelDatatoDownload };

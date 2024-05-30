@@ -1,7 +1,7 @@
 import React from "react";
-import "../css/index";
-import { searchIconByName } from "@icon/handlerIcon";
+import "../scss/index.scss";
 import { CustomButtonProps } from "../interfaces";
+import { getReactIconByName } from "@icon/index";
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
   label,
@@ -23,6 +23,8 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
     ${label ? "label-is" : "label-none"}
   `;
 
+  const IconComponent = getReactIconByName(icon!);
+
   return (
     <button
       type={type}
@@ -30,7 +32,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
       disabled={disabled}
       className={classButton}
     >
-      {icon && <span className={classIcon}>{searchIconByName(icon!)}</span>}
+      {IconComponent && <IconComponent className={classIcon} />}
       {label}
     </button>
   );

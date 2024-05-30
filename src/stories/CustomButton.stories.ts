@@ -81,6 +81,6 @@ export const ButtonCreate: Story = {
         disabled: false,
         size: "medium", // Puedes cambiar el tamaño predeterminado aquí
         color: "default", // Puedes cambiar el color predeterminado aquí
-        icon: "arrowLeft", // Puedes añadir un icono aquí si es necesario
+        icon: "FcEndCall", // Puedes añadir un icono aquí si es necesario
     },
 };
