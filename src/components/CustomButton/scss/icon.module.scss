@@ -1,0 +1,23 @@
+@import '../../../scss';
+
+@mixin button-icon-margin($type) {
+  margin-right: map-get($button-icon-margins, $type);
+}
+
+@mixin button-icon-font-size($type) {
+  $font-size: map-get($button-icon-font-sizes, $type);
+  @if $font-size {
+    font-size: $font-size;
+  }
+}
+
+.button-icon {
+  &.label-none {
+    @include button-icon-margin(label-none);
+    @include button-icon-font-size(label-none);
+  }
+  &.label-is {
+    @include button-icon-margin(label-is);
+    @include button-icon-font-size(label-is);
+  }
+}

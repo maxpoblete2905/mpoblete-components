@@ -23,15 +23,11 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./",
     "paths": {
-      "@styles/*": [
-        "src/css/*"
-      ],
-      "@types-data/*": [
-        "src/types/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ]
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/css/*"],
+      "@types-data/*": ["src/types/*"],
+      "@icon/*": ["src/icon/*"],
+      "@mock/*": ["src/mock/*"]
     }
   },
   "include": [
