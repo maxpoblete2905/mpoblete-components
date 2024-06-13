@@ -1,3 +1,3 @@
-import { CustomInput } from "@components/CustomInput/CustomInput/CustomInput";
+import { CustomInput } from "./CustomInput";
 
 export { CustomInput };

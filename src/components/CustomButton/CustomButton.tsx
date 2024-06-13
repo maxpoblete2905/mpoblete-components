@@ -1,6 +1,5 @@
-import React from "react";
-import "../scss/index.scss";
-import { CustomButtonProps } from "../interfaces";
+import "./scss/index.scss";
+import { CustomButtonProps } from "./interfaces";
 import { getReactIconByName } from "@icon/index";
 
 export const CustomButton: React.FC<CustomButtonProps> = ({

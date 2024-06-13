@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { records } from "@mock/index";
-import { CustomButtonProps } from "@components/CustomButton/interfaces";
-import { CustomButtonDownloadExcel } from "@components/CustomButton/index";
+import { CustomButtonProps } from "@components/customButton/interfaces";
+import { CustomButtonDownloadExcel } from "@components/customButton";
 
 const meta: Meta<CustomButtonProps> = {
   title: "Component/Buttons/ButonDownloadExcel",

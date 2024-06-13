@@ -1,12 +1,11 @@
 import { ReactIcons } from "@icon/types";
-
+import { ExcelDatatoDownload } from ".";
 import {
   BorderRadiusType,
   ButtonColorType,
   ButtonSizeType,
   ButtonType,
 } from "../types";
-import { ExcelDatatoDownload } from ".";
 
 export interface CustomButtonProps {
   label: string;

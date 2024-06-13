@@ -1,6 +1,5 @@
-// En un archivo llamado Modal.stories.tsx
 import { Meta, StoryObj } from "@storybook/react";
-import Modal, { ModalProps } from "@components/CustomModal/CustomModal";
+import Modal, { ModalProps } from "@components/customModal/CustomModal";
 
 const meta: Meta<ModalProps> = {
   title: "Component/Modal/modal",

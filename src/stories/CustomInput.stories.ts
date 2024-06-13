@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { CustomInputProps } from '@components/CustomInput/interfaces';
-import { CustomInput } from '@components/CustomInput/';
+import { CustomInput } from '@components/customInput';
+import { CustomInputProps } from '@components/customInput/interfaces';
 
 const meta: Meta<CustomInputProps> = {
   title: 'Component/Inputs/CustomInput',
