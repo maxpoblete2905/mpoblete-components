@@ -4,7 +4,7 @@ import { CustomButtonProps } from "@components/customButton/interfaces";
 import { CustomButtonDownloadExcel } from "@components/customButton";
 
 const meta: Meta<CustomButtonProps> = {
-  title: "Component/Buttons/ButonDownloadExcel",
+  title: "Component/CustomButton/ButonDownloadExcel",
   component: CustomButtonDownloadExcel,
   tags: ["autodocs"],
   parameters: {

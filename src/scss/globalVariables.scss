@@ -11,7 +11,6 @@ $border-radius-values: (
   custom: 100px,
 );
 
-// _background-colors.scss
 $button-background-colors: (
   primary: #0069d9,
   secondary: #6c757d,
@@ -24,7 +23,6 @@ $button-background-colors: (
   yellow: #ffc107
 );
 
-// _text-colors.scss
 $button-text-colors: (
   primary: white,
   secondary: white,
@@ -37,7 +35,6 @@ $button-text-colors: (
   yellow: black,
 );
 
-// _icon-button-variables.scss hay que mejorar logica estos estilos
 $button-icon-margins: (
   label-none: 0px,
   label-is: 8px
@@ -47,4 +44,12 @@ $button-icon-font-sizes: (
   label-none: null,
   label-is: 24px
 );
-/// 
+
+// Definición de variables
+$button-padding-small: 5px 10px;
+$button-padding-medium: 10px 20px;
+$button-padding-large: 15px 30px;
+
+$button-font-size-small: 12px;
+$button-font-size-medium: 16px;
+$button-font-size-large: 20px;

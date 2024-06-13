@@ -1,7 +1,7 @@
 import "./scss/index.scss";
 import { getReactIconByName } from "@icon/index";
 import { CustomButtonProps } from "./interfaces";
-import { handleDownloadExcel } from "./util";
+import { handleDownloadExcel } from "./utils";
 
 export const CustomButtonDownloadExcel: React.FC<CustomButtonProps> = ({
   label,

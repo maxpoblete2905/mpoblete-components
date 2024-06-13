@@ -1,4 +1,4 @@
-@import '../../../scss/globalVariables.scss';
+@import '../../../scss';
 
 @mixin apply-border-radius($size) {
   border-radius: map-get($border-radius-values, $size);
