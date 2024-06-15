@@ -7,8 +7,8 @@ import {
   IconSize,
 } from "@CustomButton/types";
 export interface CustomButtonProps {
-  label: string;
-  onClick: () => void;
+  label?: string;
+  onClick?: () => void;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
   size?: ButtonSize;

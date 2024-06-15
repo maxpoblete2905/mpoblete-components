@@ -19,8 +19,13 @@ import { ButtonSize, BorderRadius, ButtonTheme } from "@CustomButton/types";
   };
 
   export const borderRadiusClass: Record<BorderRadius, string> = {
+    none: "rounded-none",
+    xxs: "rounded-xxs",
+    xs: "rounded-xs",
     sm: "rounded-sm",
     md: "rounded-md",
     lg: "rounded-lg",
     xl: "rounded-xl",
+    xxl: "rounded-xxl",
   };
+  

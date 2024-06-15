@@ -1,6 +1,6 @@
 import React from "react";
 import { getReactIconByName } from "@icon/index";
-import { handleDownloadExcel } from "@CustomButton/utils";
+import { capitalizeLabel, handleDownloadExcel } from "@CustomButton/utils";
 import { CustomButtonProps } from "@CustomButton/interfaces";
 import { borderRadiusClass, themeClass, sizeClass } from "@CustomButton/theme";
 
@@ -32,7 +32,7 @@ export const CustomButtonDownloadExcel: React.FC<CustomButtonProps> = ({
       className={`btn ${sizeClass[size]} ${themeClass[theme]} ${borderRadiusClass[borderRedius]}`}
     >
        {IconComponent && <IconComponent size={iconSize} className="me-2"/>}
-       {capitalized ? label.toUpperCase() : label}
-    </button>
+       {capitalizeLabel(label!, capitalized!)}
+       </button>
   );
 };

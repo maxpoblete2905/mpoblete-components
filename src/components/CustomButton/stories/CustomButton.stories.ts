@@ -99,8 +99,9 @@ const simulateClick = async (element: HTMLElement) => {
   await userEvent.click(element);
 };
 
-export const DefaultButton: Story = {
+export const Default: Story = {
   args: {
+    label: "Button",
     onClick: action("Se ejecuta función anónima"),
   },
   play: async ({ canvasElement }) => {
@@ -110,12 +111,70 @@ export const DefaultButton: Story = {
   },
 };
 
-export const CustomButton2: Story = {
+export const Custom: Story = {
   args: {
     label: "Custom Button",
     capitalized: true,
     icon: "FcEditImage",
     theme: "secondary",
+    onClick: action("Se ejecuta función anónima"),
+  },
+  play: async ({ canvasElement }) => {
+    const buttonElement = within(canvasElement).getByTestId("custom-button");
+    await simulateClick(buttonElement);
+    await userEvent.hover(buttonElement);
+  },
+};
+
+export const Icon: Story = {
+  args: {
+    icon: "FcDownload",
+    theme: "info",
+    onClick: action("Se ejecuta función anónima"),
+    size: "small",
+  },
+  play: async ({ canvasElement }) => {
+    const buttonElement = within(canvasElement).getByTestId("custom-button");
+    await simulateClick(buttonElement);
+    await userEvent.hover(buttonElement);
+  },
+};
+
+export const Delete: Story = {
+  args: {
+    label: "delete",
+    icon: "FcDeleteDatabase",
+    theme: "danger",
+    onClick: action("Se ejecuta función anónima"),
+    capitalized: true,
+  },
+  play: async ({ canvasElement }) => {
+    const buttonElement = within(canvasElement).getByTestId("custom-button");
+    await simulateClick(buttonElement);
+    await userEvent.hover(buttonElement);
+  },
+};
+
+export const Create: Story = {
+  args: {
+    label: "create",
+    icon: "FcPlus",
+    theme: "success",
+    onClick: action("Se ejecuta función anónima"),
+    capitalized: true,
+  },
+  play: async ({ canvasElement }) => {
+    const buttonElement = within(canvasElement).getByTestId("custom-button");
+    await simulateClick(buttonElement);
+    await userEvent.hover(buttonElement);
+  },
+};
+
+export const Small: Story = {
+  args: {
+    size: "small",
+    label: "small",
+    theme: "warning",
     onClick: action("Se ejecuta función anónima"),
   },
   play: async ({ canvasElement }) => {
