@@ -1,8 +1,41 @@
 {
-  "name": "storybook",
-  "private": true,
-  "version": "0.0.0",
+  "name": "mp-custom-components",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
+  "keywords": [
+    "react",
+    "dev",
+    "storybook",
+    "maxpoblete2905"
+  ],
+  "license": "MIT",
+  "homepage": "https://maxpoblete2905.github.io/Storybook/?path=/docs/documentacion-general--docs",
+  "repository": {
+    "url": "https://github.com/maxpoblete2905/Storybook.git",
+    "type": "git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "peerDependencies": {
+    "@types/xlsx": "^0.0.36",
+    "bootstrap": "^5.3.3",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "sass": "^1.77.3",
+    "uuid": "^9.0.1"
+  },
+  "engines": {
+
+  },
   "scripts": {
     "commit": "cz",
     "dev": "vite",
@@ -22,6 +55,9 @@
     "test": "jest"
   },
   "dependencies": {
+
+  },
+  "devDependencies": {
     "@types/xlsx": "^0.0.36",
     "bootstrap": "^5.3.3",
     "copyfiles": "^2.4.1",
@@ -31,9 +67,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "sass": "^1.77.3",
-    "uuid": "^9.0.1"
-  },
-  "devDependencies": {
+    "uuid": "^9.0.1",
     "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
