@@ -1,6 +1,7 @@
 import { getReactIconByName } from "@icon/index";
 import { CustomInputProps } from "./interfaces";
 import "./scss/index.scss";
+import React from "react";
 
 export const CustomInput: React.FC<CustomInputProps> = ({
   value,
