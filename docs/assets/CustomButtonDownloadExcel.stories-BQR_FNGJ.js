@@ -1,0 +1,13 @@
+import{C as n}from"./CustomButtonDownloadExcel-Bb3DTHC6.js";import"./jsx-runtime-Nms4Y4qS.js";import"./index-BwDkhjyp.js";import"./_commonjsHelpers-BosuxZz1.js";import"./getReactIconByName-BlUYT3dy.js";const r=[{id:"0",nombre:"Juan",apellido:"Perez",email:"juan@example.com",creationDate:new Date().toISOString()},{id:"1",nombre:"María",apellido:"García",email:"maria@example.com",creationDate:new Date(Date.now()-864e5).toISOString()},{id:"2",nombre:"Pedro",apellido:"López",email:"pedro@example.com",creationDate:new Date(Date.now()-2*864e5).toISOString()},{id:"3",nombre:"Ana",apellido:"Martínez",email:"ana@example.com",creationDate:new Date(Date.now()-3*864e5).toISOString()},{id:"4",nombre:"Luis",apellido:"Fernández",email:"luis@example.com",creationDate:new Date(Date.now()-4*864e5).toISOString()}],m={title:"Component/Buttons/ButonDownloadExcel",component:n,tags:["autodocs"],parameters:{layout:"centered"},argTypes:{label:{control:"text",description:"Texto que se muestra en el botón",table:{type:{summary:"string"}}},onClick:{action:"clicked",description:"Función a ejecutar cuando se hace clic en el botón",table:{disable:!0}},type:{control:"select",options:["button","submit","reset"],description:"Tipo del botón",table:{type:{summary:"button | submit | reset"}}},disabled:{control:"boolean",description:"Si el botón está deshabilitado",table:{type:{summary:"boolean"}}},size:{control:"select",options:["small","medium","large"],description:"Tamaño del botón",table:{type:{summary:"small | medium | large"}}},theme:{control:"select",description:"Color del botón",table:{type:{summary:"default | primary | secondary | danger"}}},icon:{control:"select",description:"Elemento de icono para el botón"},borderRedius:{control:"select",description:"Elemento de icono para el botón"},data:{control:"array",description:"data que descargara en formato excel."},header:{control:{disable:!0},description:"Encabezado para el archivo Excel",table:{type:{summary:"string[]"}}}}},e={args:{label:"Export to Excel",type:"button",disabled:!1,size:"medium",theme:"default",icon:"FcDataBackup",data:r,capitalized:!1,iconSize:22}};var t,a,o;e.parameters={...e.parameters,docs:{...(t=e.parameters)==null?void 0:t.docs,source:{originalSource:`{
+  args: {
+    label: "Export to Excel",
+    type: "button",
+    disabled: false,
+    size: "medium",
+    theme: "default",
+    icon: "FcDataBackup",
+    data: records,
+    capitalized: false,
+    iconSize: 22
+  }
+}`,...(o=(a=e.parameters)==null?void 0:a.docs)==null?void 0:o.source}}};const p=["ButtonCreate"];export{e as ButtonCreate,p as __namedExportsOrder,m as default};
