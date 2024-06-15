@@ -15,9 +15,8 @@ export const CustomButtonDownloadExcel: React.FC<CustomButtonProps> = ({
   data,
   header,
   iconSize,
-  capitalized
+  capitalized,
 }) => {
-
   const IconComponent = getReactIconByName(icon!);
 
   const handleClick = () => {
@@ -29,10 +28,15 @@ export const CustomButtonDownloadExcel: React.FC<CustomButtonProps> = ({
       onClick={handleClick}
       type={type}
       disabled={disabled}
-      className={`btn ${sizeClass[size]} ${themeClass[theme]} ${borderRadiusClass[borderRedius]}`}
+      className={`
+        btn 
+        ${sizeClass[size]} 
+        ${themeClass[theme]} 
+        ${borderRadiusClass[borderRedius]}
+    `}
     >
-       {IconComponent && <IconComponent size={iconSize} className="me-2"/>}
-       {capitalizeLabel(label!, capitalized!)}
-       </button>
+      {IconComponent && <IconComponent size={iconSize} className="me-2" />}
+      {capitalizeLabel(label!, capitalized!)}
+    </button>
   );
 };
