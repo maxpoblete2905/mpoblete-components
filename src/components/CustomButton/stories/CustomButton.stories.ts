@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { CustomButton } from "@CustomButton/components";
 import { CustomButtonProps } from "@CustomButton/interfaces";
+import { userEvent, within } from "@storybook/test";
+import { action } from "@storybook/addon-actions"; // Importa la función action
 
 const meta: Meta<CustomButtonProps> = {
   title: "Component/Buttons/Button",
@@ -10,6 +12,7 @@ const meta: Meta<CustomButtonProps> = {
     layout: "centered",
   },
   argTypes: {
+    // Define tus argumentos aquí
     label: {
       control: "text",
       description: "Texto que se muestra en el botón",
@@ -86,28 +89,38 @@ const meta: Meta<CustomButtonProps> = {
       description: "cambia label a mayusculas.",
     },
   },
-} satisfies Meta<typeof CustomButton>;
+};
 
 export default meta;
 
 type Story = StoryObj<typeof CustomButton>;
 
+const simulateClick = async (element: HTMLElement) => {
+  await userEvent.click(element);
+};
+
 export const DefaultButton: Story = {
   args: {
-    onClick: () => {
-      alert("se ejecuta funcion anonima");
-    },
+    onClick: action("Se ejecuta función anónima"),
+  },
+  play: async ({ canvasElement }) => {
+    const buttonElement = within(canvasElement).getByTestId("custom-button");
+    await simulateClick(buttonElement);
+    await userEvent.hover(buttonElement);
   },
 };
 
-export const CustomButom: Story = {
+export const CustomButton2: Story = {
   args: {
-    label: "Custom Butom",
+    label: "Custom Button",
     capitalized: true,
     icon: "FcEditImage",
     theme: "secondary",
-    onClick: () => {
-      alert("se ejecuta funcion anonima");
-    },
+    onClick: action("Se ejecuta función anónima"),
+  },
+  play: async ({ canvasElement }) => {
+    const buttonElement = within(canvasElement).getByTestId("custom-button");
+    await simulateClick(buttonElement);
+    await userEvent.hover(buttonElement);
   },
 };

@@ -1,3 +1,4 @@
+import React from "react";
 import { getReactIconByName } from "@icon/index";
 import { CustomButtonProps } from "@CustomButton/interfaces";
 import { capitalizeLabel } from "@CustomButton/utils";
@@ -22,6 +23,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
+      data-testid="custom-button"
       className={`
         btn 
         ${sizeClass[size]} 

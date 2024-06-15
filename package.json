@@ -18,7 +18,8 @@
     "create:nojekyll-file": "type nul > docs\\.nojekyll",
     "copy:dist": "npm run create:docs-directory && npm run copy:storybook-static && npm run create:nojekyll-file",
     "build-storybook": "storybook build",
-    "build:github": "npm run delete:docs && npm run build-storybook && npm run copy:dist && npm run delete:build-storybook"
+    "build:github": "npm run delete:docs && npm run build-storybook && npm run copy:dist && npm run delete:build-storybook",
+    "test": "jest"
   },
   "dependencies": {
     "@types/xlsx": "^0.0.36",
@@ -41,6 +42,7 @@
     "@storybook/react": "^7.6.19",
     "@storybook/react-vite": "^7.6.17",
     "@storybook/test": "^7.6.17",
+    "@types/jest": "^29.5.12",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
@@ -66,5 +68,9 @@
       "pre-commit": "npm run lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom"
   }
 }
