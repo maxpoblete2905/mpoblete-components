@@ -1,24 +1,24 @@
 # 📁 MP Custom Components
 
-Este proyecto es una biblioteca de componentes personalizados creada con [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) y [Storybook](https://storybook.js.org/).
+This project is a library of custom components created with [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), and [Storybook](https://storybook.js.org/).
 
-## 🛠️ Servidor de Desarrollo
+## 🛠️ Development Server
 
-Ejecuta `npm run storybook` para iniciar el servidor de desarrollo. Navega a `http://localhost:6006/`. La aplicación se recargará automáticamente si cambias alguno de los archivos fuente.
+Run `npm run storybook` to start the development server. Navigate to `http://localhost:6006/`. The application will automatically reload if you change any of the source files.
 
-## 🔧 Creación de Componentes
+## 🔧 Creating Components
 
-Ejecuta `npm run generate component component-name` para generar un nuevo componente utilizando una plantilla predeterminada.
+Run `npm run generate component component-name` to generate a new component using a predefined template.
 
-## 🏗️ Construcción
+## 🏗️ Build
 
-Ejecuta `npm run build` para construir el proyecto. Los artefactos de construcción se almacenarán en el directorio `dist/`.
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## ❓ Más Ayuda
+## ❓ Further Help
 
-Para obtener más ayuda sobre Vite, utiliza `vite --help` o revisa la [documentación de Vite](https://vitejs.dev/guide/). Para más ayuda sobre Storybook, revisa la [documentación de Storybook](https://storybook.js.org/docs/react/get-started/introduction).
+For more help on Vite, use `vite --help` or check out the [Vite documentation](https://vitejs.dev/guide/). For more help on Storybook, check out the [Storybook documentation](https://storybook.js.org/docs/react/get-started/introduction).
 
-## 📦 Dependencias y Versiones
+## 📦 Dependencies and Versions
 
 - **React**: ^18.2.0
 - **React DOM**: ^18.2.0
@@ -26,28 +26,28 @@ Para obtener más ayuda sobre Vite, utiliza `vite --help` o revisa la [documenta
 - **Vite**: ^5.1.4
 - **Storybook**: ^7.6.17
 
-## ▶️ Ejecutar el Proyecto
+## ▶️ Running the Project
 
-Para ejecutar el proyecto localmente, sigue estos pasos:
+To run the project locally, follow these steps:
 
-1. Asegúrate de tener Node.js y npm instalados en tu máquina.
-2. Clona este repositorio en tu máquina local.
-3. Navega al directorio del proyecto en tu terminal.
-4. Ejecuta `npm install` para instalar las dependencias del proyecto.
-5. Después de que la instalación esté completa, ejecuta `npm run dev` para iniciar el servidor de desarrollo.
-6. Abre tu navegador web y navega a `http://localhost:3000/` para ver el proyecto en funcionamiento.
+1. Make sure you have Node.js and npm installed on your machine.
+2. Clone this repository to your local machine.
+3. Navigate to the project directory in your terminal.
+4. Run `npm install` to install the project dependencies.
+5. After the installation is complete, run `npm run dev` to start the development server.
+6. Open your web browser and navigate to `http://localhost:3000/` to view the project.
 
-## 📦 Componentes Exportados
+## 📦 Exported Components
 
-Actualmente, la biblioteca exporta los siguientes componentes:
+Currently, the library exports the following components:
 
-- 🟦 **CustomButton**: Un componente de botón personalizado.
-- 🟦 **CustomButtonDownloadExcel**: Un componente de botón para descargar archivos Excel.
+- 🟦 **CustomButton**: A custom button component.
+- 🟦 **CustomButtonDownloadExcel**: A button component for downloading Excel files.
 
-## 📝 Licencia
+## 📝 License
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-## 📫 Contacto
+## 📫 Contact
 
-Para más información, visita la página de [documentación](https://maxpoblete2905.github.io/Storybook/?path=/docs/documentacion-general--docs) o el [repositorio](https://github.com/maxpoblete2905/Storybook.git).
+For more information, visit the [documentation page](https://maxpoblete2905.github.io/Storybook/?path=/docs/documentacion-general--docs) or the [repository](https://github.com/maxpoblete2905/Storybook.git).

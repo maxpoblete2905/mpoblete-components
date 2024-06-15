@@ -1,7 +1,7 @@
 {
   "name": "mp-custom-components",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -54,7 +54,8 @@
     "build:github": "npm run delete:docs && npm run build-storybook && npm run copy:dist && npm run delete:build-storybook",
     "test": "jest",
     "clean": "rimraf dist/",
-    "copyfiles": "copyfiles -u 1 src/**/*.scss dist/"
+    "copyfiles": "copyfiles -u 1 src/**/*.scss dist/",
+    "desployfull": "npm run build:github && npm run build"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.17",
