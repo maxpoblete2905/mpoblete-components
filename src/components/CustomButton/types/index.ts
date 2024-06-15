@@ -1,6 +1,8 @@
-import { BorderRadiusType } from "./borderRadiusType";
-import { ButtonColorType } from "./buttonColor.type";
-import { ButtonSizeType } from "./buttonSize.type";
-import { ButtonType } from "./button.type";
+import { IconSize } from "./IconSize";
+import { BorderRadius } from "./borderRadius";
+import { ButtonSize } from "./buttonSize";
+import { ButtonTheme } from "./buttonTheme";
+import { ButtonType } from "./buttonType";
+import { ExcelRecords } from "./excelRecords";
 
-export type { BorderRadiusType, ButtonColorType, ButtonSizeType, ButtonType };
+export type { BorderRadius, ButtonTheme, ButtonType, ButtonSize, IconSize, ExcelRecords };

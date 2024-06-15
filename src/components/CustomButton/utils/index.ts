@@ -1,3 +1,4 @@
-import { handleDownloadExcel } from './downloadExcel'
+import { capitalizeLabel } from './capitalizeLabel'
+import { handleDownloadExcel  } from './downloadExcel'
 
-export  {handleDownloadExcel}
+export  {handleDownloadExcel, capitalizeLabel }

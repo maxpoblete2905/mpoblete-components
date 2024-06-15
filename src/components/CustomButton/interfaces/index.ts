@@ -1,4 +1,7 @@
-import { CustomButtonProps } from "./CustomButton.interface";
-import { ExcelDatatoDownload } from "./ExcelDatatoDownload";
+import {
+  CustomButtonProps,
+} from "./CustomButton";
 
-export type { CustomButtonProps, ExcelDatatoDownload };
+export type {
+  CustomButtonProps,
+};

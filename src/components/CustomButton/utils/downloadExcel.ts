@@ -1,5 +1,5 @@
 import * as XLSX from "xlsx";
-import { ExcelDatatoDownload } from "../interfaces";
+import { ExcelDatatoDownload } from "@CustomButton/interfaces";
 
 export const handleDownloadExcel = (
   data: ExcelDatatoDownload[],

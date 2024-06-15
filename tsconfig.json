@@ -27,7 +27,9 @@
       "@styles/*": ["src/css/*"],
       "@types-data/*": ["src/types/*"],
       "@icon/*": ["src/icon/*"],
-      "@mock/*": ["src/mock/*"]
+      "@mock/*": ["src/mock/*"],
+      "@utils/*": ["src/utils/*"],
+      "@CustomButton/*": ["src/components/CustomButton/*"]
     }
   },
   "include": [

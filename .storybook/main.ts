@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
     '@storybook/addon-docs',
+    "@storybook/addon-actions",
   ],
   framework: {
     name: "@storybook/react-vite",
@@ -22,6 +23,8 @@ const config: StorybookConfig = {
       "@components": path.resolve(__dirname, "../src/components"),
       "@icon": path.resolve(__dirname, "../src/icon"),
       "@mock": path.resolve(__dirname, "../src/mock"),
+      "@utils": path.resolve(__dirname, "../src/utils"),
+      "@CustomButton": path.resolve(__dirname, "../src/components/CustomButton"),
       process: "process/browser",
     };
     config.define = config.define || {};

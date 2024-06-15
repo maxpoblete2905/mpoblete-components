@@ -217,3 +217,5 @@ export type ReactIcons =
   | "FcSpeaker"
   | "FcSportsMode"
   | "FcUnlock"
+  | "IoSend"
+  | "FcPlus"
