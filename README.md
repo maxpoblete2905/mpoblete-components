@@ -1,31 +1,53 @@
-# React + TypeScript + Vite
+# 📁 MP Custom Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una biblioteca de componentes personalizados creada con [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/) y [Storybook](https://storybook.js.org/).
 
-Currently, two official plugins are available:
+## 🛠️ Servidor de Desarrollo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ejecuta `npm run storybook` para iniciar el servidor de desarrollo. Navega a `http://localhost:6006/`. La aplicación se recargará automáticamente si cambias alguno de los archivos fuente.
 
-## Expanding the ESLint configuration
+## 🔧 Creación de Componentes
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Ejecuta `npm run generate component component-name` para generar un nuevo componente utilizando una plantilla predeterminada.
 
-- Configure the top-level `parserOptions` property like this:
+## 🏗️ Construcción
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Ejecuta `npm run build` para construir el proyecto. Los artefactos de construcción se almacenarán en el directorio `dist/`.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-al construir la app de storybook se debe crear un archivo .nojekyll vacio en la carpeta docs que se utiliza en github pages
+## ❓ Más Ayuda
+
+Para obtener más ayuda sobre Vite, utiliza `vite --help` o revisa la [documentación de Vite](https://vitejs.dev/guide/). Para más ayuda sobre Storybook, revisa la [documentación de Storybook](https://storybook.js.org/docs/react/get-started/introduction).
+
+## 📦 Dependencias y Versiones
+
+- **React**: ^18.2.0
+- **React DOM**: ^18.2.0
+- **TypeScript**: ^5.2.2
+- **Vite**: ^5.1.4
+- **Storybook**: ^7.6.17
+
+## ▶️ Ejecutar el Proyecto
+
+Para ejecutar el proyecto localmente, sigue estos pasos:
+
+1. Asegúrate de tener Node.js y npm instalados en tu máquina.
+2. Clona este repositorio en tu máquina local.
+3. Navega al directorio del proyecto en tu terminal.
+4. Ejecuta `npm install` para instalar las dependencias del proyecto.
+5. Después de que la instalación esté completa, ejecuta `npm run dev` para iniciar el servidor de desarrollo.
+6. Abre tu navegador web y navega a `http://localhost:3000/` para ver el proyecto en funcionamiento.
+
+## 📦 Componentes Exportados
+
+Actualmente, la biblioteca exporta los siguientes componentes:
+
+- 🟦 **CustomButton**: Un componente de botón personalizado.
+- 🟦 **CustomButtonDownloadExcel**: Un componente de botón para descargar archivos Excel.
+
+## 📝 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+## 📫 Contacto
+
+Para más información, visita la página de [documentación](https://maxpoblete2905.github.io/Storybook/?path=/docs/documentacion-general--docs) o el [repositorio](https://github.com/maxpoblete2905/Storybook.git).
