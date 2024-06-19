@@ -1,5 +1,5 @@
 import * as XLSX from "xlsx";
-import { ExcelRecords } from "@CustomButton/types";
+import { ExcelRecords } from "../types";
 
 export const handleDownloadExcel = (
   data: ExcelRecords[],

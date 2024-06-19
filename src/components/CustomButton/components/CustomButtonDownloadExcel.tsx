@@ -1,8 +1,9 @@
-import React from "react";
-import { getReactIconByName } from "@icon/index";
-import { capitalizeLabel, handleDownloadExcel } from "@CustomButton/utils";
-import { CustomButtonProps } from "@CustomButton/interfaces";
-import { borderRadiusClass, themeClass, sizeClass } from "@CustomButton/theme";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/index.scss'
+import { getReactIconByName } from "../../../icon";
+import { capitalizeLabel, handleDownloadExcel } from "../utils";
+import { CustomButtonProps } from "../interfaces";
+import { borderRadiusClass, themeClass, sizeClass } from "../theme";
 
 export const CustomButtonDownloadExcel: React.FC<CustomButtonProps> = ({
   label,

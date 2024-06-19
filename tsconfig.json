@@ -5,6 +5,8 @@
     "declaration": true,
     "allowJs": true,
     "emitDeclarationOnly": false,
+    "declarationMap": false,
+
     "useDefineForClassFields": true,
     "lib": [
       "ES2020",
@@ -19,7 +21,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
-    "jsx": "react",
+    "jsx": "react-jsx",
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -33,7 +35,6 @@
       "@icon/*": ["src/icon/*"],
       "@mock/*": ["src/mock/*"],
       "@utils/*": ["src/utils/*"],
-      "@CustomButton/*": ["src/components/CustomButton/*"]
     }
   },
   "include": [

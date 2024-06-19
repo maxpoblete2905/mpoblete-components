@@ -1,2 +1,3 @@
-export { CustomButton } from '../src/components/CustomButton/components/CustomButton'
-export { CustomButtonDownloadExcel } from '../src/components/CustomButton/components/CustomButtonDownloadExcel'
+
+export { CustomButton } from './components/CustomButton/components'
+export { CustomButtonDownloadExcel } from './components/CustomButton/components'

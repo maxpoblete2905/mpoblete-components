@@ -1,5 +1,5 @@
-import { CustomInput } from '@components/CustomInput';
-import { CustomInputProps } from '@components/CustomInput/interfaces';
+import { CustomInput } from '../components/CustomInput';
+import { CustomInputProps } from '../components/CustomInput/interfaces';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<CustomInputProps> = {

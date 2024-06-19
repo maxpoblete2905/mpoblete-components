@@ -24,7 +24,6 @@ const config: StorybookConfig = {
       "@icon": path.resolve(__dirname, "../src/icon"),
       "@mock": path.resolve(__dirname, "../src/mock"),
       "@utils": path.resolve(__dirname, "../src/utils"),
-      "@CustomButton": path.resolve(__dirname, "../src/components/CustomButton"),
       process: "process/browser",
     };
     config.define = config.define || {};

@@ -1,4 +1,4 @@
-import { ButtonSize, BorderRadius, ButtonTheme } from "@CustomButton/types";
+import { ButtonSize, BorderRadius, ButtonTheme } from "../types";
 
   export const sizeClass: Record<ButtonSize, string> = {
     small: "btn-sm",

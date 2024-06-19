@@ -1,11 +1,11 @@
-import { ReactIcons } from "@icon/types";
+import { ReactIcons } from "../../../icon/types";
 import {
   BorderRadius,
   ButtonSize,
   ButtonTheme,
   ExcelRecords,
   IconSize,
-} from "@CustomButton/types";
+} from "../types";
 export interface CustomButtonProps {
   label?: string;
   onClick?: () => void;

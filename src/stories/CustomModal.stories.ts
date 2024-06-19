@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ModalProps, Modal } from "@components/CustomModal/CustomModal";
+import { ModalProps, Modal } from "../components/CustomModal/CustomModal";
 
 const meta: Meta<ModalProps> = {
   title: "Component/Modal/Modal",

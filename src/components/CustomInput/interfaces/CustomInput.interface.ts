@@ -1,4 +1,4 @@
-import { ReactIcons } from "@icon/types";
+import { ReactIcons } from "../../../icon/types";
 import { ChangeEvent } from "react";
 
 export interface CustomInputProps {

@@ -1,9 +1,9 @@
-import React from "react";
-import { getReactIconByName } from "@icon/index";
-import { CustomButtonProps } from "@CustomButton/interfaces";
-import { capitalizeLabel } from "@CustomButton/utils";
-import { borderRadiusClass, themeClass, sizeClass } from "@CustomButton/theme";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/index.scss'
+import { getReactIconByName } from "../../../icon";
+import { CustomButtonProps } from "../interfaces";
+import { capitalizeLabel } from "../utils";
+import { borderRadiusClass, themeClass, sizeClass } from "../theme";
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
   label,

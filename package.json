@@ -1,7 +1,7 @@
 {
-  "name": "mp-custom-components",
+  "name": "mpoblete-components",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.2.4",
   "type": "module",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -28,9 +28,9 @@
   "peerDependencies": {
     "@types/xlsx": "^0.0.36",
     "bootstrap": "^5.3.3",
-    "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
-    "react-dom": "^18.2.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",   
     "react-icons": "^5.0.1",
     "sass": "^1.77.3",
     "uuid": "^9.0.1"
@@ -53,6 +53,7 @@
     "build-storybook": "storybook build",
     "build:github": "npm run delete:docs && npm run build-storybook && npm run copy:dist && npm run delete:build-storybook",
     "test": "jest",
+    "push:npm": "np",
     "clean": "rimraf dist/",
     "copyfiles": "copyfiles -u 1 src/**/*.scss dist/",
     "desployfull": "npm run build:github && npm run build"
@@ -107,5 +108,7 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "jsdom"
+  },
+  "dependencies": {
   }
 }

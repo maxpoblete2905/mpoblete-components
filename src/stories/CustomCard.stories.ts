@@ -1,4 +1,4 @@
-import { Card, CustomCard } from '@components/CustomCard/CustomCard';
+import { Card, CustomCard } from '../components/CustomCard/CustomCard';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<Card>  = {

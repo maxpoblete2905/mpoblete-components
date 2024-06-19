@@ -1,4 +1,4 @@
-import { getReactIconByName } from "@icon/index";
+import { getReactIconByName } from "../../icon";
 import { CustomInputProps } from "./interfaces";
 import "./scss/index.scss";
 import React from "react";

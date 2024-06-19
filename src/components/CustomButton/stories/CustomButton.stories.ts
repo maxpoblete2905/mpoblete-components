@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { CustomButton } from "@CustomButton/components";
-import { CustomButtonProps } from "@CustomButton/interfaces";
+import { CustomButton } from "../components";
+import { CustomButtonProps } from "../interfaces";
 import { userEvent, within } from "@storybook/test";
-import { action } from "@storybook/addon-actions"; // Importa la función action
+import { action } from "@storybook/addon-actions";
 
 const meta: Meta<CustomButtonProps> = {
   title: "Component/Buttons/Button",
@@ -12,7 +12,6 @@ const meta: Meta<CustomButtonProps> = {
     layout: "centered",
   },
   argTypes: {
-    // Define tus argumentos aquí
     label: {
       control: "text",
       description: "Texto que se muestra en el botón",
