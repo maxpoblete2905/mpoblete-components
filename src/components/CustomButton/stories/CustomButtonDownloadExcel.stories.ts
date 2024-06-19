@@ -85,14 +85,6 @@ type Story = StoryObj<CustomButtonProps>;
 
 export const ButtonCreate: Story = {
   args: {
-    label: "Export to Excel",
-    type: "button",
-    disabled: false,
-    size: "medium",
-    theme: "default",
-    icon: "FcDataBackup",
     data: records,
-    capitalized: false,
-    iconSize: 22,
   },
 };
