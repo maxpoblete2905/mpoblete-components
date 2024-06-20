@@ -3,7 +3,7 @@ import { Columns } from "./Columns";
 
 export interface DownloadExcelOptions {
   fileName: string;
-  active: true;
+  active: boolean;
   data: ExcelRecords[];
   columns: Columns[];
 }

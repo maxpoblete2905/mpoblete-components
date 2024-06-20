@@ -51,12 +51,9 @@ To use the `CustomButton` component in your project, follow these steps:
 
    ```sh
    npm install mp-custom-components
-
    ```
 
-   ```sh
-   Now an example of how to use the CustomButton component, so that all the components of this library are utilized
-   ```
+2. **Use component**: Secons, Import components from **mp-custom-components** and use them as in the following example.
 
    ```jsx
    import { CustomButton } from "mp-custom-components";
