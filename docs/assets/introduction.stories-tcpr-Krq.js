@@ -1,4 +1,4 @@
-import{M as i}from"./chunk-HLWAVYOI-CpM0Xuxk.js";import{j as e}from"./jsx-runtime-Nms4Y4qS.js";import{useMDXComponents as s}from"./index-BnapxFVb.js";import"./iframe-BByIbgua.js";import"../sb-preview/runtime.js";import"./index-BwDkhjyp.js";import"./_commonjsHelpers-BosuxZz1.js";import"./react-16-CNRis4zp.js";import"./index-DXimoRZY.js";import"./index-Dx4y3nsS.js";import"./index-DrFu-skq.js";function r(o){const n=Object.assign({h1:"h1",p:"p",strong:"strong",code:"code",a:"a",h2:"h2",h3:"h3",pre:"pre"},s(),o.components);return e.jsxs(e.Fragment,{children:[e.jsx(i,{title:"Introduction"}),`
+import{M as i}from"./chunk-HLWAVYOI-BFmGSEL0.js";import{j as e}from"./jsx-runtime-Nms4Y4qS.js";import{useMDXComponents as s}from"./index-BnapxFVb.js";import"./iframe-B4znI3dI.js";import"../sb-preview/runtime.js";import"./index-BwDkhjyp.js";import"./_commonjsHelpers-BosuxZz1.js";import"./react-16-CNRis4zp.js";import"./index-DXimoRZY.js";import"./index-Dx4y3nsS.js";import"./index-DrFu-skq.js";function r(o){const n=Object.assign({h1:"h1",p:"p",strong:"strong",code:"code",a:"a",h2:"h2",h3:"h3",pre:"pre"},s(),o.components);return e.jsxs(e.Fragment,{children:[e.jsx(i,{title:"Introduction"}),`
 `,e.jsx(n.h1,{id:"storybook-of-mpoblete-components-for-react-components",children:"Storybook of mpoblete-components for React components"}),`
 `,e.jsxs(n.p,{children:["Storybook helps you build UI components in isolation from business logic, data, and your application's context. This makes developing hard-to-reach states easier. Save these UI states as ",e.jsx(n.strong,{children:"stories"})," to revisit them during development, testing, or quality control."]}),`
 `,e.jsxs(n.p,{children:[`Explore example stories now by navigating to them in the sidebar.\r
@@ -56,7 +56,7 @@ export const StyledComponent: React.FC = () => (\r
 );
 `})}),`
 `,e.jsx(n.h2,{id:"you-can-create-your-own-css-file",children:"You can create your own CSS file."}),`
-`,e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-tsx",children:`.my-component {\r
+`,e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-css",children:`.my-component {\r
   padding: 1rem;\r
   border: 1px solid #ccc;\r
   border-radius: 4px;\r
