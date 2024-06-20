@@ -1,4 +1,4 @@
-import{j as n}from"./jsx-runtime-Nms4Y4qS.js";import{M as o}from"./chunk-HLWAVYOI-DVtTJmHE.js";import{useMDXComponents as s}from"./index-BnapxFVb.js";import"./index-BwDkhjyp.js";import"./_commonjsHelpers-BosuxZz1.js";import"./iframe-Dloboo_w.js";import"../sb-preview/runtime.js";import"./react-16-CNRis4zp.js";import"./index-DXimoRZY.js";import"./index-Dx4y3nsS.js";import"./index-DrFu-skq.js";function t(r){const e=Object.assign({h1:"h1",ul:"ul",li:"li",h2:"h2",p:"p",h3:"h3",pre:"pre",code:"code"},s(),r.components);return n.jsxs(n.Fragment,{children:[n.jsx(o,{title:"Component/Buttons/Documentation"}),`
+import{j as n}from"./jsx-runtime-Nms4Y4qS.js";import{M as o}from"./chunk-HLWAVYOI-CMhx-Ljo.js";import{useMDXComponents as s}from"./index-BnapxFVb.js";import"./index-BwDkhjyp.js";import"./_commonjsHelpers-BosuxZz1.js";import"./iframe-DGKP6jA-.js";import"../sb-preview/runtime.js";import"./react-16-CNRis4zp.js";import"./index-DXimoRZY.js";import"./index-Dx4y3nsS.js";import"./index-DrFu-skq.js";function r(t){const e=Object.assign({h1:"h1",ul:"ul",li:"li",h2:"h2",p:"p",h3:"h3",pre:"pre",code:"code"},s(),t.components);return n.jsxs(n.Fragment,{children:[n.jsx(o,{title:"Documentation/Buttons/Button"}),`
 `,n.jsx(e.h1,{id:"componente-button",children:"Componente Button"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsxs(e.li,{children:[`
@@ -74,4 +74,4 @@ export const CustomButton: React.FC<CustomButtonProps> = ({\r
   );\r
 };\r
 
-`})})]})}function b(r={}){const{wrapper:e}=Object.assign({},s(),r.components);return e?n.jsx(e,Object.assign({},r,{children:n.jsx(t,r)})):t(r)}export{b as default};
+`})})]})}function b(t={}){const{wrapper:e}=Object.assign({},s(),t.components);return e?n.jsx(e,Object.assign({},t,{children:n.jsx(r,t)})):r(t)}export{b as default};

@@ -1,18 +1,15 @@
-import './scss/index.scss'
-
-export interface CustomCardProps  { 
-  title: string, 
-  image: string, 
-  description: string 
+import "./scss/index.scss";
+export interface CustomCardProps {
+  title: string;
+  image: string;
+  description: string;
 }
 
-export const CustomCard = (
-  { 
-    title, 
-    image = "https://via.placeholder.com/300x200", 
-    description 
-
-  }: CustomCardProps) => {
+export const CustomCard = ({
+  title,
+  image = "https://via.placeholder.com/300x200",
+  description,
+}: CustomCardProps) => {
   return (
     <div className="card">
       <img src={image} alt={title} className="card-image" />
@@ -22,4 +19,4 @@ export const CustomCard = (
       </div>
     </div>
   );
-}
+};

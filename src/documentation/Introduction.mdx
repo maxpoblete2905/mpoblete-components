@@ -1,0 +1,90 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Introduction" />
+
+# Storybook of mpoblete-components for React components
+
+Storybook helps you build UI components in isolation from business logic, data, and your application's context. This makes developing hard-to-reach states easier. Save these UI states as **stories** to revisit them during development, testing, or quality control.
+
+Explore example stories now by navigating to them in the sidebar.
+Check out their code in the `./stories` directory to see how they work.
+We recommend building UIs with a [**component-driven**](https://componentdriven.org) process that starts with atomic components and ends with pages.
+
+## How to create a reusable component?
+
+Storybook automatically exports components entered within the `./src/components/index.ts` path. Any component not exported within this index file won't be extractable from the `@mpoblete/react-ui` library.
+
+### Component Example
+
+How to create a story for my component?
+Storybook allows creating stories related to our components. All parameters of our component can be edited and viewed in real-time.
+
+Example component:
+
+```tsx
+import React from "react";
+import "../styles/index.scss";
+import { MyComponentProps } from "../interfaces";
+
+export const MyComponent: React.FC<MyComponentProps> = ({
+  title = "Default Title",
+  content,
+  onAction,
+  isDisabled = false,
+  size = "medium",
+  theme = "default",
+}) => {
+  return (
+    <div
+      className={`my-component ${size} ${theme} ${
+        isDisabled ? "disabled" : ""
+      }`}
+      onClick={!isDisabled ? onAction : undefined}
+      data-testid="my-component"
+    >
+      <h1>{title}</h1>
+      <p>{content}</p>
+    </div>
+  );
+};
+```
+
+## Add Interfaces and Types
+
+Define your component properties using interfaces and types to ensure consistency and autocompletion in your code editor. This also makes maintaining and scaling your code easier.
+
+```tsx
+export interface MyComponentProps {
+  title?: string;
+  content?: string;
+  onAction?: () => void;
+  isDisabled?: boolean;
+  size?: "small" | "medium" | "large";
+  theme?: "default" | "primary" | "secondary";
+}
+```
+
+## To style components in Storybook
+
+you can import CSS or SCSS files directly into your component files or stories. Make sure to maintain an organized folder structure for styles, separating global styles from component-specific ones.
+
+```tsx
+import "../styles/my-component.scss";
+
+export const StyledComponent: React.FC = () => (
+  <div className="my-component custom-style">Hello World</div>
+);
+```
+
+## You can create your own CSS file.
+
+```tsx
+.my-component {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+```
