@@ -1,7 +1,7 @@
 {
   "name": "mpoblete-components",
   "private": false,
-  "version": "0.2.8",
+  "version": "0.2.9",
   "type": "module",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,7 +12,7 @@
     "maxpoblete2905"
   ],
   "license": "MIT",
-  "homepage": "https://maxpoblete2905.github.io/mpoblete-components/?path=/docs/documentacion-general--docs",
+  "homepage": "https://maxpoblete2905.github.io/mpoblete-components/?path=/docs/documentation-buttons-button--docs",
   "repository": {
     "url": "https://github.com/maxpoblete2905/Storybook.git",
     "type": "git"

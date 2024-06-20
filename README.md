@@ -81,5 +81,5 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ## 📫 Contact
 
-For more information, visit the [documentation page](https://maxpoblete2905.github.io/mpoblete-components/?path=/docs/documentacion-general--docs) or the [repository](https://github.com/maxpoblete2905/Storybook.git).
+For more information, visit the [documentation page](https://maxpoblete2905.github.io/mpoblete-components/?path=/docs/documentation-buttons-button--docs) or the [repository](https://github.com/maxpoblete2905/Storybook.git).
 ```
