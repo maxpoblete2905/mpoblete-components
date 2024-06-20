@@ -1,11 +1,7 @@
 import { ReactIcons } from "../../../icon/types";
-import {
-  BorderRadius,
-  ButtonSize,
-  ButtonTheme,
-  ExcelRecords,
-  IconSize,
-} from "../types";
+import { BorderRadius, ButtonSize, ButtonTheme } from "../types";
+import { DownloadExcelOptions } from "./DownloadExcelOptions";
+
 export interface CustomButtonProps {
   label?: string;
   onClick?: () => void;
@@ -15,8 +11,6 @@ export interface CustomButtonProps {
   theme?: ButtonTheme;
   borderRedius?: BorderRadius;
   icon?: ReactIcons;
-  capitalized?: boolean;
-  data?: ExcelRecords[];
-  header?: string[];
-  iconSize?: IconSize;
+  textUtilities?: "capitalize" | "lowercase" | "uppercase";
+  downloadExcel?: DownloadExcelOptions;
 }

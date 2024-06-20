@@ -1,6 +1,6 @@
 import './scss/index.scss'
 
-export interface Card  { 
+export interface CustomCardProps  { 
   title: string, 
   image: string, 
   description: string 
@@ -12,7 +12,7 @@ export const CustomCard = (
     image = "https://via.placeholder.com/300x200", 
     description 
 
-  }: Card) => {
+  }: CustomCardProps) => {
   return (
     <div className="card">
       <img src={image} alt={title} className="card-image" />

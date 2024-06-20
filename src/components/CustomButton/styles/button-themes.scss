@@ -1,0 +1,81 @@
+// Definición de variables para colores de botón
+$color-secondary-bg: #6c757d;
+$color-secondary-text: #fff;
+$color-secondary-border: #6c757d;
+
+$color-primary-bg: #007bff;
+$color-primary-text: #fff;
+$color-primary-border: #007bff;
+
+$color-success-bg: #28a745;
+$color-success-text: #fff;
+$color-success-border: #28a745;
+
+$color-danger-bg: #dc3545;
+$color-danger-text: #fff;
+$color-danger-border: #dc3545;
+
+$color-warning-bg: #ffc107;
+$color-warning-text: #212529;
+$color-warning-border: #ffc107;
+
+$color-info-bg: #17a2b8;
+$color-info-text: #fff;
+$color-info-border: #17a2b8;
+
+$color-light-bg: #f8f9fa;
+$color-light-text: #212529;
+$color-light-border: #f8f9fa;
+
+$color-dark-bg: #011a33;
+$color-dark-text: #08efeb;
+$color-dark-border: #022f5d;
+
+// Estilos para los temas de botón
+.btn-secondary {
+  background-color: $color-secondary-bg;
+  color: $color-secondary-text;
+  border: 1px solid $color-secondary-border;
+}
+
+.btn-primary {
+  background-color: $color-primary-bg;
+  color: $color-primary-text;
+  border: 1px solid $color-primary-border;
+}
+
+.btn-success {
+  background-color: $color-success-bg;
+  color: $color-success-text;
+  border: 1px solid $color-success-border;
+}
+
+.btn-danger {
+  background-color: $color-danger-bg;
+  color: $color-danger-text;
+  border: 1px solid $color-danger-border;
+}
+
+.btn-warning {
+  background-color: $color-warning-bg;
+  color: $color-warning-text;
+  border: 1px solid $color-warning-border;
+}
+
+.btn-info {
+  background-color: $color-info-bg;
+  color: $color-info-text;
+  border: 1px solid $color-info-border;
+}
+
+.btn-light {
+  background-color: $color-light-bg;
+  color: $color-light-text;
+  border: 1px solid $color-light-border;
+}
+
+.btn-dark {
+  background-color: $color-dark-bg;
+  color: $color-dark-text;
+  border: 1px solid $color-dark-border;
+}

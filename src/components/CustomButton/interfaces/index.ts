@@ -1,7 +1,3 @@
-import {
-  CustomButtonProps,
-} from "./CustomButton";
+import { CustomButtonProps } from "./CustomButton";
 
-export type {
-  CustomButtonProps,
-};
+export type { CustomButtonProps };

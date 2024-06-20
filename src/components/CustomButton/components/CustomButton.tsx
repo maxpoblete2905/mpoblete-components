@@ -1,40 +1,53 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/index.scss'
+import "../styles/index.scss";
 import { getReactIconByName } from "../../../icon";
 import { CustomButtonProps } from "../interfaces";
-import { capitalizeLabel } from "../utils";
 import { borderRadiusClass, themeClass, sizeClass } from "../theme";
+import { formatTextUtilities } from "../utils/formatTextUtilities";
+import { handleDownloadExcel } from "../utils";
+import { DownloadExcelOptions } from "../interfaces/DownloadExcelOptions";
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
-  label,
+  label = "Button",
   onClick,
+  icon,
   type = "button",
   disabled = false,
   size = "medium",
   theme = "primary",
   borderRedius = "sm",
-  icon,
-  capitalized = false,
-  iconSize = 22,
+  textUtilities = "capitalize",
+  downloadExcel,
 }) => {
   const IconComponent = getReactIconByName(icon!);
 
-  console.log(borderRadiusClass[borderRedius])
+  const handleClick = (downloadExcel: DownloadExcelOptions) => {
+    handleDownloadExcel(downloadExcel);
+  };
+
+  const handleClickButton = () => {
+    if (downloadExcel?.active) {
+      handleClick(downloadExcel);
+    } else {
+      onClick?.();
+    }
+  };
+
   return (
     <button
       type={type}
-      onClick={onClick}
+      onClick={handleClickButton}
       disabled={disabled}
       data-testid="custom-button"
       className={`
+        btn-button
         btn 
         ${sizeClass[size]} 
         ${themeClass[theme]} 
         ${borderRadiusClass[borderRedius]}
       `}
     >
-      {IconComponent && <IconComponent size={iconSize} className={label && icon ? "me-2" : ''} />}
-      {capitalizeLabel(label!, capitalized)}
+      {IconComponent && <IconComponent className="icon"/>}
+      {label && formatTextUtilities(textUtilities, label)}
     </button>
   );
 };

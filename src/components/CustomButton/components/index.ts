@@ -1,4 +1,3 @@
-import { CustomButton } from './CustomButton'
-import { CustomButtonDownloadExcel } from './CustomButtonDownloadExcel'
+import { CustomButton } from "./CustomButton";
 
-export { CustomButton, CustomButtonDownloadExcel }
+export { CustomButton };

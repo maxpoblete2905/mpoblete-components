@@ -1,0 +1,17 @@
+.btn-button {
+  border: none; /* Sin borde */
+  outline: none; /* Sin contorno al enfocar */
+  display: inline-flex;
+  align-items: center; /* Centra verticalmente el icono y el texto */
+  justify-content: center; /* Centra horizontalmente el icono y el texto */
+  padding: 0.5rem 1rem; /* Espaciado interno del botón */
+  border: none; /* Elimina el borde por defecto */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a una mano */
+  transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+
+}
+
+.icon {
+  margin-right: 0.5rem;
+}

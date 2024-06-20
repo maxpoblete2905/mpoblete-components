@@ -34,15 +34,49 @@ To run the project locally, follow these steps:
 2. Clone this repository to your local machine.
 3. Navigate to the project directory in your terminal.
 4. Run `npm install` to install the project dependencies.
-5. After the installation is complete, run `npm run dev` to start the development server.
-6. Open your web browser and navigate to `http://localhost:3000/` to view the project.
+5. After the installation is complete, run `npm run storybook` to start the development server.
+6. Open your web browser and navigate to `http://localhost:6006/` to view the project.
 
 ## 📦 Exported Components
 
 Currently, the library exports the following components:
 
 - 🟦 **CustomButton**: A custom button component.
-- 🟦 **CustomButtonDownloadExcel**: A button component for downloading Excel files.
+
+## 📥 Installation and Usage
+
+To use the `CustomButton` component in your project, follow these steps:
+
+1. **Install the library**: First, install the library using npm or yarn.
+
+   ```sh
+   npm install mp-custom-components
+
+   ```
+
+   ```sh
+   Now an example of how to use the CustomButton component, so that all the components of this library are utilized
+   ```
+
+   ```jsx
+   import { CustomButton } from "mp-custom-components";
+
+   const App = () => {
+     return (
+       <div>
+         <CustomButton
+           label="Click Me"
+           icon="FcDownload"
+           theme="primary"
+           onClick={() => alert("Button clicked!")}
+         />
+       </div>
+     );
+   };
+   ```
+
+```
+export default App;
 
 ## 📝 License
 
@@ -50,4 +84,5 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ## 📫 Contact
 
-For more information, visit the [documentation page](https://maxpoblete2905.github.io/Storybook/?path=/docs/documentacion-general--docs) or the [repository](https://github.com/maxpoblete2905/Storybook.git).
+For more information, visit the [documentation page](https://maxpoblete2905.github.io/mpoblete-components/?path=/docs/documentacion-general--docs) or the [repository](https://github.com/maxpoblete2905/Storybook.git).
+```

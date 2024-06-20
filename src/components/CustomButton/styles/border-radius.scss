@@ -1,0 +1,35 @@
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+.rounded-none {
+  @include border-radius(0rem);
+}
+
+.rounded-xxs {
+  @include border-radius(0.1rem);
+}
+
+.rounded-xs {
+  @include border-radius(0.2rem);
+}
+
+.rounded-sm {
+  @include border-radius(0.4rem);
+}
+
+.rounded-md {
+  @include border-radius(0.6rem);
+}
+
+.rounded-lg {
+  @include border-radius(0.8rem);
+}
+
+.rounded-xl {
+  @include border-radius(1rem);
+}
+
+.rounded-xxl {
+  @include border-radius(1.5rem);
+}

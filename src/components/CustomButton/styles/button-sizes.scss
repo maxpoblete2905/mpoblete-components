@@ -1,0 +1,24 @@
+// Definición de variables para tamaños de botón
+$btn-small-padding: 5px 10px;
+$btn-small-font-size: 12px;
+
+$btn-medium-padding: 8px 16px;
+$btn-medium-font-size: 14px;
+
+$btn-large-padding: 10px 20px;
+$btn-large-font-size: 16px;
+
+.btn-small {
+  padding: $btn-small-padding;
+  font-size: $btn-small-font-size;
+}
+
+.btn-medium {
+  padding: $btn-medium-padding;
+  font-size: $btn-medium-font-size;
+}
+
+.btn-large {
+  padding: $btn-large-padding;
+  font-size: $btn-large-font-size;
+}

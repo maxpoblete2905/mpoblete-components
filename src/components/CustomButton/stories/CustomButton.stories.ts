@@ -3,6 +3,7 @@ import { CustomButton } from "../components";
 import { CustomButtonProps } from "../interfaces";
 import { userEvent, within } from "@storybook/test";
 import { action } from "@storybook/addon-actions";
+import { records } from "@mock/data";
 
 const meta: Meta<CustomButtonProps> = {
   title: "Component/Buttons/Button",
@@ -10,6 +11,9 @@ const meta: Meta<CustomButtonProps> = {
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
+    backgrounds: {
+      default: "dark",
+    },
   },
   argTypes: {
     label: {
@@ -63,29 +67,60 @@ const meta: Meta<CustomButtonProps> = {
     },
     borderRedius: {
       control: "select",
-      description: "Elemento de icono para el botón.",
+      description:
+        "Radio de borde del botón. Permite seleccionar el estilo de borde para el botón.",
     },
-    iconSize: {
-      control: "select",
-      description: "tamaño del icono",
-    },
-    data: {
-      control: "array",
-      description: "data que descargara en formato excel.",
+    textUtilities: {
+      control: {
+        type: "radio",
+        options: ["capitalize", "lowercase", "uppercase"],
+      },
+      description: "Utilidad de formato de texto",
       table: {
-        disable: true, // Esto oculta el campo en la tabla de propiedades
+        type: { summary: "capitalize | lowercase | uppercase" },
       },
     },
-    header: {
-      control: "array",
-      description: "header datos.",
-      table: {
-        disable: true, // Esto oculta el campo en la tabla de propiedades
+    downloadExcel: {
+      control: {
+        fileName: {
+          type: "string",
+          defaultValue: "name file excel dounload",
+        },
+        active: {
+          type: "boolean",
+          defaultValue: true,
+        },
+        data: {
+          type: "object",
+          defaultValue: [
+            {
+              id: "0",
+              nombre: "Juan",
+              apellido: "Perez",
+              email: "juan@example.com",
+              creationDate: new Date().toISOString(),
+            },
+            {
+              id: "1",
+              nombre: "María",
+              apellido: "García",
+              email: "maria@example.com",
+              creationDate: new Date(Date.now() - 86400000).toISOString(),
+            },
+          ],
+        },
+        columns: {
+          type: "object",
+          defaultValue: [
+            { label: "ID", id: "id" },
+            { label: "Nombre", id: "nombre" },
+            { label: "Apellido", id: "apellido" },
+            { label: "Email", id: "email" },
+            { label: "Fecha de Creación", id: "creationDate" },
+          ],
+        },
       },
-    },
-    capitalized: {
-      control: "boolean",
-      description: "cambia label a mayusculas.",
+      description: "Configuración para la descarga de datos en formato Excel",
     },
   },
 };
@@ -106,14 +141,13 @@ export const Default: Story = {
   play: async ({ canvasElement }) => {
     const buttonElement = within(canvasElement).getByTestId("custom-button");
     await simulateClick(buttonElement);
-    await userEvent.hover(buttonElement);
   },
 };
 
 export const Custom: Story = {
   args: {
     label: "Custom Button",
-    capitalized: true,
+    textUtilities: "capitalize",
     icon: "FcEditImage",
     theme: "secondary",
     onClick: action("Se ejecuta función anónima"),
@@ -121,7 +155,6 @@ export const Custom: Story = {
   play: async ({ canvasElement }) => {
     const buttonElement = within(canvasElement).getByTestId("custom-button");
     await simulateClick(buttonElement);
-    await userEvent.hover(buttonElement);
   },
 };
 
@@ -135,7 +168,6 @@ export const Icon: Story = {
   play: async ({ canvasElement }) => {
     const buttonElement = within(canvasElement).getByTestId("custom-button");
     await simulateClick(buttonElement);
-    await userEvent.hover(buttonElement);
   },
 };
 
@@ -145,12 +177,11 @@ export const Delete: Story = {
     icon: "FcDeleteDatabase",
     theme: "danger",
     onClick: action("Se ejecuta función anónima"),
-    capitalized: true,
+    textUtilities: "capitalize",
   },
   play: async ({ canvasElement }) => {
     const buttonElement = within(canvasElement).getByTestId("custom-button");
     await simulateClick(buttonElement);
-    await userEvent.hover(buttonElement);
   },
 };
 
@@ -160,12 +191,11 @@ export const Create: Story = {
     icon: "FcPlus",
     theme: "success",
     onClick: action("Se ejecuta función anónima"),
-    capitalized: true,
+    textUtilities: "capitalize",
   },
   play: async ({ canvasElement }) => {
     const buttonElement = within(canvasElement).getByTestId("custom-button");
     await simulateClick(buttonElement);
-    await userEvent.hover(buttonElement);
   },
 };
 
@@ -179,6 +209,26 @@ export const Small: Story = {
   play: async ({ canvasElement }) => {
     const buttonElement = within(canvasElement).getByTestId("custom-button");
     await simulateClick(buttonElement);
-    await userEvent.hover(buttonElement);
+  },
+};
+
+export const DownloadExcel: Story = {
+  args: {
+    icon: "FcInternal",
+    label: "Download",
+    theme: "default",
+    textUtilities: "uppercase",
+    downloadExcel: {
+      fileName: "file_name",
+      active: true,
+      data: records,
+      columns: [
+        { label: "ID", id: "id" },
+        { label: "Nombre", id: "nombre" },
+        { label: "Apellido", id: "apellido" },
+        { label: "Email", id: "email" },
+        { label: "Fecha de Creación", id: "creationDate" },
+      ],
+    },
   },
 };
