@@ -1,4 +1,4 @@
-# 📁 MP Custom Components
+# 📁 mpoblete components
 
 This project is a library of custom components created with [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), and [Storybook](https://storybook.js.org/).
 

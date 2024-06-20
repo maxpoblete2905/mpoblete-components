@@ -3,7 +3,7 @@ import { CustomButton } from "../components";
 import { CustomButtonProps } from "../interfaces";
 import { userEvent, within } from "@storybook/test";
 import { action } from "@storybook/addon-actions";
-import { records } from "@mock/data";
+import { columns, records } from "@mock/data";
 
 const meta: Meta<CustomButtonProps> = {
   title: "Component/Buttons/Button",
@@ -18,15 +18,15 @@ const meta: Meta<CustomButtonProps> = {
   argTypes: {
     label: {
       control: "text",
-      description: "Texto que se muestra en el botón",
-      defaultValue: "Button", // Valor por defecto
+      description: "Text displayed on the button",
+      defaultValue: "Button", // Default value
       table: {
         type: { summary: "string" },
       },
     },
     onClick: {
       action: "clicked",
-      description: "Función a ejecutar cuando se hace clic en el botón",
+      description: "Function to execute when the button is clicked",
       table: {
         type: { summary: "() => void" },
       },
@@ -34,14 +34,14 @@ const meta: Meta<CustomButtonProps> = {
     type: {
       control: "select",
       options: ["button", "submit", "reset"],
-      description: "Tipo del botón",
+      description: "Type of the button",
       table: {
         type: { summary: "button | submit | reset" },
       },
     },
     disabled: {
       control: "boolean",
-      description: "Si el botón está deshabilitado",
+      description: "Whether the button is disabled",
       table: {
         type: { summary: "boolean" },
       },
@@ -49,33 +49,33 @@ const meta: Meta<CustomButtonProps> = {
     size: {
       control: "select",
       options: ["small", "medium", "large"],
-      description: "Tamaño del botón",
+      description: "Size of the button",
       table: {
         type: { summary: "small | medium | large" },
       },
     },
     theme: {
       control: "select",
-      description: "Color del botón",
+      description: "Color of the button",
       table: {
         type: { summary: "default | primary | secondary | danger" },
       },
     },
     icon: {
       control: "select",
-      description: "Elemento de icono para el botón",
+      description: "Icon element for the button",
     },
-    borderRedius: {
+    borderRadius: {
       control: "select",
       description:
-        "Radio de borde del botón. Permite seleccionar el estilo de borde para el botón.",
+        "Border radius of the button. Allows selecting the border style for the button.",
     },
     textUtilities: {
       control: {
         type: "radio",
         options: ["capitalize", "lowercase", "uppercase"],
       },
-      description: "Utilidad de formato de texto",
+      description: "Text formatting utility",
       table: {
         type: { summary: "capitalize | lowercase | uppercase" },
       },
@@ -84,7 +84,7 @@ const meta: Meta<CustomButtonProps> = {
       control: {
         fileName: {
           type: "string",
-          defaultValue: "name file excel dounload",
+          defaultValue: "Name_file",
         },
         active: {
           type: "boolean",
@@ -92,35 +92,14 @@ const meta: Meta<CustomButtonProps> = {
         },
         data: {
           type: "object",
-          defaultValue: [
-            {
-              id: "0",
-              nombre: "Juan",
-              apellido: "Perez",
-              email: "juan@example.com",
-              creationDate: new Date().toISOString(),
-            },
-            {
-              id: "1",
-              nombre: "María",
-              apellido: "García",
-              email: "maria@example.com",
-              creationDate: new Date(Date.now() - 86400000).toISOString(),
-            },
-          ],
+          defaultValue: records,
         },
         columns: {
           type: "object",
-          defaultValue: [
-            { label: "ID", id: "id" },
-            { label: "Nombre", id: "nombre" },
-            { label: "Apellido", id: "apellido" },
-            { label: "Email", id: "email" },
-            { label: "Fecha de Creación", id: "creationDate" },
-          ],
+          defaultValue: columns,
         },
       },
-      description: "Configuración para la descarga de datos en formato Excel",
+      description: "Configuration for downloading data in Excel format",
     },
   },
 };
@@ -222,13 +201,7 @@ export const DownloadExcel: Story = {
       fileName: "file_name",
       active: true,
       data: records,
-      columns: [
-        { label: "ID", id: "id" },
-        { label: "Nombre", id: "nombre" },
-        { label: "Apellido", id: "apellido" },
-        { label: "Email", id: "email" },
-        { label: "Fecha de Creación", id: "creationDate" },
-      ],
+      columns: columns,
     },
   },
 };

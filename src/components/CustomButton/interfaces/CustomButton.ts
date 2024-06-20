@@ -9,7 +9,7 @@ export interface CustomButtonProps {
   disabled?: boolean;
   size?: ButtonSize;
   theme?: ButtonTheme;
-  borderRedius?: BorderRadius;
+  borderRadius?: BorderRadius;
   icon?: ReactIcons;
   textUtilities?: "capitalize" | "lowercase" | "uppercase";
   downloadExcel?: DownloadExcelOptions;

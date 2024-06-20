@@ -13,4 +13,12 @@ export const records = [
     email: "maria@example.com",
     creationDate: new Date(Date.now() - 86400000).toISOString(), // Un día antes
   },
-]
+];
+
+export const columns = [
+  { label: "ID", id: "id" },
+  { label: "Nombre", id: "nombre" },
+  { label: "Apellido", id: "apellido" },
+  { label: "Email", id: "email" },
+  { label: "Fecha de Creación", id: "creationDate" },
+];

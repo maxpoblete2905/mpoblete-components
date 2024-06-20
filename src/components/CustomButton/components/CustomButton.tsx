@@ -14,7 +14,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
   disabled = false,
   size = "medium",
   theme = "primary",
-  borderRedius = "sm",
+  borderRadius = "sm",
   textUtilities = "capitalize",
   downloadExcel,
 }) => {
@@ -43,7 +43,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
         btn 
         ${sizeClass[size]} 
         ${themeClass[theme]} 
-        ${borderRadiusClass[borderRedius]}
+        ${borderRadiusClass[borderRadius]}
       `}
     >
       {IconComponent && <IconComponent className="icon"/>}
