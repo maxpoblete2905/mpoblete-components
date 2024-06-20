@@ -1,4 +1,4 @@
-import"./chunk-HLWAVYOI-k0OssbDs.js";import{M as l}from"./index-BMYpNYbb.js";import{j as n}from"./jsx-runtime-Nms4Y4qS.js";import{useMDXComponents as o}from"./index-BnapxFVb.js";import"./iframe-DI6_9ouP.js";import"../sb-preview/runtime.js";import"./index-BwDkhjyp.js";import"./_commonjsHelpers-BosuxZz1.js";import"./react-16-BhWW6Igw.js";import"./index-B8XB3FuZ.js";import"./index-DXimoRZY.js";import"./index-Dx4y3nsS.js";import"./index-DrFu-skq.js";function s(t){const e=Object.assign({h1:"h1",ul:"ul",li:"li",h2:"h2",p:"p",h3:"h3",pre:"pre",code:"code"},o(),t.components);return n.jsxs(n.Fragment,{children:[n.jsx(l,{title:"Documentation/Buttons/Button"}),`
+import{j as n}from"./jsx-runtime-Nms4Y4qS.js";import"./chunk-HLWAVYOI-otjlijJY.js";import{M as o}from"./index-CbN1j-cQ.js";import{useMDXComponents as s}from"./index-BnapxFVb.js";import"./index-BwDkhjyp.js";import"./_commonjsHelpers-BosuxZz1.js";import"./iframe-sagFbwxc.js";import"../sb-preview/runtime.js";import"./react-16-BhWW6Igw.js";import"./index-B8XB3FuZ.js";import"./index-DXimoRZY.js";import"./index-Dx4y3nsS.js";import"./index-DrFu-skq.js";function r(t){const e=Object.assign({h1:"h1",ul:"ul",li:"li",h2:"h2",p:"p",h3:"h3",pre:"pre",code:"code"},s(),t.components);return n.jsxs(n.Fragment,{children:[n.jsx(o,{title:"Documentation/Buttons/Button"}),`
 `,n.jsx(e.h1,{id:"componente-button",children:"Componente Button"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsxs(e.li,{children:[`
@@ -74,4 +74,4 @@ export const CustomButton: React.FC<CustomButtonProps> = ({\r
   );\r
 };\r
 
-`})})]})}function i(t={}){const{wrapper:e}=Object.assign({},o(),t.components);return e?n.jsx(e,{...t,children:n.jsx(s,{...t})}):s(t)}const c=()=>{throw new Error("Docs-only story")};c.parameters={docsOnly:!0};const r={title:"Documentation/Buttons/Button",tags:["stories-mdx"],includeStories:["__page"]};r.parameters=r.parameters||{};r.parameters.docs={...r.parameters.docs||{},page:i};const w=["__page"];export{w as __namedExportsOrder,c as __page,r as default};
+`})})]})}function f(t={}){const{wrapper:e}=Object.assign({},s(),t.components);return e?n.jsx(e,Object.assign({},t,{children:n.jsx(r,t)})):r(t)}export{f as default};
